@@ -3,8 +3,8 @@ import { DataModel, List, DataModelInstance, Path } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import { Child, Pluggable } from './mixins';
-import { FieldInstance, IParams, SectionPlugin } from './InstanceTypes';
-import { PresentationModelInstance, PageInstance } from './';
+import { FieldInstance, IParams } from './InstanceTypes';
+import { PresentationModelInstance, PageInstance, SectionPlugin } from './';
 import { Section, ChoiceField } from '../model';
 import { buildField } from './util';
 

@@ -1,10 +1,10 @@
 import { DataModelInstance } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
-import { IParams, PagePlugin } from './InstanceTypes';
+import { IParams } from './InstanceTypes';
 import { Pluggable } from './mixins';
 import { Page } from '../model';
-import { SectionInstance, PresentationModelInstance } from './';
+import { SectionInstance, PresentationModelInstance, PagePlugin } from './';
 
 export default class PageInstance implements Pluggable {
   public model: Page;

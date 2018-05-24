@@ -2,9 +2,8 @@ import * as _ from 'lodash';
 import { ContainerInstance, DataModelInstance } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
-import { PresentationModelInstance, SectionInstance } from './';
+import { PresentationModelInstance, SectionInstance, ContainerPlugin } from './';
 import { ContainerField } from '../model';
-import { ContainerPlugin } from './InstanceTypes';
 import { Pluggable, Child } from './mixins';
 
 export default class ContainerFieldInstance implements Pluggable, Child {

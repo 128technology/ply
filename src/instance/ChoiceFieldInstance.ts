@@ -3,9 +3,8 @@ import { Instance, DataModelInstance } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import { ChoiceField } from '../model';
-import { ChoicePlugin } from './InstanceTypes';
 import { Pluggable, Child } from './mixins';
-import { PresentationModelInstance, SectionInstance } from './';
+import { PresentationModelInstance, SectionInstance, ChoicePlugin } from './';
 
 export default class ChoiceFieldInstance implements Pluggable, Child {
   public model: ChoiceField;
