@@ -3,9 +3,8 @@ import { LeafListInstance, DataModelInstance, Path } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import { LeafListField } from '../model';
-import { LeafListPlugin } from './InstanceTypes';
 import { Pluggable, Child } from './mixins';
-import { PresentationModelInstance, SectionInstance } from './';
+import { PresentationModelInstance, SectionInstance, LeafListPlugin } from './';
 
 export default class LeafListFieldInstance implements Pluggable, Child {
   public instanceData: LeafListInstance;

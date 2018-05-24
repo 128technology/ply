@@ -3,9 +3,8 @@ import { ListInstance, LeafInstance, Leaf, Types, Path, DataModelInstance } from
 
 import applyMixins from '../util/applyMixins';
 import { ListField, LeafField } from '../model';
-import { ListPlugin } from './InstanceTypes';
 import { Pluggable, Child } from './mixins';
-import { PresentationModelInstance, SectionInstance } from './';
+import { PresentationModelInstance, SectionInstance, ListPlugin } from './';
 
 const { LeafRefType, DerivedType } = Types;
 

@@ -7,3 +7,12 @@ export { default as PageInstance } from './PageInstance';
 export { default as SectionInstance } from './SectionInstance';
 export { default as PresentationModelInstance } from './PresentationModelInstance';
 export { FieldInstance } from './InstanceTypes';
+export {
+  ContainerPlugin,
+  ListPlugin,
+  LeafPlugin,
+  LeafListPlugin,
+  ChoicePlugin,
+  PagePlugin,
+  SectionPlugin
+} from './PluginTypes';

@@ -1,7 +1,8 @@
 import { DataModelInstance } from '@128technology/yinz';
 
+import { IParams } from './InstanceTypes';
 import {
-  IParams,
+  PageInstance,
   ContainerPlugin,
   LeafListPlugin,
   LeafPlugin,
@@ -9,8 +10,7 @@ import {
   ChoicePlugin,
   PagePlugin,
   SectionPlugin
-} from './InstanceTypes';
-import { PageInstance } from './';
+} from './';
 import { PresentationModel } from '../model';
 
 export default class PresentationModelInstance {

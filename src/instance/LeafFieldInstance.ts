@@ -4,9 +4,8 @@ import { Leaf, LeafInstance, Types, Path, DataModelInstance } from '@128technolo
 import applyMixins from '../util/applyMixins';
 import KeyUndefinedError from './errors/KeyUndefinedError';
 import { LeafField } from '../model';
-import { LeafPlugin } from './InstanceTypes';
 import { Pluggable, Child } from './mixins';
-import { PresentationModelInstance, SectionInstance } from './';
+import { PresentationModelInstance, SectionInstance, LeafPlugin } from './';
 
 const { LeafRefType, DerivedType } = Types;
 
