@@ -73,10 +73,4 @@ export default class PresentationModel {
       return null;
     }
   }
-
-  public getPageForFieldID(id: string) {
-    const field = this.getFieldForID(id);
-
-    return field.parent.parent;
-  }
 }
