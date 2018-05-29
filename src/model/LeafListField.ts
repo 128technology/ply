@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { LeafList, Model, DataModel } from '@128technology/yinz';
+import { LeafList, Model, DataModel, OrderedBy } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import { Field } from './mixins';
@@ -20,6 +20,7 @@ export default class LeafListField implements Field {
   public required: boolean;
   public visibility: string;
   public choice: IChoice;
+  public orderedBy: OrderedBy;
 
   public addChoice: () => void;
   public addDefault: () => void;
@@ -44,6 +45,7 @@ export default class LeafListField implements Field {
     this.getPresentationModel().registerField(this);
 
     this.columnLabels = fieldDef.columnLabels;
+    this.orderedBy = this.model.orderedBy;
   }
 
   public get validation() {
@@ -56,7 +58,10 @@ export default class LeafListField implements Field {
   public serialize(): any {
     return Object.assign(
       this.baseSerialize(),
-      _.pickBy({ columnLabels: this.columnLabels, validation: this.validation }, v => !_.isNil(v))
+      _.pickBy(
+        { orderedBy: this.orderedBy, columnLabels: this.columnLabels, validation: this.validation },
+        v => !_.isNil(v)
+      )
     );
   }
 }

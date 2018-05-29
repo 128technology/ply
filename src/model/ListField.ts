@@ -1,4 +1,4 @@
-import { List, Leaf, Model, DataModel } from '@128technology/yinz';
+import { List, Leaf, Model, DataModel, OrderedBy } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import { Field } from './mixins';
@@ -21,6 +21,7 @@ export default class ListField implements Field {
   public required: boolean;
   public visibility: string;
   public choice: IChoice;
+  public orderedBy: OrderedBy;
 
   public addChoice: () => void;
   public addDefault: () => void;
@@ -50,6 +51,7 @@ export default class ListField implements Field {
 
     this.link = fieldDef.link;
     this.columns = fieldDef.columns;
+    this.orderedBy = this.model.orderedBy;
     this.getPresentationModel().registerLink(fieldDef.link, this.getPage());
   }
 
@@ -93,6 +95,7 @@ export default class ListField implements Field {
       keys: this.keys.map(key => key.serialize()),
       leaves: this.leaves,
       link: this.link,
+      orderedBy: this.orderedBy,
       tableColumns: this.tableColumns,
       validation: this.validation
     });
