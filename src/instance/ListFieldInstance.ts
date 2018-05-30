@@ -8,6 +8,8 @@ import { PresentationModelInstance, SectionInstance, ListPlugin } from './';
 
 const { LeafRefType, DerivedType } = Types;
 
+const FAKE_KEY = 'XXX_FAKE_KEY_VALUE_XXX';
+
 interface IGenericObj {
   [index: string]: string;
 }
@@ -46,12 +48,18 @@ export default class ListFieldInstance implements Pluggable, Child {
         Array.prototype.push.apply(references, this.getDataInstance().evaluateLeafRef(fakePath));
       }
 
-      if (model instanceof Leaf && model.getResolvedType() instanceof LeafRefType) {
-        const type = model.type;
-
-        if (type instanceof DerivedType && type.suggestionRefs && type.suggestionRefs.length > 0) {
-          Array.prototype.push.apply(suggestions, this.getDataInstance().evaluateSuggestionRef(fakePath));
-        }
+      const type = model.type;
+      if (
+        model instanceof Leaf &&
+        type instanceof DerivedType &&
+        type.suggestionRefs &&
+        type.suggestionRefs.length > 0
+      ) {
+        // Suggestion-Refs can be self referential...
+        Array.prototype.push.apply(
+          suggestions,
+          _.without(this.getDataInstance().evaluateSuggestionRef(fakePath), FAKE_KEY)
+        );
       }
 
       const base = modelKey.serialize();
@@ -105,7 +113,7 @@ export default class ListFieldInstance implements Pluggable, Child {
   }
 
   private getFakeKeys() {
-    return Array.from(this.model.model.keys.values()).map(key => ({ key, value: 'XXX_FAKE_KEY_VALUE_XXX' }));
+    return Array.from(this.model.model.keys.values()).map(key => ({ key, value: FAKE_KEY }));
   }
 }
 
