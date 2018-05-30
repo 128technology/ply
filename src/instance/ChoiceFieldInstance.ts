@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { Instance, DataModelInstance } from '@128technology/yinz';
+import { Instance, DataModelInstance, Path } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import { ChoiceField } from '../model';
@@ -9,6 +9,7 @@ import { PresentationModelInstance, SectionInstance, ChoicePlugin } from './';
 export default class ChoiceFieldInstance implements Pluggable, Child {
   public model: ChoiceField;
   public parent: SectionInstance;
+  public path: Path;
   public parentInstanceData: Instance;
   public plugins: ChoicePlugin[];
 
@@ -16,10 +17,11 @@ export default class ChoiceFieldInstance implements Pluggable, Child {
   public getPresentationInstance: () => PresentationModelInstance;
   public applyPlugins: (field: any) => any;
 
-  constructor(model: ChoiceField, parent: SectionInstance, parentInstanceData: Instance) {
+  constructor(model: ChoiceField, parent: SectionInstance, parentInstanceData: Instance, path: Path) {
     this.model = model;
     this.parent = parent;
     this.parentInstanceData = parentInstanceData;
+    this.path = path;
 
     this.plugins = this.getPresentationInstance().choicePlugins;
   }

@@ -16,7 +16,7 @@ export function buildField(fieldModel: Field, parent: SectionInstance, instanceD
     return new ListFieldInstance(fieldModel, parent, instanceData as ListInstance, path);
   } else if (fieldModel instanceof ChoiceField) {
     // In this case instanceData is actually the parent, if it exists.
-    return new ChoiceFieldInstance(fieldModel, parent, instanceData);
+    return new ChoiceFieldInstance(fieldModel, parent, instanceData, path);
   } else if (fieldModel instanceof LeafField) {
     return new LeafFieldInstance(fieldModel, parent, instanceData as LeafInstance, path);
   } else if (fieldModel instanceof LeafListField) {
