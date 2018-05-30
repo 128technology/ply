@@ -45,8 +45,12 @@ export default class ChoiceField implements Field {
     this.enumerations = this.model.caseNames;
   }
 
+  public get emptyCases() {
+    return this.model.emptyCases.map(theCase => theCase.name);
+  }
+
   public serialize(): any {
-    return Object.assign(this.baseSerialize(), { enumerations: this.enumerations });
+    return Object.assign(this.baseSerialize(), { enumerations: this.enumerations, emptyCases: this.emptyCases });
   }
 }
 
