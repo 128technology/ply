@@ -1,7 +1,6 @@
 import * as _ from 'lodash';
-import { Leaf } from '@128technology/yinz';
 
-import { PresentationModel, Section } from './';
+import { PresentationModel, Section, LeafField } from './';
 import { ISection } from './Section';
 import { IErrorReporter } from '../validate/ErrorReporter';
 
@@ -36,16 +35,16 @@ export default class Page {
     return this.getPresentationModel().getParentPage(this);
   }
 
-  public getKeyFields() {
+  public getKeyFields(): LeafField[] {
     return _.flatMap(this.sections, section => section.fields).filter(
-      field => field.model instanceof Leaf && field.model.isKey
+      (field): field is LeafField => field instanceof LeafField && field.model.isKey
     );
   }
 
   public isListPage() {
     return _.some(
       _.flatMap(this.sections, section => section.fields),
-      field => field.model instanceof Leaf && field.model.isKey
+      field => field instanceof LeafField && field.model.isKey
     );
   }
 
