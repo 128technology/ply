@@ -1,0 +1,44 @@
+{
+    "title": "LDAP Server",
+    "id": "ldap-server",
+    "sections": [
+        {
+            "id": "ldap-servers.main",
+            "title": "Basic Information",
+            "fields": [
+                {
+                    "id": "authority.ldap-server.name",
+                    "label": "Name"
+                },
+                {
+                    "id": "authority.ldap-server.address",
+                    "label": "Address"
+                },
+                {
+                    "id": "authority.ldap-server.port",
+                    "label": "Port"
+                },
+                {
+                    "id": "authority.ldap-server.search-base",
+                    "label": "Search Base"
+                },
+                {
+                    "id": "authority.ldap-server.server-type",
+                    "label": "Type"
+                },
+                {
+                    "id": "authority.ldap-server.bind-type",
+                    "label": "Bind Type"
+                },
+                {
+                    "id": "authority.ldap-server.distinguished-name",
+                    "label": "Distinguished Name"
+                },
+                {
+                    "id": "authority.ldap-server.password",
+                    "label": "Password"
+                }
+            ]
+        }
+    ]
+}

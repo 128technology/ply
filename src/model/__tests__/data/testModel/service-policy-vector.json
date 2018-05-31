@@ -1,0 +1,15 @@
+{
+    "title": "Vector",
+    "id": "service-policy-vector",
+    "sections": [{
+        "id": "service-policy-vector.main",
+        "title": "Basic Information",
+        "fields": [{
+            "id": "authority.service-policy.vector.name",
+            "label": "Name"
+        }, {
+            "id": "authority.service-policy.vector.priority",
+            "label": "Priority"
+        }]
+    }]
+}

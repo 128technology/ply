@@ -1,0 +1,18 @@
+{
+  "title": "Routing Interface",
+  "id": "routing-interface",
+  "sections": [{
+    "id": "routing-interface.main",
+    "title": "Basic Information",
+    "fields": [{
+      "id": "authority.router.routing.interface.name",
+      "label": "Name"
+    }, {
+      "id": "authority.router.routing.interface.ip-address",
+      "label": "IP Address"
+    }, {
+      "id": "authority.router.routing.interface.enabled",
+      "label": "Enabled"
+    }]
+  }]
+}

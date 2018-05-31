@@ -1,0 +1,48 @@
+{
+    "title": "Router BFD Settings",
+    "id": "router-bfd",
+    "sections": [{
+        "id": "router-bfd.main",
+        "title": "Basic Information",
+        "fields": [{
+            "id": "authority.router.bfd.state",
+            "label": "State"
+        }, {
+            "id": "authority.router.bfd.authentication-type",
+            "label": "Authentication Type"
+        }]
+    }, {
+        "id": "router-bfd.intervals",
+        "title": "BFD Intervals",
+        "fields": [{
+            "id": "authority.router.bfd.desired-tx-interval",
+            "label": "Desired Transmit (Tx) Interval"
+        }, {
+            "id": "authority.router.bfd.required-min-rx-interval",
+            "label": "Required Minimum Receive (Rx) Interval"
+        }, {
+            "id": "authority.router.bfd.required-min-echo-interval",
+            "label": "Required Minimum Echo Interval"
+        }]
+    }, {
+        "id": "router-bfd.linksettings",
+        "title": "BFD Link Settings",
+        "fields": [{
+            "id": "authority.router.bfd.multiplier",
+            "label": "Multiplier"
+        }, {
+            "id": "authority.router.bfd.link-test-interval",
+            "label": "Link Test Interval"
+        }, {
+            "id": "authority.router.bfd.link-test-length",
+            "label": "Link Test Length"
+        }]
+    }, {
+        "id": "router-bfd.dscp",
+        "title": "BFD DSCP Settings",
+        "fields": [{
+            "id": "authority.router.bfd.dscp",
+            "label": "DSCP Value"
+        }]
+    }]
+}

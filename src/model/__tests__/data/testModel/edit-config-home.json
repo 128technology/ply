@@ -1,0 +1,105 @@
+{
+    "title": "Authority",
+    "id": "edit-config-home",
+    "sections": [{
+        "id": "home.main",
+        "title": "Configuration Home",
+        "type": "container-list-section",
+        "fields": [{
+            "link": "authority",
+            "id": "authority",
+            "label": "Authority"
+        }]
+    }, {
+        "id": "home.routers",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "router",
+            "id": "authority.router",
+            "label": "Routers",
+            "columns": ["name", "location", "description"]
+        }]
+    }, {
+        "id": "home.tenants",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "tenant",
+            "id": "authority.tenant",
+            "label": "Tenants"
+        }]
+    }, {
+        "id": "home.ldap-servers",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "ldap-server",
+            "id": "authority.ldap-server",
+            "label": "LDAP Servers"
+        }]
+    }, {
+        "id": "home.services",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "service",
+            "id": "authority.service",
+            "label": "Services"
+        }]
+    }, {
+        "id": "home.security-policies",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "security",
+            "id": "authority.security",
+            "label": "Security Policies"
+        }]
+    }, {
+        "id": "home.service-policies",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "service-policy",
+            "id": "authority.service-policy",
+            "label": "Service Policies"
+        }]
+    }, {
+        "id": "home.traffic-profile",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "traffic-profile",
+            "id": "authority.traffic-profile",
+            "label": "Traffic Profiles"
+        }]
+    }, {
+        "id": "home.service-classes",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "service-class",
+            "id": "authority.service-class",
+            "label": "Service Classes"
+        }]
+    }, {
+        "id": "home.session-types",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "session-type",
+            "id": "authority.session-type",
+            "label": "Session Types"
+        }]
+    }, {
+        "id": "home.dscp-map",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "dscp-map",
+            "id": "authority.dscp-map",
+            "label": "DSCP Map"
+        }]
+    }]
+}

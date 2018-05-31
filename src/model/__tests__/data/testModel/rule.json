@@ -1,0 +1,33 @@
+{
+  "title": "Rule",
+  "id": "rule",
+  "sections": [{
+    "id": "rule.basic-config",
+    "title": "Basic Configuration",
+    "fields": [{
+      "id": "authority.routing.filter.rule.name",
+      "label": "Name"
+    }, {
+      "id": "authority.routing.filter.rule.filter",
+      "label": "Filter"
+    }, {
+      "id": "authority.routing.filter.rule.prefix",
+      "label": "Prefix"
+    }, {
+      "id": "authority.routing.filter.rule.ge",
+      "label": "Greater Than or Equal"
+    }, {
+      "id": "authority.routing.filter.rule.le",
+      "label": "Less Than or Equal"
+    }, {
+      "id": "authority.routing.filter.rule.as-path",
+      "label": "As Path"
+    }, {
+      "id": "authority.routing.filter.rule.community",
+      "label": "Community"
+    }, {
+      "id": "authority.routing.filter.rule.extended-community",
+      "label": "Extended Community"
+    }]
+  }]
+}

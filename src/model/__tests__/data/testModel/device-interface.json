@@ -1,0 +1,122 @@
+{
+    "title": "Device Interface",
+    "id": "device-interface",
+    "sections": [{
+        "id": "device-interface.main",
+        "title": "Basic Information",
+        "fields": [{
+            "id": "authority.router.node.device-interface.name",
+            "label": "Device Interface Name"
+        }, {
+            "id": "authority.router.node.device-interface.enabled",
+            "label": "Enabled"
+        }, {
+            "id": "authority.router.node.device-interface.description",
+            "label": "Description"
+        }]
+    }, {
+        "id": "device-interface.type",
+        "title": "Device Interface Type Settings",
+        "type": "choice-section",
+        "fields": [{
+            "id": "authority.router.node.device-interface.type",
+            "label": "Device Interface Type",
+            "control": true
+        }, {
+            "id": "authority.router.node.device-interface.pci-address",
+            "label": "PCI Address",
+            "customComponent": "PciAddressField"
+        }, {
+            "id": "authority.router.node.device-interface.link-settings",
+            "label": "Ethernet Link Settings"
+        }, {
+            "id": "authority.router.node.device-interface.forwarding",
+            "label": "Forwarding"
+        }, {
+            "id": "authority.router.node.device-interface.mode",
+            "label": "Kernel Network Interface (KNI) Mode"
+        }, {
+            "id": "authority.router.node.device-interface.target-interface",
+            "label": "Kernel Network Interface (KNI) Target Interface"
+        }, {
+            "id": "authority.router.node.device-interface.bridge-name",
+            "label": "Kernel Network Interface (KNI) Bridge Name"
+        }, {
+            "id": "authority.router.node.device-interface.pppoe.user-name",
+            "label": "PPPoE User Name"
+        }, {
+            "id": "authority.router.node.device-interface.pppoe.password",
+            "label": "PPPoE Password"
+        }, {
+            "id": "authority.router.node.device-interface.pppoe.authentication-protocol",
+            "label": "PPPoE Authentication Protocol"
+        }, {
+            "id": "authority.router.node.device-interface.lte.apn-name",
+            "label": "LTE APN Name"
+        }, {
+            "id": "authority.router.node.device-interface.strip-vlan",
+            "label": "VLAN Stripping"
+        }, {
+            "id": "authority.router.node.device-interface.promiscuous-mode",
+            "label": "Promiscuous Mode"
+        }]
+    }, {
+        "id": "device-interface.traffic-engineering",
+        "title": "Traffic Engineering Settings",
+        "fields": [{
+            "id": "authority.router.node.device-interface.traffic-engineering.enabled",
+            "label": "Traffic Engineering Enabled"
+        }, {
+            "id": "authority.router.node.device-interface.traffic-engineering.transmit-cap",
+            "label": "Transmission Capacity"
+        }, {
+            "id": "authority.router.node.device-interface.traffic-engineering.traffic-profile",
+            "label": "Traffic Profile"
+        }]
+    }, {
+        "id": "device-interface.load-balancing",
+        "title": "Load Balancing Settings",
+        "fields": [{
+            "id": "authority.router.node.device-interface.load-balancing.utilization-high-water-mark",
+            "label": "Utilization high water mark"
+        }, {
+            "id": "authority.router.node.device-interface.load-balancing.utilization-low-water-mark",
+            "label": "Utilization low water mark"
+        }]
+    }, {
+        "id": "device-interface.session-optimization",
+        "title": "Session Optimization Settings",
+        "fields": [{
+            "id": "authority.router.node.device-interface.session-optimization.enable-detection",
+            "label": "Enable session optimization detection"
+        }]
+    }, {
+        "id": "device-interface.phys",
+        "title": "Interface Redundancy",
+        "fields": [{
+            "id": "authority.router.node.device-interface.shared-phys-address",
+            "label": "Shared Physical Address"
+        }]
+    }, {
+        "id": "device-interface.capture-filter",
+        "title": null,
+        "type": "list-table",
+        "fields": [{
+            "id": "authority.router.node.device-interface.capture-filter",
+            "label": "Capture Filter",
+            "columnLabels": [{
+                "id": "name",
+                "label": "Filter String"
+            }]
+        }]
+    }, {
+        "id": "device-interface.network-interface",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "network-interface",
+            "id": "authority.router.node.device-interface.network-interface",
+            "label": "Network Interfaces"
+        }]
+    }]
+}

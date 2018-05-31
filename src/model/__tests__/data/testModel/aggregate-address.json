@@ -1,0 +1,18 @@
+{
+  "title": "Address To Aggregate In BGP",
+  "id": "aggregate-address",
+  "sections": [{
+    "id": "aggregate-address.main",
+    "title": "Basic Information",
+    "fields": [{
+      "id": "authority.router.routing.routing-protocol.address-family.aggregate-address.prefix",
+      "label": "Address Prefix"
+    }, {
+      "id": "authority.router.routing.routing-protocol.address-family.aggregate-address.as-set",
+      "label": "Generate AS Set Information"
+    }, {
+      "id": "authority.router.routing.routing-protocol.address-family.aggregate-address.summary-only",
+      "label": "Send Aggregate Summary Only"
+    }]
+  }]
+}

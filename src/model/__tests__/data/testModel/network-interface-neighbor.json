@@ -1,0 +1,15 @@
+{
+  "title": "Network Interface Neighbor",
+  "id": "network-interface-neighbor",
+  "sections": [{
+    "id": "network-interface-neighbor.main",
+    "title": "Basic Information",
+    "fields": [{
+      "id": "authority.router.node.device-interface.network-interface.neighbor.ip-address",
+      "label": "Neighbor Address"
+    }, {
+      "id": "authority.router.node.device-interface.network-interface.neighbor.phys-address",
+      "label": "Neighbor Physical (MAC) Address"
+    }]
+  }]
+}

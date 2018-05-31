@@ -1,0 +1,21 @@
+{
+    "title": "SNMP Notification Receivers",
+    "id": "router-system-snmp-server-notification-receiver",
+    "sections": [{
+        "title": "SNMP Notification Receiver",
+        "fields": [{
+                "label": "Receiver Address",
+                "id": "authority.router.system.services.snmp-server.notification-receiver.ip-address"
+            }, {
+                "label": "Receiver Port",
+                "id": "authority.router.system.services.snmp-server.notification-receiver.port"
+            }, {
+                "label": "Notification Type",
+                "id": "authority.router.system.services.snmp-server.notification-receiver.type"
+            }, {
+                "label": "Community String",
+                "id": "authority.router.system.services.snmp-server.notification-receiver.community"
+            }],
+        "id": "router-system-snmp-server-notification-receiver.main"
+    }]
+}

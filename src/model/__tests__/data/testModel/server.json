@@ -1,0 +1,15 @@
+{
+  "title": "Server",
+  "id": "server",
+  "sections": [{
+    "id": "server.basic-config",
+    "title": "Basic Configuration",
+    "fields": [{
+      "id": "authority.router.system.syslog.server.ip-address",
+      "label": "IP Address"
+    }, {
+      "id": "authority.router.system.syslog.server.port",
+      "label": "Port"
+    }]
+  }]
+}

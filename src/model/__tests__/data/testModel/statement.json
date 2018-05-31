@@ -1,0 +1,33 @@
+{
+    "title": "Statement",
+    "id": "statement",
+    "sections": [{
+        "id": "statement.basic-config",
+        "title": "Basic Information",
+        "fields": [{
+            "id": "authority.routing.policy.statement.name",
+            "label": "Name"
+        }, {
+            "id": "authority.routing.policy.statement.policy",
+            "label": "Policy"
+        }]
+    }, {
+        "id": "statement.conditions",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "condition",
+            "id": "authority.routing.policy.statement.condition",
+            "label": "Conditions"
+        }]
+    }, {
+        "id": "statement.actions",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "action",
+            "id": "authority.routing.policy.statement.action",
+            "label": "Actions"
+        }]
+    }]
+}

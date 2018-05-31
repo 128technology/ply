@@ -1,0 +1,42 @@
+{
+    "title": "IPFIX Collector",
+    "id": "authority-ipfix-collector",
+    "sections": [{
+        "id": "authority-ipfix-collector.settings",
+        "title": "Settings",
+        "fields": [{
+            "id": "authority.ipfix-collector.name",
+            "label": "Name"
+        }, {
+            "id": "authority.ipfix-collector.ip-address",
+            "label": "IP Address"
+        }, {
+            "id": "authority.ipfix-collector.port",
+            "label": "Port"
+        }, {
+            "id": "authority.ipfix-collector.protocol",
+            "label": "Protocol"
+        }, {
+            "id": "authority.ipfix-collector.interim-record-interval",
+            "label": "Interim Record Interval"
+        }, {
+            "id": "authority.ipfix-collector.template-refresh-interval",
+            "label": "Template Refresh Interval"
+        }, {
+            "id": "authority.ipfix-collector.sampling-percentage",
+            "label": "Sampling Percentage"
+        }]
+    }, {
+        "id": "authority-ipfix-collector.tenants",
+        "title": null,
+        "type": "list-table",
+        "fields": [{
+            "id": "authority.ipfix-collector.tenant",
+            "label": "Tenants",
+            "columnLabels": [{
+                "id": "name",
+                "label": "Tenant"
+            }]
+        }]
+    }]
+}

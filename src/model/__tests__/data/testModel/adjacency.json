@@ -1,0 +1,88 @@
+{
+    "title": "Adjacency",
+    "id": "adjacency",
+    "sections": [{
+        "id": "adjacency.main",
+        "title": "Basic Information",
+        "fields": [{
+            "id": "authority.router.node.device-interface.network-interface.adjacency.ip-address",
+            "label": "Address"
+        }, {
+            "id": "authority.router.node.device-interface.network-interface.adjacency.peer-connectivity",
+            "label": "Peer Connectivity"
+        }, {
+            "id": "authority.router.node.device-interface.network-interface.adjacency.peer",
+            "label": "Peer"
+        }, {
+            "id": "authority.router.node.device-interface.network-interface.adjacency.inter-router-security",
+            "label": "Security Policy"
+        }, {
+            "id": "authority.router.node.device-interface.network-interface.adjacency.external-nat-address",
+            "label": "External NAT Address"
+        }, {
+            "id": "authority.router.node.device-interface.network-interface.adjacency.generated",
+            "label": "Auto-generated"
+        }]
+    }, {
+        "id": "adjacency.ports",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "adjacency-ports",
+            "id": "authority.router.node.device-interface.network-interface.adjacency.port-range",
+            "label": "Port Range"
+        }]
+    }, {
+        "id": "adjacency.links",
+        "title": "Link Settings",
+        "fields": [{
+            "id": "authority.router.node.device-interface.network-interface.adjacency.qp-value",
+            "label": "Quality Points"
+        }, {
+            "id": "authority.router.node.device-interface.network-interface.adjacency.cost",
+            "label": "Cost"
+        }]
+    }, {
+        "id": "adjacency.bfd",
+        "title": "BFD",
+        "fields": [{
+            "link": "adjacency-bfd",
+            "id": "authority.router.node.device-interface.network-interface.adjacency.bfd",
+            "label": "BFD Settings"
+        }]
+    }, {
+        "id": "adjacency.udp-transform",
+        "title": "UDP Transform Settings",
+        "fields": [{
+            "id": "authority.router.node.device-interface.network-interface.adjacency.udp-transform.mode",
+            "label": "UDP Transform Mode"
+        },{
+            "id": "authority.router.node.device-interface.network-interface.adjacency.udp-transform.detect-interval",
+            "label": "UDP Transform Detection Interval"
+        }]
+    }, {
+        "id": "adjacency.source-nat",
+        "title": null,
+        "type": "list-table",
+        "fields": [{
+            "id": "authority.router.node.device-interface.network-interface.adjacency.source-nat-address",
+            "label": "Source NAT Addresses",
+            "columnLabels": [{
+                "id": "name",
+                "label": "Address"
+            }]
+        }]
+    }, {
+        "id": "adjacency.vector",
+        "title": null,
+        "type": "list-table",
+        "fields": [{
+            "id": "authority.router.node.device-interface.network-interface.adjacency.vector",
+            "label": "Vectors",
+            "columnLabels": [{
+                "id": "name",
+                "label": "Vector"
+            }]
+        }]
+    }]
+}

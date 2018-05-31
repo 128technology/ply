@@ -1,0 +1,18 @@
+{
+    "title": "SNMP Access Control Policies",
+    "id": "router-system-snmp-server-access-control",
+    "sections": [{
+        "title": "SNMP Access Control Policy",
+        "fields": [{
+                "label": "Policy Name",
+                "id": "authority.router.system.services.snmp-server.access-control.name"
+            }, {
+                "label": "SNMP Community String",
+                "id": "authority.router.system.services.snmp-server.access-control.community"
+            }, {
+                "label": "Permitted Client Host",
+                "id": "authority.router.system.services.snmp-server.access-control.source"
+            }],
+        "id": "router-system-snmp-server-access-control.main"
+    }]
+}

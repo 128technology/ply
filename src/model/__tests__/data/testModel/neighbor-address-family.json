@@ -1,0 +1,48 @@
+{
+    "title": "Neighbor Address Family",
+    "id": "neighbor-address-family",
+    "sections": [{
+        "id": "neighbor-address-family.main",
+        "title": "Basic Information",
+        "fields": [{
+            "id": "authority.router.routing.routing-protocol.neighbor.address-family.afi-safi",
+            "label": "Address Family"
+        }, {
+            "id": "authority.router.routing.routing-protocol.neighbor.address-family.send-default-route",
+            "label": "Send Default Route"
+        }, {
+            "id": "authority.router.routing.routing-protocol.neighbor.address-family.next-hop-self",
+            "label": "Set This Router As Next Hop"
+        }, {
+            "id": "authority.router.routing.routing-protocol.neighbor.address-family.remove-private-as",
+            "label": "Remove Private AS Numbers From Updates"
+        }]
+    }, {
+        "id": "neighbor-address-family.prefix-limit",
+        "title": "Prefix Limit Settings",
+        "fields": [{
+            "id": "authority.router.routing.routing-protocol.neighbor.address-family.prefix-limit.max-prefixes",
+            "label": "Maximum Number of Prefixes"
+        }, {
+            "id": "authority.router.routing.routing-protocol.neighbor.address-family.prefix-limit.shutdown-threshold-pct",
+            "label": "Shutdown Threshold Percentage"
+        }, {
+            "id": "authority.router.routing.routing-protocol.neighbor.address-family.prefix-limit.restart-timer",
+            "label": "Restart Interval"
+        }]
+    }, {
+        "id": "neighbor-address-family.route-reflector",
+        "title": "Route Reflector Options",
+        "fields": [{
+            "id": "authority.router.routing.routing-protocol.neighbor.address-family.route-reflector.client",
+            "label": "Configure Neighbor As Route Reflector"
+        }]
+    }, {
+        "id": "neighbor-address-family.as-path-options",
+        "title": "AS_Path Options",
+        "fields": [{
+            "id": "authority.router.routing.routing-protocol.neighbor.address-family.as-path-options.allow-own-as",
+            "label": "Local AS_PATH Occurrences Before Rejection"
+        }]
+    }]
+}

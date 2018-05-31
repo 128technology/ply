@@ -1,0 +1,51 @@
+{
+  "title": "Condition",
+  "id": "condition",
+  "sections": [{
+    "id": "condition.basic-config",
+    "title": "Basic Configuration",
+    "fields": [{
+      "id": "authority.routing.policy.statement.condition.type",
+      "label": "Type"
+    }, {
+      "id": "authority.routing.policy.statement.condition.as-path-filter",
+      "label": "AS Path Filter"
+    }, {
+      "id": "authority.routing.policy.statement.condition.community-filter",
+      "label": "Community Filter"
+    }, {
+      "id": "authority.routing.policy.statement.condition.extended-community-filter",
+      "label": "Extended Community Filter"
+    }, {
+      "id": "authority.routing.policy.statement.condition.metric",
+      "label": "Metric"
+    }, {
+      "id": "authority.routing.policy.statement.condition.next-hop-interface",
+      "label": "Next Hop Interface"
+    }, {
+      "id": "authority.routing.policy.statement.condition.next-hop-node",
+      "label": "Next Hop Node"
+    }, {
+      "id": "authority.routing.policy.statement.condition.origin",
+      "label": "Origin"
+    }, {
+      "id": "authority.routing.policy.statement.condition.peer-address",
+      "label": "Peer Address"
+    }, {
+      "id": "authority.routing.policy.statement.condition.peer-address-type",
+      "label": "Peer Address Type"
+    }, {
+      "id": "authority.routing.policy.statement.condition.peer-local",
+      "label": "Peer Local"
+    }, {
+      "id": "authority.routing.policy.statement.condition.prefix-filter",
+      "label": "Prefix Filter"
+    }, {
+      "id": "authority.routing.policy.statement.condition.probability",
+      "label": "Probability"
+    }, {
+      "id": "authority.routing.policy.statement.condition.tag",
+      "label": "Tag"
+    }]
+  }]
+}

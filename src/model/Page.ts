@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+import { Leaf } from '@128technology/yinz';
 
 import { PresentationModel, Section } from './';
 import { ISection } from './Section';
@@ -33,6 +34,19 @@ export default class Page {
 
   public get parentPage() {
     return this.getPresentationModel().getParentPage(this);
+  }
+
+  public getKeyFields() {
+    return _.flatMap(this.sections, section => section.fields).filter(
+      field => field.model instanceof Leaf && field.model.isKey
+    );
+  }
+
+  public isListPage() {
+    return _.some(
+      _.flatMap(this.sections, section => section.fields),
+      field => field.model instanceof Leaf && field.model.isKey
+    );
   }
 
   public getLocation() {

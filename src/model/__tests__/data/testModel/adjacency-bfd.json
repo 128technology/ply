@@ -1,0 +1,48 @@
+{
+    "title": "Adjacency BFD Settings",
+    "id": "adjacency-bfd",
+    "sections": [{
+        "id": "adjacency-bfd.main",
+        "title": "Basic Information",
+        "fields": [{
+            "id": "authority.router.node.device-interface.network-interface.adjacency.bfd.state",
+            "label": "State"
+        }, {
+            "id": "authority.router.node.device-interface.network-interface.adjacency.bfd.authentication-type",
+            "label": "Authentication Type"
+        }]
+    }, {
+        "id": "adjacency-bfd.intervals",
+        "title": "BFD Intervals",
+        "fields": [{
+            "id": "authority.router.node.device-interface.network-interface.adjacency.bfd.desired-tx-interval",
+            "label": "Desired Transmit (Tx) Interval"
+        }, {
+            "id": "authority.router.node.device-interface.network-interface.adjacency.bfd.required-min-rx-interval",
+            "label": "Required Minimum Receive (Rx) Interval"
+        }, {
+            "id": "authority.router.node.device-interface.network-interface.adjacency.bfd.required-min-echo-interval",
+            "label": "Required Minimum Echo Interval"
+        }]
+    }, {
+        "id": "adjacency-bfd.linksettings",
+        "title": "BFD Link Settings",
+        "fields": [{
+            "id": "authority.router.node.device-interface.network-interface.adjacency.bfd.multiplier",
+            "label": "Multiplier"
+        }, {
+            "id": "authority.router.node.device-interface.network-interface.adjacency.bfd.link-test-interval",
+            "label": "Link Test Interval"
+        }, {
+            "id": "authority.router.node.device-interface.network-interface.adjacency.bfd.link-test-length",
+            "label": "Link Test Length"
+        }]
+    }, {
+        "id": "adjacency-bfd.dscp",
+        "title": "BFD DSCP Settings",
+        "fields": [{
+            "id": "authority.router.node.device-interface.network-interface.adjacency.bfd.dscp",
+            "label": "DSCP Value"
+        }]
+    }]
+}

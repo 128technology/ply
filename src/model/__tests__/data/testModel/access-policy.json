@@ -1,0 +1,15 @@
+{
+  "title": "Access Policy",
+  "id": "access-policy",
+  "sections": [{
+    "id": "access-policy.main",
+    "title": "Basic Information",
+    "fields": [{
+      "id": "authority.service.access-policy.source",
+      "label": "Source"
+    }, {
+      "id": "authority.service.access-policy.permission",
+      "label": "Permission"
+    }]
+  }]
+}
