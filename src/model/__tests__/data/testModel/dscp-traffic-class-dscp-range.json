@@ -1,0 +1,15 @@
+{
+  "title": "DSCP Range",
+  "id": "dscp-traffic-class-dscp-range",
+  "sections": [{
+    "id": "dscp-traffic-class-dscp-range.main",
+    "title": "Start & End DSCP",
+    "fields": [{
+      "id": "authority.dscp-map.dscp-traffic-class.dscp-range.start-value",
+      "label": "Start Value"
+    }, {
+      "id": "authority.dscp-map.dscp-traffic-class.dscp-range.end-value",
+      "label": "End Value"
+    }]
+  }]
+}

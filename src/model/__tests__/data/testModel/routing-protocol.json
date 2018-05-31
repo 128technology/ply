@@ -1,0 +1,94 @@
+{
+    "title": "Routing Protocol",
+    "id": "routing-protocol",
+    "sections": [{
+        "id": "routing-protocol.main",
+        "title": "Basic Information",
+        "fields": [{
+            "id": "authority.router.routing.routing-protocol.type",
+            "label": "Type"
+        }, {
+            "id": "authority.router.routing.routing-protocol.description",
+            "label": "Description"
+        }]
+    }, {
+        "id": "routing-protocol.bgp-settings",
+        "title": "BGP Settings",
+        "fields": [{
+            "id": "authority.router.routing.routing-protocol.router-id",
+            "label": "Router ID"
+        }, {
+            "id": "authority.router.routing.routing-protocol.local-as",
+            "label": "Local Autonomous System (AS) Number"
+        }]
+    }, {
+        "id": "routing-protocol.bgp-neighbors",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "routing-protocol-neighbor",
+            "id": "authority.router.routing.routing-protocol.neighbor",
+            "label": "BGP Neighbors"
+        }]
+    }, {
+        "id": "routing-protocol.bgp-address-family",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "routing-protocol-address-family",
+            "id": "authority.router.routing.routing-protocol.address-family",
+            "label": "BGP Address Families"
+        }]
+    }, {
+        "id": "routing-protocol.bgp-redistribute",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "routing-protocol-redistribute",
+            "id": "authority.router.routing.routing-protocol.redistribute",
+            "label": "BGP Route Redistribution"
+        }]
+    }, {
+        "id": "routing-protocol.timers",
+        "title": "Default Protocol Timers",
+        "fields": [{
+            "id": "authority.router.routing.routing-protocol.timers.hold-time",
+            "label": "Hold Time Interval"
+        }, {
+            "id": "authority.router.routing.routing-protocol.timers.keepalive-interval",
+            "label": "Keep Alive Interval"
+        }]
+    }, {
+        "id": "routing-protocol.confederation",
+        "title": "Confederation",
+        "fields": [{
+            "id": "authority.router.routing.routing-protocol.confederation.identifier",
+            "label": "Confederation Identifier AS Number"
+        }]
+    }, {
+        "id": "routing-protocol.member-as",
+        "title": null,
+        "type": "list-table",
+        "fields": [{
+            "id": "authority.router.routing.routing-protocol.confederation.member-as",
+            "label": "Member Autonomous System (AS) List",
+            "columnLabels": [{
+                "id": "name",
+                "label": "AS Number"
+            }]
+        }]
+    }, {
+        "id": "routing-protocol.route-selection-options",
+        "title": "Route Selection Options",
+        "fields": [{
+            "id": "authority.router.routing.routing-protocol.route-selection-options.always-compare-med",
+            "label": "Always Compare Multi-Exit Discriminator (MED)"
+        }, {
+            "id": "authority.router.routing.routing-protocol.route-selection-options.ignore-as-path-length",
+            "label": "Ignore AS Path Length"
+        }, {
+            "id": "authority.router.routing.routing-protocol.route-selection-options.external-compare-router-id",
+            "label": "Use Router ID in Path Determination"
+        }]
+    }]
+}

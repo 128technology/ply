@@ -1,0 +1,15 @@
+{
+    "title": "Port Range",
+    "id": "neighborhood-ports",
+    "sections": [{
+        "id": "neighborhood-ports.main",
+        "title": "Start & End Ports",
+        "fields": [{
+            "id": "authority.router.node.device-interface.network-interface.neighborhood.port-range.start-port",
+            "label": "Start Port"
+        }, {
+            "id": "authority.router.node.device-interface.network-interface.neighborhood.port-range.end-port",
+            "label": "End Port"
+        }]
+    }]
+}

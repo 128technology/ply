@@ -1,0 +1,21 @@
+{
+    "title": "DSCP Prioritization",
+    "id": "dscp-prioritization",
+    "sections": [{
+        "id": "dscp-prioritization.main",
+        "title": "Basic Information",
+        "fields": [{
+            "id": "authority.dscp-map.dscp-prioritization.priority",
+            "label": "Priority"
+        }]
+    }, {
+        "id": "dscp-prioritization.dscp-range",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "dscp-prioritization-dscp-range",
+            "id": "authority.dscp-map.dscp-prioritization.dscp-range",
+            "label": "DSCP Range"
+        }]
+    }]
+}

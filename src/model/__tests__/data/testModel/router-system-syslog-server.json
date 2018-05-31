@@ -1,0 +1,15 @@
+{
+    "title": "Router Syslog Server",
+    "id": "router-system-syslog-server",
+    "sections": [{
+        "id": "router-system-syslog-server.main",
+        "title": "Basic Information",
+        "fields": [{
+            "id": "authority.router.system.syslog.server.ip-address",
+            "label": "Address"
+        }, {
+            "id": "authority.router.system.syslog.server.port",
+            "label": "Port"
+        }]
+    }]
+}

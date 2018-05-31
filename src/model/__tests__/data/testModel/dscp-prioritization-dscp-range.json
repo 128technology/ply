@@ -1,0 +1,15 @@
+{
+  "title": "DSCP Range",
+  "id": "dscp-prioritization-dscp-range",
+  "sections": [{
+    "id": "dscp-prioritization-dscp-range.main",
+    "title": "Start & End DSCP",
+    "fields": [{
+      "id": "authority.dscp-map.dscp-prioritization.dscp-range.start-value",
+      "label": "Start Value"
+    }, {
+      "id": "authority.dscp-map.dscp-prioritization.dscp-range.end-value",
+      "label": "End Value"
+    }]
+  }]
+}

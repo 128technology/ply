@@ -1,0 +1,15 @@
+{
+    "title": "Router Log Category",
+    "id": "router-system-log-category",
+    "sections": [{
+        "id": "router-system-log-category.main",
+        "title": "Basic Information",
+        "fields": [{
+            "id": "authority.router.system.log-category.name",
+            "label": "Name"
+        }, {
+            "id": "authority.router.system.log-category.log-level",
+            "label": "Log Level"
+        }]
+    }]
+}

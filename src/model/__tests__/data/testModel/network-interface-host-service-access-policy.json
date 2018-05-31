@@ -1,0 +1,15 @@
+{
+  "title": "Access Policy",
+  "id": "network-interface-host-service-access-policy",
+  "sections": [{
+    "id": "network-interface-access-policy.main",
+    "title": "Basic Information",
+    "fields": [{
+      "id": "authority.router.node.device-interface.network-interface.host-service.access-policy.source",
+      "label": "Source"
+    }, {
+      "id": "authority.router.node.device-interface.network-interface.host-service.access-policy.permission",
+      "label": "Permission"
+    }]
+  }]
+}

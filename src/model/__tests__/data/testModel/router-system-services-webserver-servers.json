@@ -1,0 +1,15 @@
+{
+  "title": "Web Server & REST API Address",
+  "id": "router-system-services-webserver-servers",
+  "sections": [{
+    "id": "router-system-services-webserver-servers.main",
+    "title": "Basic Information",
+    "fields": [{
+      "id": "authority.router.system.services.webserver.server.node-name",
+      "label": "Node"
+    }, {
+      "id": "authority.router.system.services.webserver.server.ip-address",
+      "label": "Address"
+    }]
+  }]
+}

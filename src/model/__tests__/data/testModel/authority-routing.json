@@ -1,0 +1,23 @@
+{
+    "title": "Authority-wide Routing Filters & Policies",
+    "id": "authority-routing",
+    "sections": [{
+        "id": "authority-routing.filters",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "filter",
+            "id": "authority.routing.filter",
+            "label": "Authority-wide Routing Filters"
+        }]
+    }, {
+        "id": "authority-routing.policies",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "policy",
+            "id": "authority.routing.policy",
+            "label": "Authority-wide Routing Policies"
+        }]
+    }]
+}

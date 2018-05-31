@@ -1,0 +1,18 @@
+{
+  "title": "Next Hop",
+  "id": "next-hop",
+  "sections": [{
+    "id": "next-hop.main",
+    "title": "Basic Information",
+    "fields": [{
+      "id": "authority.router.service-route.next-hop.node-name",
+      "label": "Node"
+    }, {
+      "id": "authority.router.service-route.next-hop.interface",
+      "label": "Network Interface"
+    }, {
+      "id": "authority.router.service-route.next-hop.gateway-ip",
+      "label": "Gateway Address"
+    }]
+  }]
+}

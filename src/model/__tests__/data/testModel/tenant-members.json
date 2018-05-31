@@ -1,0 +1,24 @@
+{
+    "title": "Tenant Members",
+    "id": "tenant-members",
+    "sections": [{
+        "id": "tenant-member.neighborhood",
+        "title": "Basic Information",
+        "fields": [{
+            "id": "authority.tenant.member.neighborhood",
+            "label": "Neighborhood"
+        }]
+    }, {
+        "id": "tenant.subnets",
+        "type": "list-table",
+        "title": null,
+        "fields": [{
+            "id": "authority.tenant.member.address",
+            "label": "Tenant Subnets",
+            "columnLabels": [{
+                "id": "name",
+                "label": "Tenant Subnet"
+            }]
+        }]
+    }]
+}

@@ -1,0 +1,47 @@
+{
+  "title": "Security Policy",
+  "id": "security",
+  "sections": [{
+      "id": "security.main",
+      "title": "Basic Information",
+      "fields": [{
+          "id": "authority.security.name",
+          "label": "Name"
+      }, {
+          "id": "authority.security.description",
+          "label": "Description"
+      }]
+  }, {
+      "id": "security.keys",
+      "title": "Keys & Ciphers",
+      "fields": [{
+          "id": "authority.security.hmac-cipher",
+          "label": "HMAC Cipher"
+      }, {
+          "id": "authority.security.hmac-key",
+          "label": "HMAC Key"
+      }, {
+          "id": "authority.security.encryption-cipher",
+          "label": "Encryption Cipher"
+      }, {
+          "id": "authority.security.encryption-key",
+          "label": "Encryption Key"
+      }, {
+          "id": "authority.security.encryption-iv",
+          "label": "Encryption Vector"
+      }]
+  }, {
+      "id": "security.encryption",
+      "title": "Encryption Settings",
+      "fields": [{
+          "id": "authority.security.encrypt",
+          "label": "Encrypt"
+      }, {
+          "id": "authority.security.hmac",
+          "label": "HMAC"
+      }, {
+          "id": "authority.security.adaptive-encryption",
+          "label": "Adaptive Encryption"
+      }]
+  }]
+}

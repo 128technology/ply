@@ -1,0 +1,28 @@
+{
+  "title": "Traffic Profile",
+  "id": "traffic-profile",
+  "sections": [{
+      "id": "traffic-profile.main",
+      "title": "Basic Information",
+      "fields": [{
+          "id": "authority.traffic-profile.name",
+          "label": "Name"
+      }]
+  }, {
+      "id": "traffic-profile.distributions",
+      "title": "Minimum Traffic Distributions",
+      "fields": [{
+          "id": "authority.traffic-profile.high.distribution",
+          "label": "High"
+      },{
+          "id": "authority.traffic-profile.medium.distribution",
+          "label": "Medium"
+      },{
+          "id": "authority.traffic-profile.low.distribution",
+          "label": "Low"
+      },{
+          "id": "authority.traffic-profile.best-effort.distribution",
+          "label": "Best Effort"
+      }]
+  }]
+}

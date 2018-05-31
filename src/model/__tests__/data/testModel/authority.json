@@ -1,0 +1,51 @@
+{
+    "title": "Authority Settings",
+    "id": "authority",
+    "sections": [{
+        "id": "authority.main",
+        "title": "Basic Information",
+        "fields": [{
+            "id": "authority.name",
+            "label": "Name"
+        }, {
+            "id": "authority.rekey-interval",
+            "label": "Security Key Regeneration Interval"
+        }, {
+            "id": "authority.dynamic-hostname",
+            "label": "Dynamic Hostname Format"
+        }, {
+            "id": "authority.auto-install",
+            "label": "Automatically Install After Asset ID Association"
+        }]
+    }, {
+        "id": "authority.routing-policies-filters",
+        "title": "Authority-wide Routing Filters & Policies",
+        "type": "container-list-section",
+        "fields": [{
+            "link": "authority-routing",
+            "id": "authority.routing",
+            "label": "Routing Filters & Policies"
+        }]
+    }, {
+        "id": "authority.conductor-addresses",
+        "title": null,
+        "type": "list-table",
+        "fields": [{
+            "id": "authority.conductor-address",
+            "label": "Conductor Addresses",
+            "columnLabels": [{
+              "id": "name",
+              "label": "Conductor Address"
+            }]
+        }]
+    }, {
+        "id": "authority.ipfix-collector",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "authority-ipfix-collector",
+            "id": "authority.ipfix-collector",
+            "label": "IPFIX Collection Settings"
+        }]
+    }]
+}

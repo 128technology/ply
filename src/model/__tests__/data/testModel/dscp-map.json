@@ -1,0 +1,33 @@
+{
+    "title": "DSCP Map",
+    "id": "dscp-map",
+    "sections": [{
+        "id": "dscp-map.main",
+        "title": "Basic Information",
+        "fields": [{
+            "id": "authority.dscp-map.name",
+            "label": "Name"
+        }, {
+            "id": "authority.dscp-map.prioritization-method",
+            "label": "DSCP Prioritization Method"
+        }]
+    }, {
+        "id": "dscp-map.dscp-prioritization",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "dscp-prioritization",
+            "id": "authority.dscp-map.dscp-prioritization",
+            "label": "DSCP Prioritization"
+        }]
+    }, {
+        "id": "dscp-map.dscp-traffic-class",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "dscp-traffic-class",
+            "id": "authority.dscp-map.dscp-traffic-class",
+            "label": "DSCP Traffic Class"
+        }]
+    }]
+}

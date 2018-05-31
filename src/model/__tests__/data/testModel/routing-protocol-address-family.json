@@ -1,0 +1,79 @@
+{
+    "title": "Routing Protocol Address Family",
+    "id": "routing-protocol-address-family",
+    "sections": [{
+        "id": "routing-protocol-address-family.main",
+        "title": "Basic Information",
+        "fields": [{
+            "id": "authority.router.routing.routing-protocol.address-family.afi-safi",
+            "label": "Address Family Type"
+        }, {
+            "id": "authority.router.routing.routing-protocol.address-family.send-default-route",
+            "label": "Send Default Route To Neighbors"
+        }]
+    }, {
+        "id": "routing-protocol-address-family.networks",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "network",
+            "id": "authority.router.routing.routing-protocol.address-family.network",
+            "label": "Networks To Advertise Into BGP"
+        }]
+    }, {
+        "id": "routing-protocol-address-family.aggregate-address",
+        "title": null,
+        "type": "list-section",
+        "fields": [{
+            "link": "aggregate-address",
+            "id": "authority.router.routing.routing-protocol.address-family.aggregate-address",
+            "label": "Address Prefixes To Aggregate"
+        }]
+    }, {
+        "id": "routing-protocol-address-family.prefix-limit",
+        "title": "Address Family Prefix Limit",
+        "fields": [{
+            "id": "authority.router.routing.routing-protocol.address-family.prefix-limit.max-prefixes",
+            "label": "BGP Neigbor Maximum Prefix Limit"
+        }, {
+            "id": "authority.router.routing.routing-protocol.address-family.prefix-limit.restart-timer",
+            "label": "BGP Maximum Prefix Restart Interval"
+        }, {
+            "id": "authority.router.routing.routing-protocol.address-family.prefix-limit.shutdown-threshold-pct",
+            "label": "BGP Prefix Shutdown Threshold Percentage"
+        }]
+    }, {
+        "id": "routing-protocol-address-family.use-multiple-paths",
+        "title": "BGP Multipath Settings",
+        "fields": [{
+            "id": "authority.router.routing.routing-protocol.address-family.use-multiple-paths.ebgp.maximum-paths",
+            "label": "eBGP Maximum Paths"
+        }, {
+            "id": "authority.router.routing.routing-protocol.address-family.use-multiple-paths.ibgp.maximum-paths",
+            "label": "iBGP Maximum Paths"
+        }]
+    }, {
+        "id": "routing-protocol-address-family.default-route-distance",
+        "title": "Default Route Distances",
+        "fields": [{
+            "id": "authority.router.routing.routing-protocol.address-family.default-route-distance.external",
+            "label": "eBGP Administrative Route Distance"
+        }, {
+            "id": "authority.router.routing.routing-protocol.address-family.default-route-distance.internal",
+            "label": "iBGP Administrative Route Distance"
+        }, {
+            "id": "authority.router.routing.routing-protocol.address-family.default-route-distance.local",
+            "label": "Local Route Administrative Distance"
+        }]
+    }, {
+        "id": "routing-protocol-address-family.graceful-restart",
+        "title": "BGP Graceful Restart",
+        "fields": [{
+            "id": "authority.router.routing.routing-protocol.address-family.graceful-restart.restart-time",
+            "label": "Graceful Restart Interval Upper Bound"
+        }, {
+            "id": "authority.router.routing.routing-protocol.address-family.graceful-restart.stale-routes-time",
+            "label": "Stale Route Interval Upper Bound"
+        }]
+    }]
+}

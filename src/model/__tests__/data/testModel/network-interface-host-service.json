@@ -1,0 +1,33 @@
+{
+  "title": "Host Service",
+  "id": "network-interface-host-service",
+  "sections": [{
+    "id": "network-interface-host-service.main",
+    "title": "Basic Information",
+    "fields": [{
+      "id": "authority.router.node.device-interface.network-interface.host-service.service-type",
+      "label": "Service Type"
+    }, {
+      "id": "authority.router.node.device-interface.network-interface.host-service.description",
+      "label": "Description"
+    }]
+  }, {
+    "id": "network-interface-host-service.transport",
+    "title": null,
+    "type": "list-section",
+    "fields": [{
+        "link": "network-interface-host-service-transport",
+        "id": "authority.router.node.device-interface.network-interface.host-service.transport",
+        "label": "Transport"
+    }]
+  }, {
+    "id": "network-interface-host-service.access-policy",
+    "title": null,
+    "type": "list-section",
+    "fields": [{
+        "link": "network-interface-host-service-access-policy",
+        "id": "authority.router.node.device-interface.network-interface.host-service.access-policy",
+        "label": "Access Policies"
+    }]
+  }]
+}
