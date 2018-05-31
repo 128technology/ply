@@ -2,7 +2,7 @@ import { expect } from 'chai';
 
 import TestPresentationModel from './data/testPresentationModel';
 
-describe('Page', () => {
+describe('Page Model', () => {
   it('should determine if it is a list page', () => {
     const page = TestPresentationModel.getPage('peer');
 
