@@ -6,6 +6,10 @@ import { Field } from './mixins';
 import { IField, IChoice } from './FieldTypes';
 import { IErrorReporter } from '../validate/ErrorReporter';
 
+export interface IEmptyCases {
+  [index: string]: string;
+}
+
 export default class ChoiceField implements Field {
   public model: Choice;
   public enumerations: string[];
@@ -46,7 +50,10 @@ export default class ChoiceField implements Field {
   }
 
   public get emptyCases() {
-    return this.model.emptyCases.map(theCase => theCase.name);
+    return this.model.emptyCases.reduce((acc: IEmptyCases, theCase) => {
+      acc[theCase.name] = Array.from(theCase.children.values())[0].name;
+      return acc;
+    }, {});
   }
 
   public serialize(): any {
