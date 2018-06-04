@@ -55,7 +55,7 @@ All lists need to be contained in their own `list-section`. A `list-section` wil
   "type": "list-section",
   "fields": [{
     "link": "dog",
-    "id": "id.to.a.list.field",
+    "id": "id.to.a.list",
     "label": "Dogs"
   }]
 }
@@ -69,7 +69,7 @@ All leaf-lists need to be contained in their own `list-table` section.  Similarl
   "title": null,
   "type": "list-table",
   "fields": [{
-    "id": "id.to.a.leaf-list.field",
+    "id": "id.to.a.leaf-list",
     "label": "Cats",
     "columnLabels": [{
       "id": "name",
@@ -87,9 +87,62 @@ If you want links that dive into one or more containers/pages in a section, you 
   "title": "Example Container Links",
   "type": "container-list-section",
   "fields": [{
-    "id": "id.to.a.container.field",
+    "id": "id.to.a.container",
     "link": "container-1",
     "label": "Container 1"
   }]
+}
+```
+
+## Fields
+
+### `leaf`
+```json
+{
+  "id": "id.to.a.leaf",
+  "label": "My Leaf Field"
+}
+```
+
+### `choice`
+While a choice field technically has no value in the `running` config, it will be populated with the cases in the model and the selected case is inferred at runtime.
+```json
+{
+  "id": "id.to.a.choice",
+  "label": "My Choice Field"
+}
+```
+
+### `container`
+Containers do not have to be represented in the presentation model.  They should be used in cases where a link to a page representing the container is desired. The `link` **MUST** correspond to an `id` of another page.
+```json
+{
+  "id": "id.to.a.container",
+  "label": "My Container Field",
+  "link": "page-for-container"
+}
+```
+
+### `leaf-list`
+The `columnLabels` property is used to describe a label for the columns of a table displaying the `leaf-list`.  In this case since a `leaf-list` only has one column, this array should only contain one item. **A `leaf-list` field can only by contained in a `list-table` section.** 
+```json
+{
+  "id": "id.to.a.leaf-list",
+  "label": "My Leaf List Field",
+  "columnLabels": [{
+    "id": "thing",
+    "label": "thing"
+  }]
+}
+```
+
+### `list`
+The `columns` property of a list field is optional.  It is intended to denote which columns (leafs) should be displayed if the list if presented in a table.  Otherwise typically only the key fields would be presented in a table.  The `link` **MUST** correspond to an `id` of the page for the list instance.  For example if the list field describes the list of all routers, then the link must correspond to the `router` page describing an individual router.  **A `list` field can only by contained in a `list-section`.** 
+ ```json
+{
+  "id": "id.to.a.leaf-list",
+  "label": "My List Field",
+  "link": "my-list-instance",
+  "columns": ["name", "description"]
 }
 ```
