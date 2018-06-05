@@ -3,7 +3,7 @@ import { DataModelInstance } from '@128technology/yinz';
 
 import { PresentationModelInstance } from '../';
 
-export type IPlugin = (instance: any) => any;
+export type IPlugin = (instance: any, serialized: any) => any;
 
 export default class Pluggable {
   public plugins: IPlugin[];
