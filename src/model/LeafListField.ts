@@ -5,7 +5,8 @@ import applyMixins from '../util/applyMixins';
 import { Field } from './mixins';
 import { Section, Page, PresentationModel } from './';
 import { IField, IChoice, ILeafListField, IColumnLabel } from './FieldTypes';
-import { IErrorReporter } from '../validate/ErrorReporter';
+import { IErrorReporter, IErrorLocation, IValidateOptions } from '../validate/ErrorReporter';
+import { SectionType, ErrorLevel } from '../enum';
 
 export default class LeafListField implements Field {
   public model: LeafList;
@@ -32,13 +33,13 @@ export default class LeafListField implements Field {
   public baseSerialize: () => any;
   public getDataModel: () => DataModel;
   public getKeyNames: () => string[];
-  public getLocation: () => any;
+  public getLocation: () => IErrorLocation;
   public getLocationDescriptor: () => string;
   public getPage: () => Page;
   public getPresentationModel: () => PresentationModel;
   public resolveModel: () => Model;
   public translateType: () => string;
-  public validate: (errorReporter: IErrorReporter) => void;
+  public baseValidate: (errorReporter: IErrorReporter, options: IValidateOptions) => void;
 
   constructor(fieldDef: ILeafListField, parent: Section) {
     this.addFieldProps(fieldDef, parent);
@@ -53,6 +54,18 @@ export default class LeafListField implements Field {
       maxElements: this.model.maxElements,
       minElements: this.model.minElements
     };
+  }
+
+  public validate(errorReporter: IErrorReporter, options: IValidateOptions) {
+    this.baseValidate(errorReporter, options);
+
+    if (this.parent.type !== SectionType.listTable) {
+      errorReporter(
+        `Leaf list field ${this.id} must be in a list-table section.`,
+        ErrorLevel.error,
+        this.getLocation()
+      );
+    }
   }
 
   public serialize(): any {

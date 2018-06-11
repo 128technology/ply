@@ -2,7 +2,8 @@ import * as _ from 'lodash';
 
 import { PresentationModel, Section, LeafField } from './';
 import { ISection } from './Section';
-import { IErrorReporter } from '../validate/ErrorReporter';
+import { IErrorReporter, IErrorLocation, IValidateOptions } from '../validate/ErrorReporter';
+import { ErrorLevel } from '../enum';
 
 export interface IPage {
   id: string;
@@ -28,7 +29,17 @@ export default class Page {
     this.id = pageDef.id;
     this.title = pageDef.title;
 
-    this.sections = pageDef.sections.map(section => new Section(section, this));
+    this.sections = Array.from(
+      pageDef.sections
+        .reduce((acc, section) => {
+          if (acc.has(section.id)) {
+            throw new Error(`Duplicate presentation section detected on page ${this.id} for section ${section.id}`);
+          }
+
+          return acc.set(section.id, new Section(section, this));
+        }, new Map())
+        .values()
+    );
   }
 
   public get parentPage() {
@@ -48,7 +59,7 @@ export default class Page {
     );
   }
 
-  public getLocation() {
+  public getLocation(): IErrorLocation {
     return {
       page: this.id
     };
@@ -68,10 +79,16 @@ export default class Page {
     return Array.from(keyNames);
   }
 
-  public validate(errorReporter: IErrorReporter) {
-    // TODO: Implement validation error reporting.
-    // const report = _.partial(errorReporter, this.getLocation());
-    // this.sections.forEach(section => section.validate(errorReporter));
+  public validate(errorReporter: IErrorReporter, options: IValidateOptions) {
+    if (this.sections.length < 1) {
+      errorReporter('Page must have at least one section.', ErrorLevel.error, this.getLocation());
+    }
+
+    if (!this.id || !this.title) {
+      errorReporter('Page must have an id and title.', ErrorLevel.error, this.getLocation());
+    }
+
+    this.sections.forEach(section => section.validate(errorReporter, options));
   }
 
   public getParents(): IParentPage | null {

@@ -4,7 +4,7 @@ import applyMixins from '../util/applyMixins';
 import { Field } from './mixins';
 import { Page, Section, PresentationModel } from './';
 import { IField, IChoice, IContainerField } from './FieldTypes';
-import { IErrorReporter } from '../validate/ErrorReporter';
+import { IErrorReporter, IErrorLocation, IValidateOptions } from '../validate/ErrorReporter';
 
 export default class ContainerField implements Field {
   public model: Leaf;
@@ -30,13 +30,13 @@ export default class ContainerField implements Field {
   public baseSerialize: () => any;
   public getDataModel: () => DataModel;
   public getKeyNames: () => string[];
-  public getLocation: () => any;
+  public getLocation: () => IErrorLocation;
   public getLocationDescriptor: () => string;
   public getPage: () => Page;
   public getPresentationModel: () => PresentationModel;
   public resolveModel: () => Model;
   public translateType: () => string;
-  public validate: (errorReporter: IErrorReporter) => void;
+  public baseValidate: (errorReporter: IErrorReporter, options: IValidateOptions) => void;
 
   constructor(fieldDef: IContainerField, parent: Section) {
     this.addFieldProps(fieldDef, parent);
@@ -55,6 +55,10 @@ export default class ContainerField implements Field {
         `Field ${this.id} on page ${this.parent.parent.id} has a link to non-existant page ${this.link}.`
       );
     }
+  }
+
+  public validate(errorReporter: IErrorReporter, options: IValidateOptions) {
+    this.baseValidate(errorReporter, options);
   }
 
   public serialize(): any {

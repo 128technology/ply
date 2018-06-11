@@ -4,7 +4,8 @@ import { Page, Field } from './';
 import { IField } from './FieldTypes';
 import { buildField } from './util';
 import SectionType, { enumValueOf } from '../enum/SectionType';
-import { IErrorReporter } from '../validate/ErrorReporter';
+import { IErrorReporter, IErrorLocation, IValidateOptions } from '../validate/ErrorReporter';
+import { ErrorLevel } from '../enum';
 
 export interface ISection {
   id: string;
@@ -30,22 +31,20 @@ export default class Section {
     this.fields = sectionDef.fields.map(field => buildField(field, this, this.getDataModel()));
   }
 
-  public getLocation() {
+  public getLocation(): IErrorLocation {
     return Object.assign(this.parent.getLocation(), {
       section: this.id
     });
   }
 
-  public validate(errorReporter: IErrorReporter) {
-    const report = _.partial(errorReporter, this.getLocation());
-
-    if (this.type === SectionType.listSection) {
+  public validate(errorReporter: IErrorReporter, options: IValidateOptions) {
+    if (this.type === SectionType.listSection || this.type === SectionType.listTable) {
       if (this.fields.length !== 1) {
-        report('List sections can only have one field.');
+        errorReporter('List sections can only have one field.', ErrorLevel.error, this.getLocation());
       }
     }
 
-    this.fields.forEach(field => field.validate(errorReporter));
+    this.fields.forEach(field => field.validate(errorReporter, options));
   }
 
   public serialize(withChildren: boolean = true): any {

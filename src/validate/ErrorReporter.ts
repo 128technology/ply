@@ -1,7 +1,13 @@
+import { ErrorLevel } from '../enum';
+
+export interface IValidateOptions {
+  checkStartCase: boolean;
+}
+
 export interface IErrorLocation {
   page?: string;
   section?: string;
   field?: string;
 }
 
-export type IErrorReporter = (location: IErrorLocation, errorMessage: string) => void;
+export type IErrorReporter = (errorMessage: string, level: ErrorLevel, location?: IErrorLocation) => void;
