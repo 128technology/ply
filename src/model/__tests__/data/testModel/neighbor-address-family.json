@@ -22,7 +22,7 @@
         "title": "Prefix Limit Settings",
         "fields": [{
             "id": "authority.router.routing.routing-protocol.neighbor.address-family.prefix-limit.max-prefixes",
-            "label": "Maximum Number of Prefixes"
+            "label": "Maximum Number Of Prefixes"
         }, {
             "id": "authority.router.routing.routing-protocol.neighbor.address-family.prefix-limit.shutdown-threshold-pct",
             "label": "Shutdown Threshold Percentage"

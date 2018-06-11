@@ -29,9 +29,6 @@
       "id": "authority.routing.policy.statement.action.set-community-type",
       "label": "Set Community Type"
     }, {
-      "id": "authority.routing.policy.statement.action.community-attribute",
-      "label": "Community Attribute"
-    }, {
       "id": "authority.routing.policy.statement.action.additive",
       "label": "Additive"
     }, {
@@ -62,14 +59,8 @@
       "id": "authority.routing.policy.statement.action.bgp-weight",
       "label": "BGP Weight"
     }, {
-      "id": "authority.routing.policy.statement.action.route-target",
-      "label": "Route Target"
-    }, {
       "id": "authority.routing.policy.statement.action.set",
       "label": "Set"
-    }, {
-      "id": "authority.routing.policy.statement.action.site-of-origin",
-      "label": "Site of Origin"
     }, {
       "id": "authority.routing.policy.statement.action.subtract",
       "label": "Subtract"
@@ -82,6 +73,42 @@
     }, {
       "id": "authority.routing.policy.statement.action.policy",
       "label": "Policy"
+    }]
+  }, {
+    "id": "action.community-attr",
+    "title": null,
+    "type": "list-table",
+    "fields": [{
+      "id": "authority.routing.policy.statement.action.community-attribute",
+      "label": "Community Attribute",
+      "columnLabels": [{
+        "id": "name",
+        "label": "Community Attribute"
+      }]
+    }]
+  }, {
+    "id": "action.route-target",
+    "title": null,
+    "type": "list-table",
+    "fields": [{
+      "id": "authority.routing.policy.statement.action.route-target",
+      "label": "Route Target",
+      "columnLabels": [{
+        "id": "name",
+        "label": "Target"
+      }]
+    }]
+  }, {
+    "id": "action.site-of-origin",
+    "title": null,
+    "type": "list-table",
+    "fields": [{
+      "id": "authority.routing.policy.statement.action.site-of-origin",
+      "label": "Site Of Origin",
+      "columnLabels": [{
+        "id": "name",
+        "label": "Site Of Origin"
+      }]
     }]
   }]
 }

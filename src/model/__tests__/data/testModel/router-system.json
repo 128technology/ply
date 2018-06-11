@@ -107,10 +107,10 @@
         "title": "Web server & REST API Settings",
         "fields": [{
             "id": "authority.router.system.services.webserver.enabled",
-            "label": "Enable Web server & REST API"
+            "label": "Enable Web Server & REST API"
         }, {
             "id": "authority.router.system.services.webserver.port",
-            "label": "Web server & REST API Port"
+            "label": "Web Server & REST API Port"
         }]
     }, {
         "id": "router-system.servers",
@@ -119,7 +119,20 @@
         "fields": [{
             "link": "router-system-services-webserver-servers",
             "id": "authority.router.system.services.webserver.server",
-            "label": "Web server & REST API Addresses"
+            "label": "Web Server & REST API Addresses"
+        }]
+    }, {
+        "id": "router.software-update",
+        "title": "Software Update Settings",
+        "fields": [{
+            "id": "authority.router.system.software-update.repository.source-type",
+            "label": "Software Repository Source Type"
+        }, {
+            "id": "authority.router.system.software-update.repository.address",
+            "label": "Software Repository Address"
+        }, {
+            "id": "authority.router.system.software-update.max-bandwidth",
+            "label": "Software Update Max Bandwidth"
         }]
     }]
 }

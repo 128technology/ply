@@ -78,17 +78,17 @@
         "title": "Load Balancing Settings",
         "fields": [{
             "id": "authority.router.node.device-interface.load-balancing.utilization-high-water-mark",
-            "label": "Utilization high water mark"
+            "label": "Utilization High Water Mark"
         }, {
             "id": "authority.router.node.device-interface.load-balancing.utilization-low-water-mark",
-            "label": "Utilization low water mark"
+            "label": "Utilization Low Water Mark"
         }]
     }, {
         "id": "device-interface.session-optimization",
         "title": "Session Optimization Settings",
         "fields": [{
             "id": "authority.router.node.device-interface.session-optimization.enable-detection",
-            "label": "Enable session optimization detection"
+            "label": "Enable Session Optimization Detection"
         }]
     }, {
         "id": "device-interface.phys",

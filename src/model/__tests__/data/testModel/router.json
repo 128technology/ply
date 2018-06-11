@@ -140,12 +140,5 @@
               "label": "Application Learning Mode"
             }]
         }]
-    }, {
-        "id": "router.software-access-proxy",
-        "title": "Conductor Software Access Proxy",
-        "fields": [{
-            "id": "authority.router.software-access-proxy",
-            "label": "Conductor Proxy Address"
-        }]
     }]
 }
