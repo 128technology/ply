@@ -51,9 +51,6 @@
             "id": "authority.router.node.ssh-keepalive.inter-router.max-attempts",
             "label": "Inter Router SSH Keepalive Max Attempts"
         }, {
-            "id": "authority.router.node.software-update-bandwidth",
-            "label": "Software Update Bandwidth Limit"
-        }, {
             "id": "authority.router.node.clean-before-install",
             "label": "Clean Before 128T Install"
         }, {

@@ -34,8 +34,7 @@ describe('List Field Model', () => {
         'description',
         'maintenance-mode',
         'inter-node-security',
-        'reverse-flow-enforcement',
-        'software-access-proxy'
+        'reverse-flow-enforcement'
       ],
       link: 'router',
       name: 'router',

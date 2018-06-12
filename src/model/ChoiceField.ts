@@ -4,7 +4,7 @@ import applyMixins from '../util/applyMixins';
 import { Page, Section, PresentationModel } from './';
 import { Field } from './mixins';
 import { IField, IChoice } from './FieldTypes';
-import { IErrorReporter } from '../validate/ErrorReporter';
+import { IErrorReporter, IErrorLocation, IValidateOptions } from '../validate/ErrorReporter';
 
 export interface IEmptyCases {
   [index: string]: string;
@@ -34,13 +34,13 @@ export default class ChoiceField implements Field {
   public baseSerialize: () => any;
   public getDataModel: () => DataModel;
   public getKeyNames: () => string[];
-  public getLocation: () => any;
+  public getLocation: () => IErrorLocation;
   public getLocationDescriptor: () => string;
   public getPage: () => Page;
   public getPresentationModel: () => PresentationModel;
   public resolveModel: () => Model;
   public translateType: () => string;
-  public validate: (errorReporter: IErrorReporter) => void;
+  public baseValidate: (errorReporter: IErrorReporter, options: IValidateOptions) => void;
 
   constructor(fieldDef: IField, parent: Section) {
     this.addFieldProps(fieldDef, parent);
@@ -54,6 +54,10 @@ export default class ChoiceField implements Field {
       acc[theCase.name] = Array.from(theCase.children.values())[0].name;
       return acc;
     }, {});
+  }
+
+  public validate(errorReporter: IErrorReporter, options: IValidateOptions) {
+    this.baseValidate(errorReporter, options);
   }
 
   public serialize(): any {

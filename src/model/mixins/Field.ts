@@ -3,9 +3,18 @@ import { DataModel, Types, Model, Choice, Leaf, List, LeafList } from '@128techn
 
 import { Section, Page, PresentationModel } from '../';
 import { IField, IChoice } from '../FieldTypes';
-import { IErrorReporter } from '../../validate/ErrorReporter';
+import { IErrorReporter, IErrorLocation, IValidateOptions } from '../../validate/ErrorReporter';
+import { ErrorLevel } from '../../enum';
 
 const { DerivedType } = Types;
+
+function isLetter(character: string) {
+  return character.toLowerCase() !== character.toUpperCase();
+}
+
+function isUpperCase(character: string) {
+  return character === character.toUpperCase();
+}
 
 export default class Field {
   public id: string;
@@ -38,7 +47,7 @@ export default class Field {
     this.addVisibility();
   }
 
-  public getLocation() {
+  public getLocation(): IErrorLocation {
     return Object.assign(this.parent.getLocation(), {
       field: this.id
     });
@@ -74,8 +83,15 @@ export default class Field {
     return Array.from(keyNames.values());
   }
 
-  public validate(errorReporter: IErrorReporter) {
-    const report = _.partial(errorReporter, this.getLocation());
+  public baseValidate(errorReporter: IErrorReporter, options: IValidateOptions) {
+    if (options.checkStartCase) {
+      const labelWords = this.label.split(' ');
+      const isNotStartCase = _.some(labelWords, word => isLetter(word.charAt(0)) && !isUpperCase(word.charAt(0)));
+
+      if (isNotStartCase) {
+        errorReporter(`Label "${this.label}" should be Start Case`, ErrorLevel.warning, this.getLocation());
+      }
+    }
   }
 
   public baseSerialize(): any {

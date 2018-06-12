@@ -88,7 +88,7 @@
             "label": "Ignore AS Path Length"
         }, {
             "id": "authority.router.routing.routing-protocol.route-selection-options.external-compare-router-id",
-            "label": "Use Router ID in Path Determination"
+            "label": "Use Router ID In Path Determination"
         }]
     }]
 }

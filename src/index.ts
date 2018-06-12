@@ -29,6 +29,8 @@ import {
 } from './instance';
 
 import { KeyUndefinedError } from './instance/errors';
+import { IErrorLocation } from './validate/ErrorReporter';
+import { ErrorLevel } from './enum';
 
 export {
   ChoiceField,
@@ -37,7 +39,9 @@ export {
   ContainerField,
   ContainerFieldInstance,
   ContainerPlugin,
+  ErrorLevel,
   FieldInstance,
+  IErrorLocation,
   KeyUndefinedError,
   LeafField,
   LeafFieldInstance,

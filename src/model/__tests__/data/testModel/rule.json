@@ -15,10 +15,10 @@
       "label": "Prefix"
     }, {
       "id": "authority.routing.filter.rule.ge",
-      "label": "Greater Than or Equal"
+      "label": "Greater Than Or Equal"
     }, {
       "id": "authority.routing.filter.rule.le",
-      "label": "Less Than or Equal"
+      "label": "Less Than Or Equal"
     }, {
       "id": "authority.routing.filter.rule.as-path",
       "label": "As Path"

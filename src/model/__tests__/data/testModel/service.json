@@ -86,7 +86,7 @@
         "title": "Tap Multiplexing",
         "fields": [{
             "id": "authority.service.tap-multiplexing",
-            "label": "Tap multiplexing enablement"
+            "label": "Enable Tap Multiplexing"
         }]
     }, {
         "id": "service.accesspolicy",
