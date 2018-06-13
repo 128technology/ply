@@ -22,8 +22,8 @@ export default class ContainerFieldInstance implements Pluggable, Child {
     this.plugins = this.getPresentationInstance().containerPlugins;
   }
 
-  public serialize(readOnly?: boolean): any {
-    return this.applyPlugins(Object.assign({}, this.model.serialize(), _.pickBy({ readOnly }, v => !_.isUndefined(v))));
+  public serialize(): any {
+    return this.applyPlugins(Object.assign({}, this.model.serialize()));
   }
 }
 

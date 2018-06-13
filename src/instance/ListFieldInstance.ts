@@ -94,12 +94,12 @@ export default class ListFieldInstance implements Pluggable, Child {
     });
   }
 
-  public serialize(readOnly?: boolean): any {
+  public serialize(): any {
     return this.applyPlugins(
       Object.assign(
         {},
         this.model.serialize(),
-        _.pickBy({ readOnly, value: this.value, keys: this.keys }, v => !_.isUndefined(v))
+        _.pickBy({ value: this.value, keys: this.keys }, v => !_.isUndefined(v))
       )
     );
   }

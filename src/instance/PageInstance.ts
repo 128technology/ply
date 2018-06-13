@@ -23,10 +23,10 @@ export default class PageInstance implements Pluggable {
     this.sections = model.sections.map(section => new SectionInstance(section, this, params));
   }
 
-  public serialize(readOnly?: boolean): any {
+  public serialize(): any {
     return this.applyPlugins(
       Object.assign({}, this.model.serialize(false), {
-        sections: this.sections.map(section => section.serialize(readOnly))
+        sections: this.sections.map(section => section.serialize())
       })
     );
   }

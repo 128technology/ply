@@ -31,6 +31,7 @@ import {
 import { KeyUndefinedError } from './instance/errors';
 import { IErrorLocation } from './validate/ErrorReporter';
 import { ErrorLevel } from './enum';
+import * as Plugins from './plugins';
 
 export {
   ChoiceField,
@@ -55,6 +56,7 @@ export {
   Page,
   PageInstance,
   PagePlugin,
+  Plugins,
   PresentationModel,
   PresentationModelInstance,
   Section,
