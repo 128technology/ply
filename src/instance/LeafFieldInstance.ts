@@ -55,7 +55,7 @@ export default class LeafFieldInstance implements Pluggable, Child {
     return _.uniq(this.references.concat(this.suggestions));
   }
 
-  public serialize(readOnly?: boolean): any {
+  public serialize(): any {
     const base = this.model.serialize();
 
     let enumerations;
@@ -66,7 +66,7 @@ export default class LeafFieldInstance implements Pluggable, Child {
     }
 
     return this.applyPlugins(
-      Object.assign({}, base, _.pickBy({ readOnly, value: this.value, enumerations }, v => !_.isUndefined(v)))
+      Object.assign({}, base, _.pickBy({ value: this.value, enumerations }, v => !_.isUndefined(v)))
     );
   }
 }

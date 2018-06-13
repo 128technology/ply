@@ -34,9 +34,9 @@ export default class ChoiceFieldInstance implements Pluggable, Child {
     }
   }
 
-  public serialize(readOnly?: boolean): any {
+  public serialize(): any {
     return this.applyPlugins(
-      Object.assign({}, this.model.serialize(), _.pickBy({ readOnly, value: this.value }, v => !_.isUndefined(v)))
+      Object.assign({}, this.model.serialize(), _.pickBy({ value: this.value }, v => !_.isUndefined(v)))
     );
   }
 }

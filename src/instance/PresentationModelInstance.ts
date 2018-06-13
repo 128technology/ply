@@ -29,11 +29,11 @@ export default class PresentationModelInstance {
     this.instance = instance;
   }
 
-  public getPresentationForPage(page: string, params: IParams, readOnly: boolean) {
+  public getPresentationForPage(page: string, params: IParams) {
     const pageModel = this.presentationModel.getPage(page);
     const instance = new PageInstance(pageModel, this, params);
 
-    return instance.serialize(readOnly);
+    return instance.serialize();
   }
 
   public registerContainerPlugin(plugin: ContainerPlugin) {

@@ -50,10 +50,10 @@ export default class SectionInstance implements Child, Pluggable {
     this.addFields(params);
   }
 
-  public serialize(readOnly?: boolean): any {
+  public serialize(): any {
     return this.applyPlugins(
       Object.assign({}, this.model.serialize(false), {
-        fields: this.fields.map(field => field.serialize(readOnly))
+        fields: this.fields.map(field => field.serialize())
       })
     );
   }
