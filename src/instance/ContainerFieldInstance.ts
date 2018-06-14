@@ -1,4 +1,3 @@
-import * as _ from 'lodash';
 import { ContainerInstance, DataModelInstance } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
