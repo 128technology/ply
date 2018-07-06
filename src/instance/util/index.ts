@@ -22,7 +22,7 @@ export function buildField(fieldModel: Field, parent: SectionInstance, instanceD
   } else if (fieldModel instanceof LeafListField) {
     return new LeafListFieldInstance(fieldModel, parent, instanceData as LeafListInstance, path);
   } else if (fieldModel instanceof ContainerField) {
-    return new ContainerFieldInstance(fieldModel, parent, instanceData as ContainerInstance);
+    return new ContainerFieldInstance(fieldModel, parent, instanceData as ContainerInstance, path);
   } else {
     throw new Error('Unrecognized field model type.');
   }
