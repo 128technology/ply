@@ -1,6 +1,6 @@
 {
   "name": "@128technology/ply",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Manage model files that describe the GUI presentation of a Yinz data model.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
