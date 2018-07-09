@@ -72,7 +72,12 @@ export default class LeafListField implements Field {
     return Object.assign(
       this.baseSerialize(),
       _.pickBy(
-        { orderedBy: this.orderedBy, columnLabels: this.columnLabels, validation: this.validation },
+        {
+          columnLabels: this.columnLabels,
+          orderedBy: this.orderedBy,
+          units: this.model.units,
+          validation: this.validation
+        },
         v => !_.isNil(v)
       )
     );

@@ -38,4 +38,10 @@ describe('Leaf Field Model', () => {
       visibility: 'visible'
     });
   });
+
+  it('serializes a field with units', () => {
+    const field = TestPresentationModel.getFieldForID('authority.router.bfd.desired-tx-interval');
+
+    expect(field.serialize().units).to.equal('milliseconds');
+  });
 });
