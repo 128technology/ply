@@ -56,7 +56,10 @@ export default class LeafField implements Field {
   public serialize(): any {
     return Object.assign(
       this.baseSerialize(),
-      _.pickBy({ enumerations: this.enumerations, suggestionRefs: this.suggestionRefs }, v => !_.isNil(v))
+      _.pickBy(
+        { enumerations: this.enumerations, suggestionRefs: this.suggestionRefs, units: this.model.units },
+        v => !_.isNil(v)
+      )
     );
   }
 
