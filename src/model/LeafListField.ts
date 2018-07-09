@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { LeafList, Model, DataModel, OrderedBy, Types } from '@128technology/yinz';
+import { LeafList, Model, DataModel, OrderedBy } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import { Field } from './mixins';
@@ -73,10 +73,10 @@ export default class LeafListField implements Field {
       this.baseSerialize(),
       _.pickBy(
         {
-          orderedBy: this.orderedBy,
           columnLabels: this.columnLabels,
-          validation: this.validation,
-          units: this.model.units
+          orderedBy: this.orderedBy,
+          units: this.model.units,
+          validation: this.validation
         },
         v => !_.isNil(v)
       )
