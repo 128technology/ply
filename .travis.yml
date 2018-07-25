@@ -6,7 +6,6 @@ install:
 script:
 - npm run validate
 deploy:
-  matrix:
   - provider: npm
     email: 128techadmin@128technology.com
     skip_cleanup: true
