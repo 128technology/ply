@@ -9,6 +9,6 @@ export default class Pluggable {
   public plugins: IPlugin[];
 
   public applyPlugins(field: any) {
-    return _.flow(this.plugins.map(plugin => _.partial(plugin, this)))(field);
+    return _.flow(this.plugins.map(plugin => _.partial(plugin, this)))(_.cloneDeep(field));
   }
 }
