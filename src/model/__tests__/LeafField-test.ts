@@ -7,6 +7,7 @@ describe('Leaf Field Model', () => {
     const field = TestPresentationModel.getFieldForID('authority.name');
 
     expect(field.serialize()).to.deep.equal({
+      deprecated: false,
       description: 'The identifier for the Authority.',
       id: 'authority.name',
       isKey: false,
@@ -25,6 +26,7 @@ describe('Leaf Field Model', () => {
 
     expect(field.serialize()).to.deep.equal({
       default: 'ethernet',
+      deprecated: false,
       description: 'Type of interface.',
       enumerations: ['ethernet', 'kni', 'pppoe', 'host', 'bridged', 'lte', 't1'],
       id: 'authority.router.node.device-interface.type',

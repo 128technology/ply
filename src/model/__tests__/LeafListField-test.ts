@@ -13,6 +13,7 @@ describe('Leaf List Field Model', () => {
           label: 'Group Name'
         }
       ],
+      deprecated: false,
       description: 'An identifier that associates this router with an administrative group.',
       id: 'authority.router.group',
       kind: 'leaf-list',

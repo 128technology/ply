@@ -7,11 +7,13 @@ describe('List Field Model', () => {
     const field = TestPresentationModel.getFieldForID('authority.router');
 
     expect(field.serialize()).to.deep.equal({
+      deprecated: false,
       description:
         'The router configuration element serves as a container for holding the nodes of a single deployed router, along with their policies.',
       id: 'authority.router',
       keys: [
         {
+          deprecated: false,
           description: 'An identifier for the router.',
           id: 'authority.router.name',
           isKey: true,
