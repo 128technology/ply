@@ -100,6 +100,7 @@ export default class Field {
         choice: this.choice,
         customComponent: this.customComponent,
         default: this.default,
+        deprecated: this.model.isDeprecated,
         description: this.model.description,
         id: this.id,
         isKey: this.model instanceof Leaf ? this.model.isKey : undefined,

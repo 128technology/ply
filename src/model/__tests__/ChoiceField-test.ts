@@ -7,6 +7,7 @@ describe('Choice Field Model', () => {
     const field = TestPresentationModel.getFieldForID('authority.dscp-map.prioritization-method');
 
     expect(field.serialize()).to.deep.equal({
+      deprecated: false,
       emptyCases: {},
       enumerations: ['priority', 'traffic-class'],
       id: 'authority.dscp-map.prioritization-method',
@@ -23,6 +24,7 @@ describe('Choice Field Model', () => {
     const field = TestPresentationModel.getFieldForID('authority.router.service-route.type');
 
     expect(field.serialize()).to.deep.equal({
+      deprecated: false,
       emptyCases: {
         'to-routing-agent': 'to-routing-agent',
         'use-learned-routes': 'use-learned-routes'

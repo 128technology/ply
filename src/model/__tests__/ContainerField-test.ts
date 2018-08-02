@@ -8,6 +8,7 @@ describe('Container/Link Field Model', () => {
     const field = TestPresentationModel.getFieldForID('authority');
 
     expect(field.serialize()).to.deep.equal({
+      deprecated: false,
       description: 'Authority configuration is the top-most level in the 128T router configuration hierarchy.',
       id: 'authority',
       kind: 'container',
