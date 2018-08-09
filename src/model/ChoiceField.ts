@@ -1,4 +1,4 @@
-import { Choice, Model, DataModel } from '@128technology/yinz';
+import { Choice, Model, DataModel, Case } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import { Page, Section, PresentationModel } from './';
@@ -46,7 +46,9 @@ export default class ChoiceField implements Field {
     this.addFieldProps(fieldDef, parent);
     this.getPresentationModel().registerField(this);
 
-    this.enumerations = this.model.caseNames;
+    this.enumerations = this.model.cases
+      .filter((theCase: Case) => !theCase.isObsolete && theCase.isVisible)
+      .map((theCase: Case) => theCase.name);
   }
 
   public get emptyCases() {

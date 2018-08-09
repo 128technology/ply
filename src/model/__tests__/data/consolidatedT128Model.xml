@@ -10969,6 +10969,12 @@ paths exist learned via different sources.</yin:text>
               </yin:description>
             </yin:leaf>
             <yin:choice name="next-hop-choice">
+              <yin:case name="i-am-obsolete">
+                <yin:status value="obsolete" />
+                <yin:leaf name="obsolete-child">
+                  <yin:type name="string" />
+                </yin:leaf>
+              </yin:case>
               <yin:case name="next-hop">
                 <yin:leaf-list name="next-hop">
                   <yin:type name="inet:ip-address">

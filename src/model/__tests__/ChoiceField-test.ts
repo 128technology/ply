@@ -20,6 +20,25 @@ describe('Choice Field Model', () => {
     });
   });
 
+  it('serializes choice with an obsolete case', () => {
+    const field = TestPresentationModel.getFieldForID('authority.router.routing.static-route.next-hop-choice');
+
+    expect(field.serialize()).to.deep.equal({
+      deprecated: false,
+      emptyCases: {
+        blackhole: 'blackhole'
+      },
+      enumerations: ['next-hop', 'blackhole'],
+      id: 'authority.router.routing.static-route.next-hop-choice',
+      kind: 'choice',
+      label: 'Next Hop Choice',
+      name: 'next-hop-choice',
+      readOnly: false,
+      required: false,
+      visibility: 'visible'
+    });
+  });
+
   it('serializes a choice with empty cases', () => {
     const field = TestPresentationModel.getFieldForID('authority.router.service-route.type');
 
