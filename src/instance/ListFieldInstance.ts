@@ -43,8 +43,10 @@ export default class ListFieldInstance implements Pluggable, Child {
       const references: string[] = [];
       const suggestions: string[] = [];
       const fakePath = this.getFakePath(model.name);
+      let enumerations: string[];
 
       if (model instanceof Leaf && model.getResolvedType() instanceof LeafRefType) {
+        enumerations = [];
         Array.prototype.push.apply(references, this.getDataInstance().evaluateLeafRef(fakePath));
       }
 
@@ -55,6 +57,7 @@ export default class ListFieldInstance implements Pluggable, Child {
         type.suggestionRefs &&
         type.suggestionRefs.length > 0
       ) {
+        enumerations = [];
         // Suggestion-Refs can be self referential...
         Array.prototype.push.apply(
           suggestions,
@@ -64,7 +67,6 @@ export default class ListFieldInstance implements Pluggable, Child {
 
       const base = modelKey.serialize();
 
-      let enumerations;
       if (base.enumerations) {
         enumerations = _.uniq(base.enumerations.concat(references).concat(suggestions));
       } else if (suggestions.length > 0 || references.length > 0) {
