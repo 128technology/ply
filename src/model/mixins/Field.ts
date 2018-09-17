@@ -146,7 +146,7 @@ export default class Field {
   public addType() {
     if (this.model instanceof Leaf || this.model instanceof LeafList) {
       if (this.model.type instanceof DerivedType) {
-        this.type = this.model.type.baseType.type;
+        this.type = this.model.type.builtInType.type;
       } else {
         this.type = this.model.type.type;
       }
