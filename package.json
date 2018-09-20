@@ -1,6 +1,6 @@
 {
   "name": "@128technology/ply",
-  "version": "0.1.7",
+  "version": "0.1.6",
   "description": "Manage model files that describe the GUI presentation of a Yinz data model.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -23,7 +23,7 @@
   "author": "128 Technology",
   "license": "MIT",
   "dependencies": {
-    "@128technology/yinz": "^4.1.0",
+    "@128technology/yinz": "^4.1.1",
     "@types/lodash": "^4.14.67",
     "lodash": "^4.17.4"
   },
