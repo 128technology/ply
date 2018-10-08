@@ -42,7 +42,47 @@ describe('List Field Model', () => {
       name: 'router',
       orderedBy: 'system',
       readOnly: false,
-      tableColumns: ['name', 'location', 'description'],
+      tableColumns: [
+        {
+          deprecated: false,
+          description: 'An identifier for the router.',
+          id: 'authority.router.name',
+          isKey: true,
+          kind: 'leaf',
+          label: 'Name',
+          name: 'name',
+          readOnly: false,
+          required: true,
+          type: 'string',
+          visibility: 'visible'
+        },
+        {
+          deprecated: false,
+          description: 'A descriptive location for this 128T router.',
+          id: 'authority.router.location',
+          isKey: false,
+          kind: 'leaf',
+          label: 'Location',
+          name: 'location',
+          readOnly: false,
+          required: false,
+          type: 'string',
+          visibility: 'visible'
+        },
+        {
+          deprecated: false,
+          description: 'A human-readable string that allows administrators to describe this configuration.',
+          id: 'authority.router.description',
+          isKey: false,
+          kind: 'leaf',
+          label: 'Description',
+          name: 'description',
+          readOnly: false,
+          required: false,
+          type: 'string',
+          visibility: 'visible'
+        }
+      ],
       validation: {
         maxElements: null,
         minElements: 0
