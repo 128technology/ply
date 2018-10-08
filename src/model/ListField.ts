@@ -75,7 +75,11 @@ export default class ListField implements Field {
       tableColumnFilterer = (leaf: string) => this.model.keys.has(leaf);
     }
 
-    return this.leaves.filter(tableColumnFilterer);
+    return this.leaves
+      .filter(tableColumnFilterer)
+      .map(leaf => this.model.getChild(leaf))
+      .filter(x => x instanceof Leaf)
+      .map(keyNode => this.getPresentationModel().getFieldForModel(keyNode) as LeafField);
   }
 
   public get keys(): LeafField[] {
@@ -105,7 +109,7 @@ export default class ListField implements Field {
       leaves: this.leaves,
       link: this.link,
       orderedBy: this.orderedBy,
-      tableColumns: this.tableColumns,
+      tableColumns: this.tableColumns.map(x => x.serialize()),
       validation: this.validation
     });
   }
