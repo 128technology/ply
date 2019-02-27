@@ -6,6 +6,7 @@ import { ContainerField } from '../model';
 import { Pluggable, Child } from './mixins';
 
 export default class ContainerFieldInstance implements Pluggable, Child {
+  public readonly instanceData: ContainerInstance;
   public model: ContainerField;
   public parent: SectionInstance;
   public plugins: ContainerPlugin[];
@@ -19,6 +20,7 @@ export default class ContainerFieldInstance implements Pluggable, Child {
     this.model = model;
     this.parent = parent;
     this.path = path;
+    this.instanceData = instanceData;
 
     this.plugins = this.getPresentationInstance().containerPlugins;
   }
