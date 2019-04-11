@@ -1,6 +1,6 @@
 {
   "name": "@128technology/ply",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "Manage model files that describe the GUI presentation of a Yinz data model.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@types/chai": "^4.0.1",
-    "@types/libxmljs": "^0.14.31",
+    "@types/libxmljs": "^0.18.3",
     "@types/mocha": "^2.2.41",
     "chai": "^3.5.0",
     "libxmljs": "^0.19.5",
@@ -39,7 +39,7 @@
     "tslint": "^5.8.0",
     "tslint-config-prettier": "^1.5.0",
     "tslint-plugin-prettier": "^1.2.0",
-    "typescript": "^2.8.1"
+    "typescript": "^3.3.3"
   },
   "publishConfig": {
     "access": "public",
