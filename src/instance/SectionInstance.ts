@@ -8,7 +8,6 @@ import { FieldInstance, IParams } from './InstanceTypes';
 import { PresentationModelInstance, PageInstance, SectionPlugin } from './';
 import { Section, ChoiceField } from '../model';
 import { buildField } from './util';
-import { PathSegment } from '@128technology/yinz/dist/instance/Path';
 
 function getPath(id: string, params: IParams, model: DataModel): Path {
   const splitPath = id.split('.');
@@ -73,7 +72,7 @@ export default class SectionInstance implements Child, Pluggable {
         const searchPath = field instanceof ChoiceField ? _.initial(path) : path;
         let instanceData = null;
 
-        const noMatchHandler = (stopInstance: Instance, remaining: PathSegment[]) => {
+        const noMatchHandler = (stopInstance: Instance, remaining: Path) => {
           if (_.find(remaining, 'keys')) {
             throw new ContainingListDoesNotExist(
               `Tried to find field ${field.id} but its containing list does not exist`
