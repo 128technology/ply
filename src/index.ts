@@ -28,7 +28,7 @@ import {
   SectionPlugin
 } from './instance';
 
-import { KeyUndefinedError } from './instance/errors';
+import { KeyUndefinedError, ContainingListDoesNotExistError } from './instance/errors';
 import { IErrorLocation } from './validate/ErrorReporter';
 import { ErrorLevel } from './enum';
 import * as Plugins from './plugins';
@@ -40,6 +40,7 @@ export {
   ContainerField,
   ContainerFieldInstance,
   ContainerPlugin,
+  ContainingListDoesNotExistError,
   ErrorLevel,
   FieldInstance,
   IErrorLocation,
