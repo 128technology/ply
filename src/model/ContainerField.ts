@@ -5,6 +5,7 @@ import { Field } from './mixins';
 import { Page, Section, PresentationModel } from './';
 import { IField, IChoice, IContainerField } from './FieldTypes';
 import { IErrorReporter, IErrorLocation, IValidateOptions } from '../validate/ErrorReporter';
+import { ErrorLevel } from '../enum';
 
 export default class ContainerField implements Field {
   public model: Leaf;
@@ -59,6 +60,12 @@ export default class ContainerField implements Field {
 
   public validate(errorReporter: IErrorReporter, options: IValidateOptions) {
     this.baseValidate(errorReporter, options);
+
+    try {
+      this.resolveLink();
+    } catch (e) {
+      errorReporter(e.message, ErrorLevel.error, this.getLocation());
+    }
   }
 
   public serialize(): any {
