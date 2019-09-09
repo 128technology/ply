@@ -101,6 +101,12 @@ export default class ListField implements Field {
     if (this.parent.type !== SectionType.listSection) {
       errorReporter(`List field ${this.id} must be in a list section.`, ErrorLevel.error, this.getLocation());
     }
+
+    try {
+      this.resolveLink();
+    } catch (e) {
+      errorReporter(e.message, ErrorLevel.error, this.getLocation());
+    }
   }
 
   public serialize(): any {
