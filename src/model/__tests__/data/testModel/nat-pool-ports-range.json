@@ -1,0 +1,20 @@
+{
+  "title": "Port Range",
+  "id": "nat-pool-ports-range",
+  "sections": [
+    {
+      "id": "nat-pool-ports.main",
+      "title": "Start & End Ports",
+      "fields": [
+        {
+          "id": "authority.router.nat-pool.address-pool.port-range.start-port",
+          "label": "Start Port"
+        },
+        {
+          "id": "authority.router.nat-pool.address-pool.port-range.end-port",
+          "label": "End Port"
+        }
+      ]
+    }
+  ]
+}

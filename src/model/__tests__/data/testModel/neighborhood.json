@@ -1,54 +1,99 @@
 {
-    "title": "Neighborhood",
-    "id": "neighborhood",
-    "sections": [{
-        "id": "neighborhood.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.router.node.device-interface.network-interface.neighborhood.name",
-            "label": "Name"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.neighborhood.peer-connectivity",
-            "label": "Peer Connectivity"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.neighborhood.topology",
-            "label": "Topology"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.neighborhood.external-nat-address",
-            "label": "External NAT Address"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.neighborhood.qp-value",
-            "label": "Quality Points"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.neighborhood.vector",
-            "label": "Vector"
-        }]
-    }, {
-        "id": "neighborhood.ports",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "neighborhood-ports",
-            "id": "authority.router.node.device-interface.network-interface.neighborhood.port-range",
-            "label": "Port Range"
-        }]
-    }, {
-        "id": "neighborhood.udp-transform",
-        "title": "UDP Transform Settings",
-        "fields": [{
-            "id": "authority.router.node.device-interface.network-interface.neighborhood.udp-transform.mode",
-            "label": "UDP Transform Mode"
-        },{
-            "id": "authority.router.node.device-interface.network-interface.neighborhood.udp-transform.detect-interval",
-            "label": "UDP Transform Detection Interval"
-        }]
-    }, {
-        "id": "neighborhood.bfd",
-        "title": "BFD",
-        "fields": [{
-            "id": "authority.router.node.device-interface.network-interface.neighborhood.bfd",
-            "label": "BFD Settings",
-            "link": "neighborhood-bfd"
-        }]
-    }]
+  "title": "Neighborhood",
+  "id": "neighborhood",
+  "sections": [
+    {
+      "id": "neighborhood.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.neighborhood.name",
+          "label": "Name"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.neighborhood.peer-connectivity",
+          "label": "Peer Connectivity"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.neighborhood.topology",
+          "label": "Topology"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.neighborhood.external-nat-address",
+          "label": "External NAT Address"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.neighborhood.qp-value",
+          "label": "Quality Points"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.neighborhood.vector",
+          "label": "Vector"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.neighborhood.session-optimization.mode",
+          "label": "Session Optimization Mode"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood.ports",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "neighborhood-ports",
+          "id": "authority.router.node.device-interface.network-interface.neighborhood.port-range",
+          "label": "Port Range"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood.udp-transform",
+      "title": "UDP Transform Settings",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.neighborhood.udp-transform.mode",
+          "label": "UDP Transform Mode"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.neighborhood.udp-transform.detect-interval",
+          "label": "UDP Transform Detection Interval"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.neighborhood.udp-transform.nat-keep-alive-mode",
+          "label": "UDP Transform NAT Keep Alive Mode"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.neighborhood.udp-transform.nat-keep-alive-timeout",
+          "label": "UDP Transform NAT Keep Alive Timeout"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood.path-mtu-discovery",
+      "title": "Path MTU Discovery Settings",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.neighborhood.path-mtu-discovery.enabled",
+          "label": "Path MTU Discovery Enabled"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.neighborhood.path-mtu-discovery.interval",
+          "label": "Path MTU Discovery Interval"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood.bfd",
+      "title": "BFD",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.neighborhood.bfd",
+          "label": "BFD Settings",
+          "link": "neighborhood-bfd"
+        }
+      ]
+    }
+  ]
 }

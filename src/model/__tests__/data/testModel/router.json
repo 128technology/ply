@@ -1,144 +1,303 @@
 {
-    "title": "Router",
-    "id": "router",
-    "sections": [{
-        "id": "router.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.router.name",
-            "label": "Name"
-        }, {
-            "id": "authority.router.description",
-            "label": "Description"
-        }, {
-            "id": "authority.router.maintenance-mode",
-            "label": "Maintenance Mode"
-        }, {
-            "id": "authority.router.location",
-            "label": "Location"
-        }, {
-            "id": "authority.router.location-coordinates",
-            "label": "Coordinates"
-        }, {
-            "id": "authority.router.inter-node-security",
-            "label": "Inter-node Security Policy"
-        }, {
-            "id": "authority.router.reverse-flow-enforcement",
-            "label": "Reverse Flow Enforcement"
-        }]
-    }, {
-        "id": "router.group",
-        "title": null,
-        "type": "list-table",
-        "fields": [{
-            "id": "authority.router.group",
-            "label": "Groups",
-            "columnLabels": [{
-                "id": "name",
-                "label": "Group Name"
-            }]
-        }]
-    }, {
-        "id": "router.nodes",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "node",
-            "id": "authority.router.node",
-            "label": "Nodes"
-        }]
-    }, {
-        "id": "router.serviceroutes",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "service-route",
-            "id": "authority.router.service-route",
-            "label": "Service Routes"
-        }]
-    }, {
-        "id": "router.peers",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "peer",
-            "id": "authority.router.peer",
-            "label": "Peers"
-        }]
-    }, {
-        "id": "router.routing",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "routing",
-            "id": "authority.router.routing",
-            "label": "Routing Instances"
-        }]
-    }, {
-        "id": "router.settings",
-        "title": "Router Settings",
-        "type": "container-list-section",
-        "fields": [{
-            "link": "router-system",
-            "id": "authority.router.system",
-            "label": "System Settings"
-        }, {
-            "link": "router-bfd",
-            "id": "authority.router.bfd",
-            "label": "BFD Settings"
-        }]
-    }, {
-        "id": "router.udp-transform",
-        "title": "UDP Transform Settings",
-        "fields": [{
-            "id": "authority.router.udp-transform.mode",
-            "label": "UDP Transform Mode"
-        },{
-            "id": "authority.router.udp-transform.detect-interval",
-            "label": "UDP Transform Detection Interval"
-        }]
-    }, {
-        "id": "router.redundancy-group",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "redundancy-group",
-            "id": "authority.router.redundancy-group",
-            "label": "Redundancy Groups"
-        }]
-    }, {
-        "id": "router.svcroutepolicies",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "service-route-policy",
-            "id": "authority.router.service-route-policy",
-            "label": "Service Route Policies"
-        }]
-    }, {
-        "id": "router.entitlement",
-        "title": "Router Entitlement",
-        "fields": [{
-            "id": "authority.router.entitlement.id",
-            "label": "Entitlement Id"
-        }, {
-            "id": "authority.router.entitlement.description",
-            "label": "Entitlement Description"
-        }, {
-            "id": "authority.router.entitlement.max-bandwidth",
-            "label": "Maximum Router Bandwidth"
-        }]
-    }, {
-        "id": "router.application-identification",
-        "title": null,
-        "type": "list-table",
-        "fields": [{
-            "id": "authority.router.application-identification.mode",
-            "label": "Application Identification",
-            "columnLabels": [{
+  "title": "Router",
+  "id": "router",
+  "sections": [
+    {
+      "id": "router.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.name",
+          "label": "Name"
+        },
+        {
+          "id": "authority.router.description",
+          "label": "Description"
+        },
+        {
+          "id": "authority.router.maintenance-mode",
+          "label": "Maintenance Mode"
+        },
+        {
+          "id": "authority.router.location",
+          "label": "Location"
+        },
+        {
+          "id": "authority.router.location-coordinates",
+          "label": "Coordinates"
+        },
+        {
+          "id": "authority.router.inter-node-security",
+          "label": "Inter-node Security Policy"
+        },
+        {
+          "id": "authority.router.reverse-flow-enforcement",
+          "label": "Reverse Flow Enforcement"
+        }
+      ]
+    },
+    {
+      "id": "router.router-group",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.router-group",
+          "label": "Service Groups",
+          "columnLabels": [
+            {
+              "id": "name",
+              "label": "Group Name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "authority.router.conductor-address",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.conductor-address",
+          "label": "Conductor Addresses",
+          "columnLabels": [
+            {
+              "id": "name",
+              "label": "Conductor Address"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "authority.management-service-generation.service-route-type",
+      "title": "Conductor Service Generation Service Route Type",
+      "fields": [
+        {
+          "id": "authority.router.management-service-generation.service-route-type",
+          "label": "Service Route Type"
+        }
+      ]
+    },
+    {
+      "id": "authority.management-service-generation.service-policy",
+      "title": "Conductor Service Generation Service Policy",
+      "fields": [
+        {
+          "id": "authority.router.management-service-generation.service-policy",
+          "label": "Service Policy"
+        }
+      ]
+    },
+    {
+      "id": "authority.management-service-generation.proxy",
+      "title": "Conductor Service Generation Proxy",
+      "fields": [
+        {
+          "id": "authority.router.management-service-generation.proxy",
+          "label": "Proxy"
+        }
+      ]
+    },
+    {
+      "id": "router.administrative-group",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.administrative-group",
+          "label": "Groups",
+          "columnLabels": [
+            {
+              "id": "name",
+              "label": "Group Name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "router.nodes",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "node",
+          "id": "authority.router.node",
+          "label": "Nodes"
+        }
+      ]
+    },
+    {
+      "id": "router.serviceroutes",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "service-route",
+          "id": "authority.router.service-route",
+          "label": "Service Routes"
+        }
+      ]
+    },
+    {
+      "id": "router.peers",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "peer",
+          "id": "authority.router.peer",
+          "label": "Peers"
+        }
+      ]
+    },
+    {
+      "id": "router.natpools",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "nat-pool",
+          "id": "authority.router.nat-pool",
+          "label": "Shared NAT Pools"
+        }
+      ]
+    },
+    {
+      "id": "router.routing",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "routing",
+          "id": "authority.router.routing",
+          "label": "Routing Instances"
+        }
+      ]
+    },
+    {
+      "id": "router.settings",
+      "title": "Router Settings",
+      "type": "container-list-section",
+      "fields": [
+        {
+          "link": "router-system",
+          "id": "authority.router.system",
+          "label": "System Settings"
+        },
+        {
+          "link": "router-bfd",
+          "id": "authority.router.bfd",
+          "label": "BFD Settings"
+        }
+      ]
+    },
+    {
+      "id": "router.udp-transform",
+      "title": "UDP Transform Settings",
+      "fields": [
+        {
+          "id": "authority.router.udp-transform.mode",
+          "label": "UDP Transform Mode"
+        },
+        {
+          "id": "authority.router.udp-transform.detect-interval",
+          "label": "UDP Transform Detection Interval"
+        },
+        {
+          "id": "authority.router.udp-transform.nat-keep-alive-mode",
+          "label": "UDP Transform NAT Keep Alive Mode"
+        },
+        {
+          "id": "authority.router.udp-transform.nat-keep-alive-timeout",
+          "label": "UDP Transform NAT Keep Alive Timeout"
+        }
+      ]
+    },
+    {
+      "id": "router.path-mtu-discovery",
+      "title": "Path MTU Discovery Settings",
+      "fields": [
+        {
+          "id": "authority.router.path-mtu-discovery.enabled",
+          "label": "Path MTU Discovery Enabled"
+        },
+        {
+          "id": "authority.router.path-mtu-discovery.interval",
+          "label": "Path MTU Discovery Interval"
+        }
+      ]
+    },
+    {
+      "id": "router.redundancy-group",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "redundancy-group",
+          "id": "authority.router.redundancy-group",
+          "label": "Redundancy Groups"
+        }
+      ]
+    },
+    {
+      "id": "router.svcroutepolicies",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "service-route-policy",
+          "id": "authority.router.service-route-policy",
+          "label": "Service Route Policies"
+        }
+      ]
+    },
+    {
+      "id": "router.entitlement",
+      "title": "Router Entitlement",
+      "fields": [
+        {
+          "id": "authority.router.entitlement.id",
+          "label": "Entitlement Id"
+        },
+        {
+          "id": "authority.router.entitlement.description",
+          "label": "Entitlement Description"
+        },
+        {
+          "id": "authority.router.entitlement.max-bandwidth",
+          "label": "Maximum Router Bandwidth"
+        }
+      ]
+    },
+    {
+      "id": "router.application-identification",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.application-identification.mode",
+          "label": "Application Identification",
+          "columnLabels": [
+            {
               "id": "name",
               "label": "Application Learning Mode"
-            }]
-        }]
-    }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "router.dhcp-server-generated-address-pool",
+      "title": "DHCP Server Generated Address Pool",
+      "fields": [
+        {
+          "id": "authority.router.dhcp-server-generated-address-pool",
+          "label": "DHCP Server Generated Address Pool"
+        }
+      ]
+    }
+  ]
 }

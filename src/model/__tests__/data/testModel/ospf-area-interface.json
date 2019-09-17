@@ -1,0 +1,40 @@
+{
+  "title": "OSPF Area Interface",
+  "id": "ospf-area-interface",
+  "sections": [
+    {
+      "id": "ospf-area-interface.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.routing.ospf.area.interface.node",
+          "label": "Node Name"
+        },
+        {
+          "id": "authority.router.routing.ospf.area.interface.interface",
+          "label": "Network Interface Name"
+        },
+        {
+          "id": "authority.router.routing.ospf.area.interface.passive",
+          "label": "Passive Interface"
+        },
+        {
+          "id": "authority.router.routing.ospf.area.interface.cost",
+          "label": "Cost"
+        },
+        {
+          "id": "authority.router.routing.ospf.area.interface.priority",
+          "label": "Router Priority"
+        },
+        {
+          "id": "authority.router.routing.ospf.area.interface.hello-interval",
+          "label": "Hello Interval"
+        },
+        {
+          "id": "authority.router.routing.ospf.area.interface.dead-interval",
+          "label": "Dead Interval"
+        }
+      ]
+    }
+  ]
+}

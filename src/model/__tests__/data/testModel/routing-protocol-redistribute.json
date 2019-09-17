@@ -1,15 +1,20 @@
 {
-    "title": "Routing Protocol Redistribute",
-    "id": "routing-protocol-redistribute",
-    "sections": [{
-        "id": "routing-protocol-redistribute.main",
-        "title": "Route Redistribution",
-        "fields": [{
-            "id": "authority.router.routing.routing-protocol.redistribute.protocol",
-            "label": "Protocol Redistributed Into BGP"
-        }, {
-            "id": "authority.router.routing.routing-protocol.redistribute.policy",
-            "label": "Policy Applied To Redistributed Protocol Routes"
-        }]
-    }]
+  "title": "Routing Protocol Redistribute",
+  "id": "routing-protocol-redistribute",
+  "sections": [
+    {
+      "id": "routing-protocol-redistribute.main",
+      "title": "Route Redistribution",
+      "fields": [
+        {
+          "id": "authority.router.routing.routing-protocol.redistribute.protocol",
+          "label": "Protocol Redistributed Into BGP"
+        },
+        {
+          "id": "authority.router.routing.routing-protocol.redistribute.policy",
+          "label": "Policy Applied To Redistributed Protocol Routes"
+        }
+      ]
+    }
+  ]
 }

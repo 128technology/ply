@@ -1,15 +1,20 @@
 {
-    "title": "Redundancy Group Member",
-    "id": "redundancy-group-member",
-    "sections": [{
-        "id": "redundancy-group-member.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.router.redundancy-group.member.node",
-            "label": "Node"
-        }, {
-            "id": "authority.router.redundancy-group.member.device-id",
-            "label": "Device ID"
-        }]
-    }]
+  "title": "Redundancy Group Member",
+  "id": "redundancy-group-member",
+  "sections": [
+    {
+      "id": "redundancy-group-member.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.redundancy-group.member.node",
+          "label": "Node"
+        },
+        {
+          "id": "authority.router.redundancy-group.member.device-id",
+          "label": "Device ID"
+        }
+      ]
+    }
+  ]
 }

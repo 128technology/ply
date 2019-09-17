@@ -1,15 +1,20 @@
 {
-    "title": "Port Range",
-    "id": "host-service-transport-ports",
-    "sections": [{
-        "id": "host-service-transport-ports.main",
-        "title": "Start & End Ports",
-        "fields": [{
-            "id": "authority.router.node.device-interface.network-interface.address.host-service.transport.port-range.start-port",
-            "label": "Start Port"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.address.host-service.transport.port-range.end-port",
-            "label": "End Port"
-        }]
-    }]
+  "title": "Port Range",
+  "id": "host-service-transport-ports",
+  "sections": [
+    {
+      "id": "host-service-transport-ports.main",
+      "title": "Start & End Ports",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.transport.port-range.start-port",
+          "label": "Start Port"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.transport.port-range.end-port",
+          "label": "End Port"
+        }
+      ]
+    }
+  ]
 }

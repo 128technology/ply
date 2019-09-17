@@ -7,7 +7,7 @@ import { Section, Page, PresentationModel } from './';
 import { IField, IChoice } from './FieldTypes';
 import { IErrorReporter, IErrorLocation, IValidateOptions } from '../validate/ErrorReporter';
 
-const { EnumerationType, IdentityRefType, DerivedType } = Types;
+const { EnumerationType, IdentityRefType, DerivedType, BooleanType } = Types;
 
 export default class LeafField implements Field {
   public model: Leaf;
@@ -60,15 +60,10 @@ export default class LeafField implements Field {
     );
   }
 
-  /**
-   * Walks the model's type tree and builds an enumeration of options
-   *
-   * @param {Object} model field model
-   * @param {Object} newField output parameter; will be mutated
-   */
   private collectOptions() {
     const enumerations: string[] = [];
     const suggestionRefs: string[] = [];
+    let containsBoolean = false;
 
     const visitType = (aType: Type) => {
       if (aType instanceof IdentityRefType || aType instanceof EnumerationType) {
@@ -81,6 +76,8 @@ export default class LeafField implements Field {
         if (aType.type === 't128ext:qsn') {
           this.type = 'qsn';
         }
+      } else if (aType instanceof BooleanType) {
+        containsBoolean = true;
       }
     };
 
@@ -91,7 +88,7 @@ export default class LeafField implements Field {
     }
 
     if (enumerations.length > 0) {
-      this.enumerations = enumerations;
+      this.enumerations = containsBoolean ? [...enumerations, 'true', 'false'] : enumerations;
     }
 
     if (suggestionRefs.length > 0) {

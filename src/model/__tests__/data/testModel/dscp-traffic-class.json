@@ -1,21 +1,28 @@
 {
-    "title": "DSCP Traffic Class",
-    "id": "dscp-traffic-class",
-    "sections": [{
-        "id": "dscp-traffic-class.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.dscp-map.dscp-traffic-class.traffic-class",
-            "label": "Traffic Class"
-        }]
-    }, {
-        "id": "dscp-prioritization.dscp-range",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "dscp-traffic-class-dscp-range",
-            "id": "authority.dscp-map.dscp-traffic-class.dscp-range",
-            "label": "DSCP Range"
-        }]
-    }]
+  "title": "DSCP Traffic Class",
+  "id": "dscp-traffic-class",
+  "sections": [
+    {
+      "id": "dscp-traffic-class.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.dscp-map.dscp-traffic-class.traffic-class",
+          "label": "Traffic Class"
+        }
+      ]
+    },
+    {
+      "id": "dscp-prioritization.dscp-range",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "dscp-traffic-class-dscp-range",
+          "id": "authority.dscp-map.dscp-traffic-class.dscp-range",
+          "label": "DSCP Range"
+        }
+      ]
+    }
+  ]
 }

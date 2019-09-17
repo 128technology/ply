@@ -1,77 +1,104 @@
 {
-    "title": "Service Policy",
-    "id": "service-policy",
-    "sections": [{
-        "id": "service-policy.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.service-policy.name",
-            "label": "Name"
-        }, {
-            "id": "authority.service-policy.description",
-            "label": "Description"
-        }, {
-            "id": "authority.service-policy.service-class",
-            "label": "Service Class"
-        }, {
-            "id": "authority.service-policy.transport-state-enforcement",
-            "label": "Transport State Enforcement"
-        }, {
+  "title": "Service Policy",
+  "id": "service-policy",
+  "sections": [
+    {
+      "id": "service-policy.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.service-policy.name",
+          "label": "Name"
+        },
+        {
+          "id": "authority.service-policy.description",
+          "label": "Description"
+        },
+        {
+          "id": "authority.service-policy.service-class",
+          "label": "Service Class"
+        },
+        {
+          "id": "authority.service-policy.transport-state-enforcement",
+          "label": "Transport State Enforcement"
+        },
+        {
           "id": "authority.service-policy.generated",
           "label": "Auto-generated"
-        }]
-    }, {
-        "id": "service-policy.loadbalancing",
-        "title": "Load Balancing Settings",
-        "fields": [{
-            "id": "authority.service-policy.lb-strategy",
-            "label": "Load Balancing Strategy"
-        }, {
-            "id": "authority.service-policy.required-qp",
-            "label": "Required Quality Points"
-        }, {
-            "id": "authority.service-policy.qp-preference",
-            "label": "Quality Points Preference"
-        }, {
-            "id": "authority.service-policy.session-resiliency",
-            "label": "Session Resiliency Type"
-        }, {
-            "id": "authority.service-policy.peer-path-resiliency",
-            "label": "Peer Path Resiliency"
-        }]
-    }, {
-        "id": "service-policy.sla",
-        "title": "Service Level Agreement",
-        "fields": [{
-            "id": "authority.service-policy.path-quality-filter",
-            "label": "Path Quality Filter"
-        }, {
-            "id": "authority.service-policy.best-effort",
-            "label": "Use Best-Effort Paths"
-        }, {
-            "id": "authority.service-policy.measure",
-            "label": "Path Quality Measure"
-        }, {
-            "id": "authority.service-policy.max-loss",
-            "label": "Maximum Allowable Loss"
-        }, {
-            "id": "authority.service-policy.max-latency",
-            "label": "Maximum Allowable Latency"
-        }, {
-            "id": "authority.service-policy.max-jitter",
-            "label": "Maximum Allowable Jitter"
-        }, {
-            "id": "authority.service-policy.min-mos",
-            "label": "Minimum Allowable MOS"
-        }]
-    }, {
-        "id": "service-policy.vector",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "service-policy-vector",
-            "id": "authority.service-policy.vector",
-            "label": "Vectors"
-        }]
-    }]
+        }
+      ]
+    },
+    {
+      "id": "service-policy.loadbalancing",
+      "title": "Load Balancing Settings",
+      "fields": [
+        {
+          "id": "authority.service-policy.lb-strategy",
+          "label": "Load Balancing Strategy"
+        },
+        {
+          "id": "authority.service-policy.required-qp",
+          "label": "Required Quality Points"
+        },
+        {
+          "id": "authority.service-policy.qp-preference",
+          "label": "Quality Points Preference"
+        },
+        {
+          "id": "authority.service-policy.session-resiliency",
+          "label": "Session Resiliency Type"
+        },
+        {
+          "id": "authority.service-policy.peer-path-resiliency",
+          "label": "Peer Path Resiliency"
+        }
+      ]
+    },
+    {
+      "id": "service-policy.sla",
+      "title": "Service Level Agreement",
+      "fields": [
+        {
+          "id": "authority.service-policy.path-quality-filter",
+          "label": "Path Quality Filter"
+        },
+        {
+          "id": "authority.service-policy.best-effort",
+          "label": "Use Best-Effort Paths"
+        },
+        {
+          "id": "authority.service-policy.measure",
+          "label": "Path Quality Measure"
+        },
+        {
+          "id": "authority.service-policy.max-loss",
+          "label": "Maximum Allowable Loss"
+        },
+        {
+          "id": "authority.service-policy.max-latency",
+          "label": "Maximum Allowable Latency"
+        },
+        {
+          "id": "authority.service-policy.max-jitter",
+          "label": "Maximum Allowable Jitter"
+        },
+        {
+          "id": "authority.service-policy.min-mos",
+          "label": "Minimum Allowable MOS"
+        }
+      ]
+    },
+    {
+      "id": "service-policy.vector",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "service-policy-vector",
+          "id": "authority.service-policy.vector",
+          "label": "Vectors"
+        }
+      ]
+    }
+  ]
 }

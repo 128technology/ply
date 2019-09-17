@@ -4,7 +4,7 @@ import TestPresentationModel from './data/testPresentationModel';
 
 describe('Leaf List Field Model', () => {
   it('serializes a basic leaf list', () => {
-    const field = TestPresentationModel.getFieldForID('authority.router.group');
+    const field = TestPresentationModel.getFieldForID('authority.router.administrative-group');
 
     expect(field.serialize()).to.deep.equal({
       columnLabels: [
@@ -15,10 +15,10 @@ describe('Leaf List Field Model', () => {
       ],
       deprecated: false,
       description: 'An identifier that associates this router with an administrative group.',
-      id: 'authority.router.group',
+      id: 'authority.router.administrative-group',
       kind: 'leaf-list',
       label: 'Groups',
-      name: 'group',
+      name: 'administrative-group',
       orderedBy: 'system',
       readOnly: false,
       type: 'string',

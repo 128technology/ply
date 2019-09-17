@@ -1,64 +1,99 @@
 {
-    "title": "Service Route",
-    "id": "service-route",
-    "sections": [{
-        "id": "service-route.main",
-        "title": "Service Route Information",
-        "fields": [{
-            "id": "authority.router.service-route.name",
-            "label": "Name"
-        }, {
-            "id": "authority.router.service-route.service-name",
-            "label": "Service Name"
-        }, {
-            "id": "authority.router.service-route.service-route-policy",
-            "label": "Service Route Policy"
-        }, {
-            "id": "authority.router.service-route.generated",
-            "label": "Auto-generated"
-        }]
-    }, {
-        "id": "service-route.type",
-        "title": "Service Route Type",
-        "fields": [{
-            "id": "authority.router.service-route.type",
-            "label": "Type"
-        }, {
-            "id": "authority.router.service-route.destination",
-            "label": "Destination"
-        }, {
-            "id": "authority.router.service-route.nat-target",
-            "label": "NAT Target"
-        }, {
-            "id": "authority.router.service-route.peer",
-            "label": "Peer"
-        }, {
-            "id": "authority.router.service-route.use-learned-routes",
-            "label": "Use Learned Routes"
-        }, {
-            "id": "authority.router.service-route.to-routing-agent",
-            "label": "To Routing Agent"
-        }]
-    }, {
-        "id": "service-route.next-peer",
-        "title": null,
-        "type": "list-table",
-        "fields": [{
-            "id": "authority.router.service-route.next-peer",
-            "label": "Next Peers",
-            "columnLabels": [{
-                "id": "name",
-                "label": "Next Peer"
-            }]
-        }]
-    }, {
-        "id": "service-route.next-hop",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "next-hop",
-            "id": "authority.router.service-route.next-hop",
-            "label": "Next Hops"
-        }]
-    }]
+  "title": "Service Route",
+  "id": "service-route",
+  "sections": [
+    {
+      "id": "service-route.main",
+      "title": "Service Route Information",
+      "fields": [
+        {
+          "id": "authority.router.service-route.name",
+          "label": "Name"
+        },
+        {
+          "id": "authority.router.service-route.service-name",
+          "label": "Service Name"
+        },
+        {
+          "id": "authority.router.service-route.service-route-policy",
+          "label": "Service Route Policy"
+        },
+        {
+          "id": "authority.router.service-route.generated",
+          "label": "Auto-generated"
+        }
+      ]
+    },
+    {
+      "id": "service-route.type",
+      "title": "Service Route Type",
+      "fields": [
+        {
+          "id": "authority.router.service-route.type",
+          "label": "Type"
+        },
+        {
+          "id": "authority.router.service-route.nat-target",
+          "label": "NAT Target"
+        },
+        {
+          "id": "authority.router.service-route.port-target",
+          "label": "Port Target"
+        },
+        {
+          "id": "authority.router.service-route.peer",
+          "label": "Peer"
+        },
+        {
+          "id": "authority.router.service-route.use-learned-routes",
+          "label": "Use Learned Routes"
+        },
+        {
+          "id": "authority.router.service-route.routing-stack",
+          "label": "To Routing Agent"
+        }
+      ]
+    },
+    {
+      "id": "service-route.next-peer",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.service-route.next-peer",
+          "label": "Next Peers",
+          "columnLabels": [
+            {
+              "id": "name",
+              "label": "Next Peer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "service-route.host",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "host-route",
+          "id": "authority.router.service-route.host",
+          "label": "Host routes"
+        }
+      ]
+    },
+    {
+      "id": "service-route.next-hop",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "next-hop",
+          "id": "authority.router.service-route.next-hop",
+          "label": "Next Hops"
+        }
+      ]
+    }
+  ]
 }

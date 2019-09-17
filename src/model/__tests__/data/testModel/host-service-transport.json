@@ -1,21 +1,28 @@
 {
-    "title": "Host Service Transport",
-    "id": "host-service-transport",
-    "sections": [{
-        "id": "host-service-transport.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.router.node.device-interface.network-interface.address.host-service.transport.protocol",
-            "label": "Protocol"
-        }]
-    }, {
-        "id": "host-service-transport.ports",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "host-service-transport-ports",
-            "id": "authority.router.node.device-interface.network-interface.address.host-service.transport.port-range",
-            "label": "Port Ranges"
-        }]
-    }]
+  "title": "Host Service Transport",
+  "id": "host-service-transport",
+  "sections": [
+    {
+      "id": "host-service-transport.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.transport.protocol",
+          "label": "Protocol"
+        }
+      ]
+    },
+    {
+      "id": "host-service-transport.ports",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "host-service-transport-ports",
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.transport.port-range",
+          "label": "Port Ranges"
+        }
+      ]
+    }
+  ]
 }

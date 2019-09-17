@@ -1,69 +1,82 @@
 {
-    "title": "Peer",
-    "id": "peer",
-    "sections": [{
-        "id": "peer.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.router.peer.name",
-            "label": "Name"
-        }, {
-            "id": "authority.router.peer.description",
-            "label": "Description"
-        }, {
-          "id": "authority.router.peer.id",
-          "label": "Peer ID"
-        }, {
+  "title": "Peer",
+  "id": "peer",
+  "sections": [
+    {
+      "id": "peer.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.peer.name",
+          "label": "Name"
+        },
+        {
+          "id": "authority.router.peer.description",
+          "label": "Description"
+        },
+        {
           "id": "authority.router.peer.generated",
           "label": "Auto-generated"
-        }]
-    }, {
-        "id": "peer.peering",
-        "title": "Peering Controls",
-        "fields": [{
-            "id": "authority.router.peer.authority-name",
-            "label": "Authority Name"
-        }, {
-            "id": "authority.router.peer.router-name",
-            "label": "Router Name"
-        }, {
-            "id": "authority.router.peer.inter-router-security",
-            "label": "Inter-router Security Policy"
-        }]
-    }, {
-        "id": "peer.bfd-settings",
-        "title": "Peer BFD Settings",
-        "fields": [{
-            "id": "authority.router.peer.bfd.state",
-            "label": "BFD State"
-        }, {
-            "id": "authority.router.peer.bfd.desired-tx-interval",
-            "label": "Desired Tx Interval"
-        }, {
-            "id": "authority.router.peer.bfd.required-min-rx-interval",
-            "label": "Required Minimum Rx Interval"
-        }, {
-            "id": "authority.router.peer.bfd.required-min-echo-interval",
-            "label": "Required Minimum Echo Interval"
-        }, {
-            "id": "authority.router.peer.bfd.authentication-type",
-            "label": "Authentication Type"
-        }, {
-            "id": "authority.router.peer.bfd.multiplier",
-            "label": "Link Multiplier"
-        }, {
-            "id": "authority.router.peer.bfd.link-test-interval",
-            "label": "Link Test Interval"
-        }, {
-            "id": "authority.router.peer.bfd.link-test-length",
-            "label": "Link Test Length"
-        }]
-    }, {
-        "id": "peer-bfd.dscp",
-        "title": "BFD DSCP Settings",
-        "fields": [{
-            "id": "authority.router.peer.bfd.dscp",
-            "label": "DSCP Value"
-        }]
-    }]
+        }
+      ]
+    },
+    {
+      "id": "peer.peering",
+      "title": "Peering Controls",
+      "fields": [
+        {
+          "id": "authority.router.peer.authority-name",
+          "label": "Authority Name"
+        },
+        {
+          "id": "authority.router.peer.router-name",
+          "label": "Router Name"
+        }
+      ]
+    },
+    {
+      "id": "peer.bfd-settings",
+      "title": "Peer BFD Settings",
+      "fields": [
+        {
+          "id": "authority.router.peer.bfd.state",
+          "label": "BFD State"
+        },
+        {
+          "id": "authority.router.peer.bfd.desired-tx-interval",
+          "label": "Desired Tx Interval"
+        },
+        {
+          "id": "authority.router.peer.bfd.required-min-rx-interval",
+          "label": "Required Minimum Rx Interval"
+        },
+        {
+          "id": "authority.router.peer.bfd.authentication-type",
+          "label": "Authentication Type"
+        },
+        {
+          "id": "authority.router.peer.bfd.multiplier",
+          "label": "Link Multiplier"
+        },
+        {
+          "id": "authority.router.peer.bfd.link-test-interval",
+          "label": "Link Test Interval"
+        },
+        {
+          "id": "authority.router.peer.bfd.link-test-length",
+          "label": "Link Test Length"
+        }
+      ]
+    },
+    {
+      "id": "peer-bfd.dscp",
+      "title": "BFD DSCP Settings",
+      "fields": [
+        {
+          "id": "authority.router.peer.bfd.dscp",
+          "label": "DSCP Value"
+        }
+      ]
+    }
+  ]
 }

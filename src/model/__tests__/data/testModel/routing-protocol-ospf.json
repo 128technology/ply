@@ -1,0 +1,60 @@
+{
+  "title": "Routing Protocol OSPF",
+  "id": "routing-protocol-ospf",
+  "sections": [
+    {
+      "id": "routing-protocol-ospf.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.routing.ospf.instance",
+          "label": "OSPF Instance"
+        },
+        {
+          "id": "authority.router.routing.ospf.router-id",
+          "label": "OSPF Router ID"
+        },
+        {
+          "id": "authority.router.routing.ospf.advertise-default.always",
+          "label": "Always Advertise Default Route"
+        },
+        {
+          "id": "authority.router.routing.ospf.advertise-default.policy",
+          "label": "Default Route Policy"
+        },
+        {
+          "id": "authority.router.routing.ospf.advertise-default.metric",
+          "label": "Default Route Metric"
+        },
+        {
+          "id": "authority.router.routing.ospf.advertise-default.metric-type",
+          "label": "Default Route Metric Type"
+        }
+      ]
+    },
+    {
+      "id": "routing-protocol-ospf.areas",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "ospf-area",
+          "id": "authority.router.routing.ospf.area",
+          "label": "OSPF Areas"
+        }
+      ]
+    },
+    {
+      "id": "routing-protocol-ospf.redistribute",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "ospf-redistribute",
+          "id": "authority.router.routing.ospf.redistribute",
+          "label": "OSPF Redistribution"
+        }
+      ]
+    }
+  ]
+}

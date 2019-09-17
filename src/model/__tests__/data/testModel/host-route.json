@@ -1,0 +1,33 @@
+{
+  "title": "Host Route",
+  "id": "host-route",
+  "sections": [
+    {
+      "id": "host-route.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.service-route.host.node-name",
+          "label": "Node"
+        }
+      ]
+    },
+    {
+      "id": "host-route.target-address",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.service-route.host.target-address",
+          "label": "Target Addresses",
+          "columnLabels": [
+            {
+              "id": "name",
+              "label": "Target Address"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

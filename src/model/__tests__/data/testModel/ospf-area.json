@@ -1,0 +1,52 @@
+{
+  "title": "OSPF Area",
+  "id": "ospf-area",
+  "sections": [
+    {
+      "id": "ospf-area.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.routing.ospf.area.id",
+          "label": "ID"
+        },
+        {
+          "id": "authority.router.routing.ospf.area.type",
+          "label": "Type"
+        },
+        {
+          "id": "authority.router.routing.ospf.area.summary-advertisement",
+          "label": "Summary Advertisement"
+        },
+        {
+          "id": "authority.router.routing.ospf.area.default-cost",
+          "label": "Default Route Cost"
+        }
+      ]
+    },
+    {
+      "id": "ospf-area.summary-range",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "ospf-area-summary-range",
+          "id": "authority.router.routing.ospf.area.summary-range",
+          "label": "Address Summary Ranges"
+        }
+      ]
+    },
+    {
+      "id": "ospf-area.interface",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "ospf-area-interface",
+          "id": "authority.router.routing.ospf.area.interface",
+          "label": "Interfaces"
+        }
+      ]
+    }
+  ]
+}

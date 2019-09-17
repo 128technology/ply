@@ -1,101 +1,170 @@
 {
-    "title": "Service",
-    "id": "service",
-    "sections": [{
-        "id": "service.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.service.name",
-            "label": "Name"
-        }, {
-            "id": "authority.service.id",
-            "label": "ID"
-        }, {
-            "id": "authority.service.description",
-            "label": "Description"
-        }, {
-            "id": "authority.service.enabled",
-            "label": "Enabled"
-        }, {
-            "id": "authority.service.tenant",
-            "label": "Tenant"
-        }, {
-            "id": "authority.service.service-group",
-            "label": "Service Group"
-        }, {
-            "id": "authority.service.scope",
-            "label": "Scope"
-        }, {
-            "id": "authority.service.share-service-routes",
-            "label": "Share Service Routes"
-        }, {
-            "id": "authority.service.source-nat",
-            "label": "Source NAT"
-        }, {
+  "title": "Service",
+  "id": "service",
+  "sections": [
+    {
+      "id": "service.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.service.name",
+          "label": "Name"
+        },
+        {
+          "id": "authority.service.id",
+          "label": "ID"
+        },
+        {
+          "id": "authority.service.description",
+          "label": "Description"
+        },
+        {
+          "id": "authority.service.enabled",
+          "label": "Enabled"
+        },
+        {
+          "id": "authority.service.tenant",
+          "label": "Tenant"
+        },
+        {
+          "id": "authority.service.service-group",
+          "label": "Service Group"
+        },
+        {
+          "id": "authority.service.scope",
+          "label": "Scope"
+        },
+        {
+          "id": "authority.service.share-service-routes",
+          "label": "Share Service Routes"
+        },
+        {
+          "id": "authority.service.source-nat",
+          "label": "Source NAT"
+        },
+        {
+          "id": "authority.service.application-type",
+          "label": "Application Type"
+        },
+        {
+          "id": "authority.service.fqdn-resolution-type",
+          "label": "FQDN Resolution Type"
+        },
+        {
           "id": "authority.service.generated",
           "label": "Auto-generated"
-        }, {
+        },
+        {
           "id": "authority.service.access-policy-generated",
           "label": "Access-Policy Auto-generated"
-        }]
-    }, {
-        "id": "service.transport",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "service-transport",
-            "id": "authority.service.transport",
-            "label": "Service Transport"
-        }]
-    }, {
-        "id": "service.addresses",
-        "title": null,
-        "type": "list-table",
-        "fields": [{
-            "id": "authority.service.address",
-            "label": "Service Addresses",
-            "columnLabels": [{
+        }
+      ]
+    },
+    {
+      "id": "authority.service.applies-to",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "service-applies-to",
+          "id": "authority.service.applies-to",
+          "label": "Service Applies To"
+        }
+      ]
+    },
+    {
+      "id": "service.transport",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "service-transport",
+          "id": "authority.service.transport",
+          "label": "Service Transport"
+        }
+      ]
+    },
+    {
+      "id": "service.addresses",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.service.address",
+          "label": "Service Addresses",
+          "columnLabels": [
+            {
               "id": "name",
               "label": "Service Address"
-            }]
-        }]
-    }, {
-        "id": "service.application-names",
-        "title": null,
-        "type": "list-table",
-        "fields": [{
-            "id": "authority.service.application-name",
-            "label": "Application Identification",
-            "columnLabels": [{
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "service.application-names",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.service.application-name",
+          "label": "Application Identification",
+          "columnLabels": [
+            {
               "id": "name",
               "label": "Application Name"
-            }]
-        }]
-    }, {
-        "id": "service.policies",
-        "title": "Policies",
-        "fields": [{
-            "id": "authority.service.security",
-            "label": "Security Policy"
-        }, {
-            "id": "authority.service.service-policy",
-            "label": "Service Policy"
-        }]
-    }, {
-        "id": "service.tap-multiplexing",
-        "title": "Tap Multiplexing",
-        "fields": [{
-            "id": "authority.service.tap-multiplexing",
-            "label": "Enable Tap Multiplexing"
-        }]
-    }, {
-        "id": "service.accesspolicy",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "access-policy",
-            "id": "authority.service.access-policy",
-            "label": "Access Policies"
-        }]
-    }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "service.policies",
+      "title": "Policies",
+      "fields": [
+        {
+          "id": "authority.service.security",
+          "label": "Security Policy"
+        },
+        {
+          "id": "authority.service.service-policy",
+          "label": "Service Policy"
+        }
+      ]
+    },
+    {
+      "id": "service.tap-multiplexing",
+      "title": "Tap Multiplexing",
+      "fields": [
+        {
+          "id": "authority.service.tap-multiplexing",
+          "label": "Enable Tap Multiplexing"
+        }
+      ]
+    },
+    {
+      "id": "service.accesspolicy",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "access-policy",
+          "id": "authority.service.access-policy",
+          "label": "Access Policies"
+        }
+      ]
+    },
+    {
+      "id": "service.multicastsenderpolicy",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "multicast-sender-policy",
+          "id": "authority.service.multicast-sender-policy",
+          "label": "Multicast Sender Policies"
+        }
+      ]
+    }
+  ]
 }

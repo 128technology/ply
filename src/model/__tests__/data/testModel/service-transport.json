@@ -1,21 +1,29 @@
 {
-    "title": "Service Transport",
-    "id": "service-transport",
-    "sections": [{
-        "id": "service-transport.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.service.transport.protocol",
-            "label": "Protocol"
-        }]
-    }, {
-        "id": "service-transport.ports",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "service-transport-ports",
-            "id": "authority.service.transport.port-range",
-            "label": "Port Ranges"
-        }]
-    }]
+  "title": "Service Transport",
+  "id": "service-transport",
+  "sections": [
+    {
+      "id": "service-transport.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.service.transport.protocol",
+          "label": "Protocol"
+        }
+      ]
+    },
+    {
+      "id": "service-transport.ports",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "service-transport-ports",
+          "id": "authority.service.transport.port-range",
+          "label": "Port Ranges",
+          "columns": ["start-port", "end-port"]
+        }
+      ]
+    }
+  ]
 }

@@ -1,12 +1,16 @@
 {
-    "title": "Router NTP Server Address",
-    "id": "router-system-ntp-server-address",
-    "sections": [{
-        "id": "router-system-ntp-server-address.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.router.system.ntp.server.ip-address",
-            "label": "Address"
-        }]
-    }]
+  "title": "Router NTP Server Address",
+  "id": "router-system-ntp-server-address",
+  "sections": [
+    {
+      "id": "router-system-ntp-server-address.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.system.ntp.server.ip-address",
+          "label": "Address"
+        }
+      ]
+    }
+  ]
 }

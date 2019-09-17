@@ -1,114 +1,155 @@
 {
   "title": "Action",
   "id": "action",
-  "sections": [{
-    "id": "action.basic-config",
-    "title": "Basic Configuration",
-    "fields": [{
-      "id": "authority.routing.policy.statement.action.type",
-      "label": "Type"
-    }, {
-      "id": "authority.routing.policy.statement.action.add",
-      "label": "Add"
-    }, {
-      "id": "authority.routing.policy.statement.action.as",
-      "label": "As"
-    }, {
-      "id": "authority.routing.policy.statement.action.aggregator-address",
-      "label": "Aggregator Address"
-    }, {
-      "id": "authority.routing.policy.statement.action.exclude",
-      "label": "Exclude"
-    }, {
-      "id": "authority.routing.policy.statement.action.prepend",
-      "label": "Prepend"
-    }, {
-      "id": "authority.routing.policy.statement.action.community-filter",
-      "label": "Community Filter"
-    }, {
-      "id": "authority.routing.policy.statement.action.set-community-type",
-      "label": "Set Community Type"
-    }, {
-      "id": "authority.routing.policy.statement.action.additive",
-      "label": "Additive"
-    }, {
-      "id": "authority.routing.policy.statement.action.none",
-      "label": "None"
-    }, {
-      "id": "authority.routing.policy.statement.action.ip-address",
-      "label": "IP Address"
-    }, {
-      "id": "authority.routing.policy.statement.action.local-preference",
-      "label": "Local Preference"
-    }, {
-      "id": "authority.routing.policy.statement.action.modify-metric",
-      "label": "Modify Metric"
-    }, {
-      "id": "authority.routing.policy.statement.action.next-hop",
-      "label": "Next Hop"
-    }, {
-      "id": "authority.routing.policy.statement.action.originator-id",
-      "label": "Originator ID"
-    }, {
-      "id": "authority.routing.policy.statement.action.origin",
-      "label": "Origin"
-    }, {
-      "id": "authority.routing.policy.statement.action.peer-address",
-      "label": "Peer Address"
-    }, {
-      "id": "authority.routing.policy.statement.action.bgp-weight",
-      "label": "BGP Weight"
-    }, {
-      "id": "authority.routing.policy.statement.action.set",
-      "label": "Set"
-    }, {
-      "id": "authority.routing.policy.statement.action.subtract",
-      "label": "Subtract"
-    }, {
-      "id": "authority.routing.policy.statement.action.tag",
-      "label": "Tag"
-    }, {
-      "id": "authority.routing.policy.statement.action.statement",
-      "label": "Statement"
-    }, {
-      "id": "authority.routing.policy.statement.action.policy",
-      "label": "Policy"
-    }]
-  }, {
-    "id": "action.community-attr",
-    "title": null,
-    "type": "list-table",
-    "fields": [{
-      "id": "authority.routing.policy.statement.action.community-attribute",
-      "label": "Community Attribute",
-      "columnLabels": [{
-        "id": "name",
-        "label": "Community Attribute"
-      }]
-    }]
-  }, {
-    "id": "action.route-target",
-    "title": null,
-    "type": "list-table",
-    "fields": [{
-      "id": "authority.routing.policy.statement.action.route-target",
-      "label": "Route Target",
-      "columnLabels": [{
-        "id": "name",
-        "label": "Target"
-      }]
-    }]
-  }, {
-    "id": "action.site-of-origin",
-    "title": null,
-    "type": "list-table",
-    "fields": [{
-      "id": "authority.routing.policy.statement.action.site-of-origin",
-      "label": "Site Of Origin",
-      "columnLabels": [{
-        "id": "name",
-        "label": "Site Of Origin"
-      }]
-    }]
-  }]
+  "sections": [
+    {
+      "id": "action.basic-config",
+      "title": "Basic Configuration",
+      "fields": [
+        {
+          "id": "authority.routing.policy.statement.action.type",
+          "label": "Type"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.add",
+          "label": "Add"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.as",
+          "label": "As"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.aggregator-address",
+          "label": "Aggregator Address"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.exclude",
+          "label": "Exclude"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.prepend",
+          "label": "Prepend"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.community-filter",
+          "label": "Community Filter"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.set-community-type",
+          "label": "Set Community Type"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.additive",
+          "label": "Additive"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.none",
+          "label": "None"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.ip-address",
+          "label": "IP Address"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.local-preference",
+          "label": "Local Preference"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.modify-metric",
+          "label": "Modify Metric"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.next-hop",
+          "label": "Next Hop"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.originator-id",
+          "label": "Originator ID"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.origin",
+          "label": "Origin"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.peer-address",
+          "label": "Peer Address"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.bgp-weight",
+          "label": "BGP Weight"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.set",
+          "label": "Set"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.subtract",
+          "label": "Subtract"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.tag",
+          "label": "Tag"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.statement",
+          "label": "Statement"
+        },
+        {
+          "id": "authority.routing.policy.statement.action.policy",
+          "label": "Policy"
+        }
+      ]
+    },
+    {
+      "id": "action.community-attr",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.routing.policy.statement.action.community-attribute",
+          "label": "Community Attribute",
+          "columnLabels": [
+            {
+              "id": "name",
+              "label": "Community Attribute"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "action.route-target",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.routing.policy.statement.action.route-target",
+          "label": "Route Target",
+          "columnLabels": [
+            {
+              "id": "name",
+              "label": "Target"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "action.site-of-origin",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.routing.policy.statement.action.site-of-origin",
+          "label": "Site Of Origin",
+          "columnLabels": [
+            {
+              "id": "name",
+              "label": "Site Of Origin"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

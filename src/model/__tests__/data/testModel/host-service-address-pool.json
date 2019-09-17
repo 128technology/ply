@@ -1,0 +1,153 @@
+{
+  "title": "Address Pool",
+  "id": "host-service-address-pool",
+  "sections": [
+    {
+      "id": "address-pool.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool.start-address",
+          "label": "Start Address"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool.end-address",
+          "label": "End Address"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool.tenant",
+          "label": "Tenant"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool.domain-name",
+          "label": "Domain Name"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool.interface-mtu",
+          "label": "Interface MTU"
+        }
+      ]
+    },
+    {
+      "id": "address-pool.router",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool.router",
+          "label": "Router Addresses",
+          "columnLabels": [
+            {
+              "id": "address",
+              "label": "Address"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "address-pool.domain-server",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool.domain-server",
+          "label": "Domain Name Server Addresses",
+          "columnLabels": [
+            {
+              "id": "address",
+              "label": "Address"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "address-pool.ntp-server",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool.ntp-server",
+          "label": "NTP Server Addresses",
+          "columnLabels": [
+            {
+              "id": "address",
+              "label": "Address"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "address-pool.smtp-server",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool.smtp-server",
+          "label": "SMTP Server Addresses",
+          "columnLabels": [
+            {
+              "id": "address",
+              "label": "Address"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "address-pool.pop-server",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool.pop-server",
+          "label": "POP Server Addresses",
+          "columnLabels": [
+            {
+              "id": "address",
+              "label": "Address"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "address-pool.static-route",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "host-service-address-pool-static-route",
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool.static-route",
+          "label": "Static Route"
+        }
+      ]
+    },
+    {
+      "id": "address-pool.static-assignment",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "host-service-address-pool-static-assignment",
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool.static-assignment",
+          "label": "Static Assignments"
+        }
+      ]
+    },
+    {
+      "id": "address-pool.custom",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "host-service-address-pool-custom",
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool.custom",
+          "label": "Custom Options"
+        }
+      ]
+    }
+  ]
+}

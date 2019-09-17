@@ -1,33 +1,44 @@
 {
   "title": "Address",
   "id": "address",
-  "sections": [{
-    "id": "address.main",
-    "title": "Basic Information",
-    "fields": [{
-      "id": "authority.router.node.device-interface.network-interface.address.ip-address",
-      "label": "Address"
-    }, {
-      "id": "authority.router.node.device-interface.network-interface.address.prefix-length",
-      "label": "Prefix"
-    }, {
-      "id": "authority.router.node.device-interface.network-interface.address.utility-ip-address",
-      "label": "Utility Address"
-    }, {
-      "id": "authority.router.node.device-interface.network-interface.address.gateway",
-      "label": "Gateway"
-    }, {
-      "id": "authority.router.node.device-interface.network-interface.address.ppp-peer-ip",
-      "label": "Peer Address"
-    }]
-  }, {
-    "id": "addresses.host-service",
-    "title": null,
-    "type": "list-section",
-    "fields": [{
-        "link": "host-service",
-        "id": "authority.router.node.device-interface.network-interface.address.host-service",
-        "label": "Host Services"
-    }]
-  }]
+  "sections": [
+    {
+      "id": "address.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.ip-address",
+          "label": "Address"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.prefix-length",
+          "label": "Prefix"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.utility-ip-address",
+          "label": "Utility Address"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.gateway",
+          "label": "Gateway"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.ppp-peer-ip",
+          "label": "Peer Address"
+        }
+      ]
+    },
+    {
+      "id": "addresses.host-service",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "host-service",
+          "id": "authority.router.node.device-interface.network-interface.address.host-service",
+          "label": "Host Services"
+        }
+      ]
+    }
+  ]
 }

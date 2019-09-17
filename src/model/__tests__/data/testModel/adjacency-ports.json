@@ -1,15 +1,20 @@
 {
-    "title": "Port Range",
-    "id": "adjacency-ports",
-    "sections": [{
-        "id": "adjacency-ports.main",
-        "title": "Start & End Ports",
-        "fields": [{
-            "id": "authority.router.node.device-interface.network-interface.adjacency.port-range.start-port",
-            "label": "Start Port"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.adjacency.port-range.end-port",
-            "label": "End Port"
-        }]
-    }]
+  "title": "Port Range",
+  "id": "adjacency-ports",
+  "sections": [
+    {
+      "id": "adjacency-ports.main",
+      "title": "Start & End Ports",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.adjacency.port-range.start-port",
+          "label": "Start Port"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.adjacency.port-range.end-port",
+          "label": "End Port"
+        }
+      ]
+    }
+  ]
 }
