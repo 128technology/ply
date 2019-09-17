@@ -1,0 +1,20 @@
+{
+  "title": "Static Route Next Hop Interfaces",
+  "id": "static-route-next-hop-interfaces",
+  "sections": [
+    {
+      "id": "static-route-next-hop-interfaces.main",
+      "title": "Next Hop Interfaces",
+      "fields": [
+        {
+          "id": "authority.router.routing.static-route.next-hop-interface.node",
+          "label": "Node Name"
+        },
+        {
+          "id": "authority.router.routing.static-route.next-hop-interface.interface",
+          "label": "Network Interface Name"
+        }
+      ]
+    }
+  ]
+}

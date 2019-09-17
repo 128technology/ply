@@ -1,0 +1,50 @@
+{
+  "title": "Service Applies To Settings",
+  "id": "service-applies-to",
+  "sections": [
+    {
+      "id": "service-applies-to.settings",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.service.applies-to.type",
+          "label": "Service Group Type"
+        }
+      ]
+    },
+    {
+      "id": "authority.service.applies-to.router-name",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.service.applies-to.router-name",
+          "label": "Router Name",
+          "columnLabels": [
+            {
+              "id": "router-name",
+              "label": "Router Name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "authority.service.applies-to.group-name",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.service.applies-to.group-name",
+          "label": "Group Name",
+          "columnLabels": [
+            {
+              "id": "group-name",
+              "label": "Group Name"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

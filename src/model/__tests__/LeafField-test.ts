@@ -28,7 +28,7 @@ describe('Leaf Field Model', () => {
       default: 'ethernet',
       deprecated: false,
       description: 'Type of interface.',
-      enumerations: ['ethernet', 'kni', 'pppoe', 'host', 'bridged', 'lte', 't1'],
+      enumerations: ['ethernet', 'pppoe', 'host', 'bridged', 'lte', 't1'],
       id: 'authority.router.node.device-interface.type',
       isKey: false,
       kind: 'leaf',
@@ -37,6 +37,26 @@ describe('Leaf Field Model', () => {
       readOnly: false,
       required: false,
       type: 'enumeration',
+      visibility: 'visible'
+    });
+  });
+
+  it('serializes a union field with enumerations and a boolean', () => {
+    const field = TestPresentationModel.getFieldForID('authority.router.system.remote-login.enabled');
+
+    expect(field.serialize()).to.deep.equal({
+      default: 'use-authority-setting',
+      deprecated: false,
+      description: 'Enable remote login from a Conductor to assets on this Router.',
+      enumerations: ['use-authority-setting', 'true', 'false'],
+      id: 'authority.router.system.remote-login.enabled',
+      isKey: false,
+      kind: 'leaf',
+      label: 'Remote Login State',
+      name: 'enabled',
+      readOnly: false,
+      required: false,
+      type: 'union',
       visibility: 'visible'
     });
   });

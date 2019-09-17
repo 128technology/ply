@@ -1,35 +1,58 @@
 {
-    "title": "Service Route Policy",
-    "id": "service-route-policy",
-    "sections": [{
-        "id": "service-route-policy.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.router.service-route-policy.name",
-            "label": "Name"
-        }, {
-            "id": "authority.router.service-route-policy.description",
-            "label": "Description"
-        }]
-    }, {
-        "id": "service-route-policy.capacity",
-        "title": "Service Route Capacity",
-        "fields": [{
-            "id": "authority.router.service-route-policy.session-rate",
-            "label": "Maximum Session Rate"
-        }, {
-            "id": "authority.router.service-route-policy.max-sessions",
-            "label": "Maximum Active Sessions"
-        }]
-    }, {
-        "id": "service-route-policy.load-balancing",
-        "title": "Service Route Load Balancing",
-        "fields": [{
-            "id": "authority.router.service-route-policy.session-high-water-mark",
-            "label": "Session High Water Mark"
-        }, {
-            "id": "authority.router.service-route-policy.session-low-water-mark",
-            "label": "Session Low Water Mark"
-        }]
-    }]
+  "title": "Service Route Policy",
+  "id": "service-route-policy",
+  "sections": [
+    {
+      "id": "service-route-policy.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.service-route-policy.name",
+          "label": "Name"
+        },
+        {
+          "id": "authority.router.service-route-policy.description",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "id": "service-route-policy.capacity",
+      "title": "Service Route Capacity",
+      "fields": [
+        {
+          "id": "authority.router.service-route-policy.session-rate",
+          "label": "Maximum Session Rate"
+        },
+        {
+          "id": "authority.router.service-route-policy.max-sessions",
+          "label": "Maximum Active Sessions"
+        }
+      ]
+    },
+    {
+      "id": "service-route-policy.load-balancing",
+      "title": "Service Route Load Balancing",
+      "fields": [
+        {
+          "id": "authority.router.service-route-policy.session-high-water-mark",
+          "label": "Session High Water Mark"
+        },
+        {
+          "id": "authority.router.service-route-policy.session-low-water-mark",
+          "label": "Session Low Water Mark"
+        }
+      ]
+    },
+    {
+      "id": "service-route-policy.packet-replication",
+      "title": "Service Route Packet Replication",
+      "fields": [
+        {
+          "id": "authority.router.service-route-policy.packet-replication",
+          "label": "Packet Replication"
+        }
+      ]
+    }
+  ]
 }

@@ -1,0 +1,24 @@
+{
+  "title": "OSPF Area Summary Range",
+  "id": "ospf-area-summary-range",
+  "sections": [
+    {
+      "id": "ospf-area-summary-range.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.routing.ospf.area.summary-range.prefix",
+          "label": "Prefix"
+        },
+        {
+          "id": "authority.router.routing.ospf.area.summary-range.advertise",
+          "label": "Advertise"
+        },
+        {
+          "id": "authority.router.routing.ospf.area.summary-range.cost",
+          "label": "Cost"
+        }
+      ]
+    }
+  ]
+}

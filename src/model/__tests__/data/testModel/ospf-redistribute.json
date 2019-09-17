@@ -1,0 +1,28 @@
+{
+  "title": "OSPF Protocol Redistribution",
+  "id": "ospf-redistribute",
+  "sections": [
+    {
+      "id": "ospf-redistribute.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.routing.ospf.redistribute.protocol",
+          "label": "Protocol Redistributed Into OSPF"
+        },
+        {
+          "id": "authority.router.routing.ospf.redistribute.policy",
+          "label": "Policy Applied to Redistribute Protocol Routes"
+        },
+        {
+          "id": "authority.router.routing.ospf.redistribute.metric",
+          "label": "Advertised Metric of Redistributed Routes"
+        },
+        {
+          "id": "authority.router.routing.ospf.redistribute.metric-type",
+          "label": "Advertised Metric Type of Redistributed Routes"
+        }
+      ]
+    }
+  ]
+}

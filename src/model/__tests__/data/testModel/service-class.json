@@ -1,40 +1,50 @@
 {
   "title": "Service Class",
   "id": "service-class",
-  "sections": [{
+  "sections": [
+    {
       "id": "service-class.main",
       "title": "Basic Information",
-      "fields": [{
+      "fields": [
+        {
           "id": "authority.service-class.name",
           "label": "Name"
-      }, {
+        },
+        {
           "id": "authority.service-class.description",
           "label": "Description"
-      }, {
+        },
+        {
           "id": "authority.service-class.dscp",
           "label": "DSCP Value To Assign"
-      }, {
+        },
+        {
           "id": "authority.service-class.class-or-priority",
           "label": "Choice Of Traffic-Class Or Priority Assignment"
-      }, {
-          "id": "authority.service-class.priority",
-          "label": "Priority To Assign"
-      }, {
+        },
+        {
           "id": "authority.service-class.traffic-class",
           "label": "Traffic Class To Assign"
-      }]
-  }, {
+        }
+      ]
+    },
+    {
       "id": "service-class.ratelimit",
       "title": "Rate Limiting",
-      "fields": [{
+      "fields": [
+        {
           "id": "authority.service-class.rate-limit",
           "label": "Enable Rate Limiting"
-      }, {
+        },
+        {
           "id": "authority.service-class.max-flow-rate",
           "label": "Maximum Flow Rate"
-      }, {
+        },
+        {
           "id": "authority.service-class.max-flow-burst",
           "label": "Maximum Flow Burst"
-      }]
-  }]
+        }
+      ]
+    }
+  ]
 }

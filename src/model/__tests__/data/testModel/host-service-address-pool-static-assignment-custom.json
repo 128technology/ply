@@ -1,0 +1,45 @@
+{
+  "title": "Custom DHCP Options",
+  "id": "host-service-address-pool-static-assignment-custom",
+  "sections": [
+    {
+      "id": "access-policy.main",
+      "title": "Custom DHCP Options",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool.static-assignment.custom.code",
+          "label": "DHCP Option Code"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool.static-assignment.custom.description",
+          "label": "DHCP Option Description"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool.static-assignment.custom.encoded-type",
+          "label": "DHCP Option Encoded Type"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool.static-assignment.custom.quantity",
+          "label": "DHCP Option Order"
+        }
+      ]
+    },
+    {
+      "id": "host-service-address-pool-static-assignment-custom.value",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool.static-assignment.custom.value",
+          "label": "DHCP Option Value",
+          "columnLabels": [
+            {
+              "id": "value",
+              "label": "Value"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

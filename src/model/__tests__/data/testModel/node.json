@@ -1,82 +1,131 @@
 {
-    "title": "Node",
-    "id": "node",
-    "sections": [{
-        "id": "node.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.router.node.name",
-            "label": "Name"
-        }, {
-            "id": "authority.router.node.id",
-            "label": "Node ID"
-        }, {
-            "id": "authority.router.node.asset-id",
-            "label": "Asset ID"
-        }, {
-            "id": "authority.router.node.description",
-            "label": "Description"
-        }, {
-            "id": "authority.router.node.enabled",
-            "label": "Enable This Node"
-        }, {
-            "id": "authority.router.node.location",
-            "label": "Location"
-        }, {
-            "id": "authority.router.node.role",
-            "label": "Role"
-        }]
-    }, {
-        "id": "node.provisioning",
-        "title": "Asset Provisioning Settings",
-        "fields": [{
-            "id": "authority.router.node.asset-validation-enabled",
-            "label": "Asset Validation Enabled"
-        }, {
-            "id": "authority.router.node.usage-reporter-enabled",
-            "label": "Enable Usage Reporter"
-        }, {
-            "id": "authority.router.node.forwarding-core-count",
-            "label": "Forwarding Core Count"
-        }, {
-            "id": "authority.router.node.ssh-keepalive.inter-node.interval",
-            "label": "Inter Node SSH Keepalive Interval"
-        }, {
-            "id": "authority.router.node.ssh-keepalive.inter-node.max-attempts",
-            "label": "Inter Node SSH Keepalive Max Attempts"
-        }, {
-            "id": "authority.router.node.ssh-keepalive.inter-router.interval",
-            "label": "Inter Router SSH Keepalive Interval"
-        }, {
-            "id": "authority.router.node.ssh-keepalive.inter-router.max-attempts",
-            "label": "Inter Router SSH Keepalive Max Attempts"
-        }, {
-            "id": "authority.router.node.clean-before-install",
-            "label": "Clean Before 128T Install"
-        }, {
-            "id": "authority.router.node.clean-after-failed-install",
-            "label": "Clean After Failed 128T Install"
-        }, {
-            "id": "authority.router.node.reachability-detection.arp-refresh-interval",
-            "label": "ARP Refresh Frequency"
-        }, {
-            "id": "authority.router.node.reachability-detection.gateway-refresh-interval",
-            "label": "Gateway ARP Refresh Frequency"
-        }, {
-            "id": "authority.router.node.reachability-detection.expired-refresh-interval",
-            "label": "Expired ARP Refresh Frequency"
-        }, {
-            "id": "authority.router.node.reachability-detection.expired-refresh-count",
-            "label": "Expired ARP Detection Count"
-        }]
-    }, {
-        "id": "router.devices",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "device-interface",
-            "id": "authority.router.node.device-interface",
-            "label": "Device Interfaces"
-        }]
-    }]
+  "title": "Node",
+  "id": "node",
+  "sections": [
+    {
+      "id": "node.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.node.name",
+          "label": "Name"
+        },
+        {
+          "id": "authority.router.node.id",
+          "label": "Node ID"
+        },
+        {
+          "id": "authority.router.node.asset-id",
+          "label": "Associated Asset ID",
+          "customComponent": "AssetIdField"
+        },
+        {
+          "id": "authority.router.node.description",
+          "label": "Description"
+        },
+        {
+          "id": "authority.router.node.enabled",
+          "label": "Enable This Node"
+        },
+        {
+          "id": "authority.router.node.location",
+          "label": "Location"
+        },
+        {
+          "id": "authority.router.node.role",
+          "label": "Role"
+        }
+      ]
+    },
+    {
+      "id": "node.provisioning",
+      "title": "Asset Provisioning Settings",
+      "fields": [
+        {
+          "id": "authority.router.node.asset-validation-enabled",
+          "label": "Asset Validation Enabled"
+        },
+        {
+          "id": "authority.router.node.usage-reporter-enabled",
+          "label": "Enable Usage Reporter"
+        },
+        {
+          "id": "authority.router.node.forwarding-core-count",
+          "label": "Forwarding Core Count"
+        },
+        {
+          "id": "authority.router.node.power-saver",
+          "label": "Forwarding Core Power Saver Mode"
+        },
+        {
+          "id": "authority.router.node.ssh-keepalive.inter-node.interval",
+          "label": "Inter Node SSH Keepalive Interval for client"
+        },
+        {
+          "id": "authority.router.node.ssh-keepalive.inter-node.max-attempts",
+          "label": "Inter Node SSH Keepalive Max Attempts for client"
+        },
+        {
+          "id": "authority.router.node.ssh-keepalive.inter-router.interval",
+          "label": "Inter Router SSH Keepalive Interval for client"
+        },
+        {
+          "id": "authority.router.node.ssh-keepalive.inter-router.max-attempts",
+          "label": "Inter Router SSH Keepalive Max Attempts for client"
+        },
+        {
+          "id": "authority.router.node.ssh-keepalive.inter-node-server.interval",
+          "label": "Inter Node SSH Keepalive Interval for server"
+        },
+        {
+          "id": "authority.router.node.ssh-keepalive.inter-node-server.max-attempts",
+          "label": "Inter Node SSH Keepalive Max Attempts for server"
+        },
+        {
+          "id": "authority.router.node.ssh-keepalive.inter-conductor-router-server.interval",
+          "label": "Inter Conductor and Router SSH Keepalive Interval for server"
+        },
+        {
+          "id": "authority.router.node.ssh-keepalive.inter-conductor-router-server.max-attempts",
+          "label": "Inter Conductor and Router SSH Keepalive Max Attempts for server"
+        },
+        {
+          "id": "authority.router.node.clean-before-install",
+          "label": "Clean Before 128T Install"
+        },
+        {
+          "id": "authority.router.node.clean-after-failed-install",
+          "label": "Clean After Failed 128T Install"
+        },
+        {
+          "id": "authority.router.node.reachability-detection.arp-refresh-interval",
+          "label": "ARP Refresh Frequency"
+        },
+        {
+          "id": "authority.router.node.reachability-detection.gateway-refresh-interval",
+          "label": "Gateway ARP Refresh Frequency"
+        },
+        {
+          "id": "authority.router.node.reachability-detection.expired-refresh-interval",
+          "label": "Expired ARP Refresh Frequency"
+        },
+        {
+          "id": "authority.router.node.reachability-detection.expired-refresh-count",
+          "label": "Expired ARP Detection Count"
+        }
+      ]
+    },
+    {
+      "id": "router.devices",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "device-interface",
+          "id": "authority.router.node.device-interface",
+          "label": "Device Interfaces"
+        }
+      ]
+    }
+  ]
 }

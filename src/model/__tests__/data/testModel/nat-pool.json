@@ -1,0 +1,28 @@
+{
+  "title": "Shared NAT Pool",
+  "id": "nat-pool",
+  "sections": [
+    {
+      "id": "nat-pool.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.nat-pool.name",
+          "label": "Name"
+        }
+      ]
+    },
+    {
+      "id": "nat-pool.address-pool",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "nat-pool-ports",
+          "id": "authority.router.nat-pool.address-pool",
+          "label": "NAT Pool Ports"
+        }
+      ]
+    }
+  ]
+}

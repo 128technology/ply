@@ -1,0 +1,20 @@
+{
+  "title": "Multicast Sender Policy",
+  "id": "multicast-sender-policy",
+  "sections": [
+    {
+      "id": "multicast-sender-policy.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.service.multicast-sender-policy.source",
+          "label": "Source"
+        },
+        {
+          "id": "authority.service.multicast-sender-policy.permission",
+          "label": "Permission"
+        }
+      ]
+    }
+  ]
+}

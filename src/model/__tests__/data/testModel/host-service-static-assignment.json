@@ -1,0 +1,153 @@
+{
+  "title": "Static Assignments",
+  "id": "host-service-static-assignment",
+  "sections": [
+    {
+      "id": "host-service-static-assignment.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.static-assignment.address",
+          "label": "Start Address"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.static-assignment.client",
+          "label": "Client"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.static-assignment.link-layer-address",
+          "label": "Link Layer Address"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.static-assignment.client-identifier",
+          "label": "DHCP Client Identifier"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.static-assignment.circuit-identifier",
+          "label": "DHCP Circuit Identifier"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.static-assignment.tenant",
+          "label": "Tenant"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.static-assignment.domain-name",
+          "label": "Domain Name"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.static-assignment.interface-mtu",
+          "label": "Interface MTU"
+        }
+      ]
+    },
+    {
+      "id": "host-service-static-assignment.router",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.static-assignment.router",
+          "label": "Router Addresses",
+          "columnLabels": [
+            {
+              "id": "address",
+              "label": "Address"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "host-service-static-assignment.domain-server",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.static-assignment.domain-server",
+          "label": "Domain Name Server Addresses",
+          "columnLabels": [
+            {
+              "id": "address",
+              "label": "Address"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "host-service-static-assignment.ntp-server",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.static-assignment.ntp-server",
+          "label": "NTP Server Addresses",
+          "columnLabels": [
+            {
+              "id": "address",
+              "label": "Address"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "host-service-static-assignment.smtp-server",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.static-assignment.smtp-server",
+          "label": "SMTP Server Addresses",
+          "columnLabels": [
+            {
+              "id": "address",
+              "label": "Address"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "host-service-static-assignment.pop-server",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.static-assignment.pop-server",
+          "label": "POP Server Addresses",
+          "columnLabels": [
+            {
+              "id": "address",
+              "label": "Address"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "host-service-static-assignment.static-route",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "host-service-static-assignment-static-route",
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.static-assignment.static-route",
+          "label": "Static Route"
+        }
+      ]
+    },
+    {
+      "id": "host-service-static-assignment.custom",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "host-service-static-assignment-custom",
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.static-assignment.custom",
+          "label": "Custom Options"
+        }
+      ]
+    }
+  ]
+}

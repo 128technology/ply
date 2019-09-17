@@ -1,42 +1,68 @@
 {
-    "title": "Routing",
-    "id": "routing",
-    "sections": [{
-        "id": "routing.main",
-        "title": "Routing Instance Information",
-        "fields": [{
-            "id": "authority.router.routing.type",
-            "label": "Type"
-        }, {
-            "id": "authority.router.routing.description",
-            "label": "Description"
-        }]
-    }, {
-        "id": "routing.interfaces",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "routing-interface",
-            "id": "authority.router.routing.interface",
-            "label": "Routing Interfaces"
-        }]
-    }, {
-        "id": "routing.protocols",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "routing-protocol",
-            "id": "authority.router.routing.routing-protocol",
-            "label": "Routing Protocols"
-        }]
-    }, {
-        "id": "routing.static-routes",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "static-route",
-            "id": "authority.router.routing.static-route",
-            "label": "Static Routes"
-        }]
-    }]
+  "title": "Routing",
+  "id": "routing",
+  "sections": [
+    {
+      "id": "routing.main",
+      "title": "Routing Instance Information",
+      "fields": [
+        {
+          "id": "authority.router.routing.type",
+          "label": "Type"
+        },
+        {
+          "id": "authority.router.routing.description",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "id": "routing.interfaces",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "routing-interface",
+          "id": "authority.router.routing.interface",
+          "label": "Routing Interfaces"
+        }
+      ]
+    },
+    {
+      "id": "routing.protocols",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "routing-protocol",
+          "id": "authority.router.routing.routing-protocol",
+          "label": "BGP"
+        }
+      ]
+    },
+    {
+      "id": "routing-protocol.ospf",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "routing-protocol-ospf",
+          "id": "authority.router.routing.ospf",
+          "label": "OSPF"
+        }
+      ]
+    },
+    {
+      "id": "routing.static-routes",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "static-route",
+          "id": "authority.router.routing.static-route",
+          "label": "Static Routes"
+        }
+      ]
+    }
+  ]
 }

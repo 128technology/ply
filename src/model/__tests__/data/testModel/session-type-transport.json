@@ -1,21 +1,28 @@
 {
-    "title": "Session Type Transport",
-    "id": "session-type-transport",
-    "sections": [{
-        "id": "session-type-transport.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.session-type.transport.protocol",
-            "label": "Protocol"
-        }]
-    }, {
-        "id": "session-type-transport.ports",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "session-type-transport-ports",
-            "id": "authority.session-type.transport.port-range",
-            "label": "Port Ranges"
-        }]
-    }]
+  "title": "Session Type Transport",
+  "id": "session-type-transport",
+  "sections": [
+    {
+      "id": "session-type-transport.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.session-type.transport.protocol",
+          "label": "Protocol"
+        }
+      ]
+    },
+    {
+      "id": "session-type-transport.ports",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "session-type-transport-ports",
+          "id": "authority.session-type.transport.port-range",
+          "label": "Port Ranges"
+        }
+      ]
+    }
+  ]
 }

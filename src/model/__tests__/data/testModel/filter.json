@@ -1,24 +1,32 @@
 {
-    "title": "Filter",
-    "id": "filter",
-    "sections": [{
-        "id": "filter.main",
-        "title": "Basic Configuration",
-        "fields": [{
-            "id": "authority.routing.filter.type",
-            "label": "Type"
-        }, {
-            "id": "authority.routing.filter.name",
-            "label": "Name"
-        }]
-    }, {
-        "id": "filter.rules",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "rule",
-            "id": "authority.routing.filter.rule",
-            "label": "Rules"
-        }]
-    }]
+  "title": "Filter",
+  "id": "filter",
+  "sections": [
+    {
+      "id": "filter.main",
+      "title": "Basic Configuration",
+      "fields": [
+        {
+          "id": "authority.routing.filter.name",
+          "label": "Name"
+        },
+        {
+          "id": "authority.routing.filter.type",
+          "label": "Type"
+        }
+      ]
+    },
+    {
+      "id": "filter.rules",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "rule",
+          "id": "authority.routing.filter.rule",
+          "label": "Rules"
+        }
+      ]
+    }
+  ]
 }

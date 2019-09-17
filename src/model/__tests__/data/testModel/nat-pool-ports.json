@@ -1,0 +1,45 @@
+{
+  "title": "NAT Pool Ports",
+  "id": "nat-pool-ports",
+  "sections": [
+    {
+      "id": "nat-pool.nat-port.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.nat-pool.address-pool.address",
+          "label": "IP Prefix"
+        }
+      ]
+    },
+    {
+      "id": "nat-pool.nat-port.port-range",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "nat-pool-ports-range",
+          "id": "authority.router.nat-pool.address-pool.port-range",
+          "label": "Port Ranges"
+        }
+      ]
+    },
+    {
+      "id": "authority.router.nat-pool.address-pool.tenant-name",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.nat-pool.address-pool.tenant-name",
+          "label": "Tenant Name",
+          "columnLabels": [
+            {
+              "id": "tenant-name",
+              "label": "Tenant Name"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

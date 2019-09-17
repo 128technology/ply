@@ -1,15 +1,20 @@
 {
   "title": "Network To Advertise Into BGP",
   "id": "network",
-  "sections": [{
-    "id": "network.main",
-    "title": "Basic Information",
-    "fields": [{
-      "id": "authority.router.routing.routing-protocol.address-family.network.network-address",
-      "label": "Network Address"
-    }, {
-      "id": "authority.router.routing.routing-protocol.address-family.network.policy",
-      "label": "Policy"
-    }]
-  }]
+  "sections": [
+    {
+      "id": "network.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.routing.routing-protocol.address-family.network.network-address",
+          "label": "Network Address"
+        },
+        {
+          "id": "authority.router.routing.routing-protocol.address-family.network.policy",
+          "label": "Policy"
+        }
+      ]
+    }
+  ]
 }

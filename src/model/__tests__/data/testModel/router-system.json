@@ -1,138 +1,212 @@
 {
-    "title": "Router System Settings",
-    "id": "router-system",
-    "sections": [{
-        "id": "router-system.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.router.system.contact",
-            "label": "System Contact"
-        }, {
-            "id": "authority.router.system.log-level",
-            "label": "Log Level"
-        }, {
-            "id": "authority.router.system.inactivity-timer",
-            "label": "Inactivity Timer"
-        }]
-    }, {
-        "id": "router-system.log-category",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "router-system-log-category",
-            "id": "authority.router.system.log-category",
-            "label": "Log Categories"
-        }]
-    }, {
-        "id": "router-system.ntp",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "router-system-ntp-server-address",
-            "id": "authority.router.system.ntp.server",
-            "label": "NTP Servers"
-        }]
-    }, {
-        "id": "router-system.metrics",
-        "title": "Metrics Settings",
-        "fields": [{
-            "id": "authority.router.system.metrics.sample-period",
-            "label": "Metric Collection Sample Period"
-        }]
-    }, {
-        "id": "router-system.syslog",
-        "title": "Syslog Settings",
-        "fields": [{
-            "id": "authority.router.system.syslog.severity",
-            "label": "Log Level"
-        }, {
-            "id": "authority.router.system.syslog.facility",
-            "label": "Facility"
-        }]
-    }, {
-        "id": "router-system.syslog-server",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "router-system-syslog-server",
-            "id": "authority.router.system.syslog.server",
-            "label": "Syslog Servers"
-        }]
-    }, {
-        "id": "router-system.audit",
-        "title": "Audit Settings",
-        "fields": [{
-            "id": "authority.router.system.audit.traffic.enabled",
-            "label": "Traffic Event Auditing"
-        }, {
-            "id": "authority.router.system.audit.administration.enabled",
-            "label": "Administration Event Auditing"
-        }, {
-            "id": "authority.router.system.audit.system.enabled",
-            "label": "System Event Auditing"
-        }]
-    }, {
-        "id": "router-system.snmp-server",
-        "title": "SNMP Server Settings",
-        "fields": [{
-            "id": "authority.router.system.services.snmp-server.enabled",
-            "label": "Enable SNMP Server"
-        }, {
-            "id": "authority.router.system.services.snmp-server.version",
-            "label": "SNMP Protocol Version"
-        }, {
-            "id": "authority.router.system.services.snmp-server.port",
-            "label": "SNMP Server Port"
-        }]
-    }, {
-        "id": "router-system.snmp-server-access-control",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "router-system-snmp-server-access-control",
-            "id": "authority.router.system.services.snmp-server.access-control",
-            "label": "SNMP Access Control Policies"
-        }]
-    }, {
-        "id": "router-system.snmp-server-notification-receiver",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "router-system-snmp-server-notification-receiver",
-            "id": "authority.router.system.services.snmp-server.notification-receiver",
-            "label": "SNMP Notification Receivers"
-        }]
-    }, {
-        "id": "router-system.webserver",
-        "title": "Web server & REST API Settings",
-        "fields": [{
-            "id": "authority.router.system.services.webserver.enabled",
-            "label": "Enable Web Server & REST API"
-        }, {
-            "id": "authority.router.system.services.webserver.port",
-            "label": "Web Server & REST API Port"
-        }]
-    }, {
-        "id": "router-system.servers",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "router-system-services-webserver-servers",
-            "id": "authority.router.system.services.webserver.server",
-            "label": "Web Server & REST API Addresses"
-        }]
-    }, {
-        "id": "router.software-update",
-        "title": "Software Update Settings",
-        "fields": [{
-            "id": "authority.router.system.software-update.repository.source-type",
-            "label": "Software Repository Source Type"
-        }, {
-            "id": "authority.router.system.software-update.repository.address",
-            "label": "Software Repository Address"
-        }, {
-            "id": "authority.router.system.software-update.max-bandwidth",
-            "label": "Software Update Max Bandwidth"
-        }]
-    }]
+  "title": "Router System Settings",
+  "id": "router-system",
+  "sections": [
+    {
+      "id": "router-system.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.system.contact",
+          "label": "System Contact"
+        },
+        {
+          "id": "authority.router.system.log-level",
+          "label": "Log Level"
+        },
+        {
+          "id": "authority.router.system.inactivity-timer",
+          "label": "Inactivity Timer"
+        }
+      ]
+    },
+    {
+      "id": "router-system.log-category",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "router-system-log-category",
+          "id": "authority.router.system.log-category",
+          "label": "Log Categories"
+        }
+      ]
+    },
+    {
+      "id": "router-system.ntp",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "router-system-ntp-server-address",
+          "id": "authority.router.system.ntp.server",
+          "label": "NTP Servers"
+        }
+      ]
+    },
+    {
+      "id": "router-system.metrics",
+      "title": "Metrics Settings",
+      "fields": [
+        {
+          "id": "authority.router.system.metrics.sample-period",
+          "label": "Metric Collection Sample Period"
+        }
+      ]
+    },
+    {
+      "id": "router-system.syslog",
+      "title": "Syslog Settings",
+      "fields": [
+        {
+          "id": "authority.router.system.syslog.severity",
+          "label": "Log Level"
+        },
+        {
+          "id": "authority.router.system.syslog.facility",
+          "label": "Facility"
+        }
+      ]
+    },
+    {
+      "id": "router-system.syslog-server",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "router-system-syslog-server",
+          "id": "authority.router.system.syslog.server",
+          "label": "Syslog Servers"
+        }
+      ]
+    },
+    {
+      "id": "router-system.audit",
+      "title": "Audit Settings",
+      "fields": [
+        {
+          "id": "authority.router.system.audit.traffic.enabled",
+          "label": "Traffic Event Auditing"
+        },
+        {
+          "id": "authority.router.system.audit.administration.enabled",
+          "label": "Administration Event Auditing"
+        },
+        {
+          "id": "authority.router.system.audit.system.enabled",
+          "label": "System Event Auditing"
+        }
+      ]
+    },
+    {
+      "id": "router-system.snmp-server",
+      "title": "SNMP Server Settings",
+      "fields": [
+        {
+          "id": "authority.router.system.services.snmp-server.enabled",
+          "label": "Enable SNMP Server"
+        },
+        {
+          "id": "authority.router.system.services.snmp-server.version",
+          "label": "SNMP Protocol Version"
+        },
+        {
+          "id": "authority.router.system.services.snmp-server.port",
+          "label": "SNMP Server Port"
+        }
+      ]
+    },
+    {
+      "id": "router-system.snmp-server-notification-receiver",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "router-system-snmp-server-notification-receiver",
+          "id": "authority.router.system.services.snmp-server.notification-receiver",
+          "label": "SNMP Notification Receivers"
+        }
+      ]
+    },
+    {
+      "id": "router-system.snmp-server-access-control",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "router-system-snmp-server-access-control",
+          "id": "authority.router.system.services.snmp-server.access-control",
+          "label": "SNMP Access Control Policies"
+        }
+      ]
+    },
+    {
+      "id": "router-system.webserver",
+      "title": "Web server & REST API Settings",
+      "fields": [
+        {
+          "id": "authority.router.system.services.webserver.enabled",
+          "label": "Enable Web Server & REST API"
+        },
+        {
+          "id": "authority.router.system.services.webserver.port",
+          "label": "Web Server & REST API Port"
+        }
+      ]
+    },
+    {
+      "id": "router-system.servers",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "router-system-services-webserver-servers",
+          "id": "authority.router.system.services.webserver.server",
+          "label": "Web Server & REST API Addresses"
+        }
+      ]
+    },
+    {
+      "id": "router.remote-login",
+      "title": "Remote Login",
+      "fields": [
+        {
+          "id": "authority.router.system.remote-login.enabled",
+          "label": "Remote Login State"
+        }
+      ]
+    },
+    {
+      "id": "router.local-login",
+      "title": "Local Login",
+      "fields": [
+        {
+          "id": "authority.router.system.local-login.netconf.session-limit",
+          "label": "Local Netconf Login Session Limit"
+        },
+        {
+          "id": "authority.router.system.local-login.netconf.session-limit-action",
+          "label": "Local Netconf Login Session Limit Action"
+        }
+      ]
+    },
+    {
+      "id": "router.software-update",
+      "title": "Software Update Settings",
+      "fields": [
+        {
+          "id": "authority.router.system.software-update.repository.source-type",
+          "label": "Software Repository Source Type"
+        },
+        {
+          "id": "authority.router.system.software-update.repository.address",
+          "label": "Software Repository Address"
+        },
+        {
+          "id": "authority.router.system.software-update.max-bandwidth",
+          "label": "Software Update Max Bandwidth"
+        }
+      ]
+    }
+  ]
 }

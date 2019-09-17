@@ -1,21 +1,28 @@
 {
-    "title": "Policy",
-    "id": "policy",
-    "sections": [{
-        "id": "policy.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.routing.policy.name",
-            "label": "Name"
-        }]
-    }, {
-        "id": "policy.statements",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "statement",
-            "id": "authority.routing.policy.statement",
-            "label": "Statements"
-        }]
-    }]
+  "title": "Policy",
+  "id": "policy",
+  "sections": [
+    {
+      "id": "policy.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.routing.policy.name",
+          "label": "Name"
+        }
+      ]
+    },
+    {
+      "id": "policy.statements",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "statement",
+          "id": "authority.routing.policy.statement",
+          "label": "Statements"
+        }
+      ]
+    }
+  ]
 }

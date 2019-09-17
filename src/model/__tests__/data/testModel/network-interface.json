@@ -1,122 +1,249 @@
 {
-    "title": "Network Interface",
-    "id": "network-interface",
-    "sections": [{
-        "id": "network-interface.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.router.node.device-interface.network-interface.name",
-            "label": "Name"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.global-id",
-            "label": "Global ID"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.description",
-            "label": "Description"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.vlan",
-            "label": "VLAN"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.type",
-            "label": "Type"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.control",
-            "label": "Control"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.conductor",
-            "label": "Conductor"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.default-route",
-            "label": "Default Route"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.tenant",
-            "label": "Tenant"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.inter-router-security",
-            "label": "Security Policy"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.dhcp",
-            "label": "DHCP"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.hostname",
-            "label": "Hostname"
-        }]
-    }, {
-        "id": "network-interface.settings",
-        "title": "Network Interface Settings",
-        "fields": [{
-            "id": "authority.router.node.device-interface.network-interface.rewrite-dscp",
-            "label": "Rewrite DSCP"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.prioritization-mode",
-            "label": "Prioritization Mode"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.dscp-map",
-            "label": "DSCP Map"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.classify",
-            "label": "Enable Packet Classification"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.source-nat",
-            "label": "Source NAT"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.icmp",
-            "label": "Allow ICMP"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.qp-value",
-            "label": "QP Value"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.mtu",
-            "label": "MTU"
-        }, {
-            "id": "authority.router.node.device-interface.network-interface.enforced-mss",
-            "label": "Enforced-MSS"
-        }]
-    }, {
-        "id": "network-interface.addresses",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "address",
-            "id": "authority.router.node.device-interface.network-interface.address",
-            "label": "Interface Addresses"
-        }]
-    }, {
-        "id": "network-interface.neighborhoods",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "neighborhood",
-            "id": "authority.router.node.device-interface.network-interface.neighborhood",
-            "label": "Neighborhoods"
-        }]
-    }, {
-        "id": "network-interface.neighbors",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "network-interface-neighbor",
-            "id": "authority.router.node.device-interface.network-interface.neighbor",
-            "label": "Neighbors"
-        }]
-    }, {
-        "id": "network-interface.adjacency",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "adjacency",
-            "id": "authority.router.node.device-interface.network-interface.adjacency",
-            "label": "Adjacencies",
-            "columns": ["ip-address", "peer", "external-nat-address"]
-        }]
-    }, {
-        "id": "network-interface.host-service",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "network-interface-host-service",
-            "id": "authority.router.node.device-interface.network-interface.host-service",
-            "label": "Host Services"
-        }]
-    }]
+  "title": "Network Interface",
+  "id": "network-interface",
+  "sections": [
+    {
+      "id": "network-interface.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.name",
+          "label": "Name"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.global-id",
+          "label": "Global ID"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.description",
+          "label": "Description"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.vlan",
+          "label": "VLAN"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.type",
+          "label": "Type"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.conductor",
+          "label": "Conductor"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.default-route",
+          "label": "Default Route"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.tenant",
+          "label": "Tenant"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.inter-router-security",
+          "label": "Security Policy"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.dhcp",
+          "label": "DHCP"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.hostname",
+          "label": "Hostname"
+        }
+      ]
+    },
+    {
+      "id": "network-interface.settings",
+      "title": "Network Interface Settings",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.rewrite-dscp",
+          "label": "Rewrite DSCP"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.prioritization-mode",
+          "label": "Prioritization Mode"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.dscp-map",
+          "label": "DSCP Map"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.source-nat",
+          "label": "Source NAT"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.ingress-source-nat-pool",
+          "label": "Ingress Source Nat Pool"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.egress-source-nat-pool",
+          "label": "Egress Source Nat Pool"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.icmp",
+          "label": "Allow ICMP"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.multicast-listeners",
+          "label": "Multicast Listeners"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.multicast-report-proxy",
+          "label": "Multicast Report Proxy"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.qp-value",
+          "label": "QP Value"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.mtu",
+          "label": "MTU"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.enforced-mss",
+          "label": "Enforced-MSS"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.prefix-delegation",
+          "label": "Prefix Delegation"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.prefix-delegation-group",
+          "label": "Prefix Delegation Group"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.prefix-delegation-subnet-id",
+          "label": "Prefix Delegation Subnet ID"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.router-advertisement",
+          "label": "Router Advertisement"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.prefix-delegation-authentication",
+          "label": "Prefix Delegation Authentication"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.dhcp-reconfig-auth-algorithm",
+          "label": "DHCP Reconfigure Key Authentication Algorithm"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.dhcp-delayed-auth-realm",
+          "label": "DHCP Delayed Authentication Realm"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.dhcp-delayed-auth-key-id",
+          "label": "DHCP Delayed Authentication Key ID"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.dhcp-delayed-auth-key",
+          "label": "DHCP Delayed Authentication Key"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.management-vector.name",
+          "label": "Management vector name"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.management-vector.priority",
+          "label": "Management vector priority"
+        }
+      ]
+    },
+    {
+      "id": "network-interface.vrrp",
+      "title": "Network Interface VRRP Settings",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.vrrp.enabled",
+          "label": "Enabled"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.vrrp.vrid",
+          "label": "Virtual Router ID"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.vrrp.priority",
+          "label": "Priority"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.vrrp.advertisement-interval",
+          "label": "Advertisement Interval"
+        }
+      ]
+    },
+    {
+      "id": "network-interface.addresses",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "address",
+          "id": "authority.router.node.device-interface.network-interface.address",
+          "label": "Interface Addresses"
+        }
+      ]
+    },
+    {
+      "id": "network-interface.neighborhoods",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "neighborhood",
+          "id": "authority.router.node.device-interface.network-interface.neighborhood",
+          "label": "Neighborhoods"
+        }
+      ]
+    },
+    {
+      "id": "network-interface.neighbors",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "network-interface-neighbor",
+          "id": "authority.router.node.device-interface.network-interface.neighbor",
+          "label": "Neighbors"
+        }
+      ]
+    },
+    {
+      "id": "network-interface.adjacency",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "adjacency",
+          "id": "authority.router.node.device-interface.network-interface.adjacency",
+          "label": "Adjacencies",
+          "columns": ["ip-address", "peer", "external-nat-address"]
+        }
+      ]
+    },
+    {
+      "id": "network-interface.host-service",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "network-interface-host-service",
+          "id": "authority.router.node.device-interface.network-interface.host-service",
+          "label": "Host Services"
+        }
+      ]
+    },
+    {
+      "id": "network-interface.ifcfg-option",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "ifcfg-option",
+          "id": "authority.router.node.device-interface.network-interface.ifcfg-option",
+          "label": "Ifcfg Option"
+        }
+      ]
+    }
+  ]
 }

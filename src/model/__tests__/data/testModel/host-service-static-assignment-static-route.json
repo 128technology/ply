@@ -1,0 +1,20 @@
+{
+  "title": "Static Route",
+  "id": "host-service-static-assignment-static-route",
+  "sections": [
+    {
+      "id": "web/presentation/edit/host-service-static-assignment-static-route.json.main",
+      "title": "Static Route",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.static-assignment.static-route.destination-address",
+          "label": "Destination Address"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.static-assignment.static-route.gateway",
+          "label": "Gateway"
+        }
+      ]
+    }
+  ]
+}

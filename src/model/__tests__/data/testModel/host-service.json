@@ -1,33 +1,80 @@
 {
   "title": "Host Service",
   "id": "host-service",
-  "sections": [{
-    "id": "host-service.main",
-    "title": "Basic Information",
-    "fields": [{
-      "id": "authority.router.node.device-interface.network-interface.address.host-service.service-type",
-      "label": "Service Type"
-    }, {
-      "id": "authority.router.node.device-interface.network-interface.address.host-service.description",
-      "label": "Description"
-    }]
-  }, {
-    "id": "host-service.transport",
-    "title": null,
-    "type": "list-section",
-    "fields": [{
-        "link": "host-service-transport",
-        "id": "authority.router.node.device-interface.network-interface.address.host-service.transport",
-        "label": "Transport"
-    }]
-  }, {
-    "id": "host-service.access-policy",
-    "title": null,
-    "type": "list-section",
-    "fields": [{
-        "link": "host-service-access-policy",
-        "id": "authority.router.node.device-interface.network-interface.address.host-service.access-policy",
-        "label": "Access Policies"
-    }]
-  }]
+  "sections": [
+    {
+      "id": "host-service.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.service-type",
+          "label": "Service Type"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.description",
+          "label": "Description"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.server-name",
+          "label": "Server Name"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.max-lease-time",
+          "label": "Maximum Lease Time"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.enabled",
+          "label": "Service Status"
+        }
+      ]
+    },
+    {
+      "id": "host-service.transport",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "host-service-transport",
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.transport",
+          "label": "Transport"
+        }
+      ]
+    },
+    {
+      "id": "host-service.access-policy",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "host-service-access-policy",
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.access-policy",
+          "label": "Access Policies"
+        }
+      ]
+    },
+    {
+      "id": "host-service.address-pool",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "host-service-address-pool",
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.address-pool",
+          "label": "Address Pools"
+        }
+      ]
+    },
+    {
+      "id": "host-service.static-assignment",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "host-service-static-assignment",
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.static-assignment",
+          "label": "Static Assignments"
+        }
+      ]
+    }
+  ]
 }

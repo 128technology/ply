@@ -1,15 +1,20 @@
 {
   "title": "Access Policy",
   "id": "host-service-access-policy",
-  "sections": [{
-    "id": "access-policy.main",
-    "title": "Basic Information",
-    "fields": [{
-      "id": "authority.router.node.device-interface.network-interface.address.host-service.access-policy.source",
-      "label": "Source"
-    }, {
-      "id": "authority.router.node.device-interface.network-interface.address.host-service.access-policy.permission",
-      "label": "Permission"
-    }]
-  }]
+  "sections": [
+    {
+      "id": "access-policy.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.access-policy.source",
+          "label": "Source"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.address.host-service.access-policy.permission",
+          "label": "Permission"
+        }
+      ]
+    }
+  ]
 }

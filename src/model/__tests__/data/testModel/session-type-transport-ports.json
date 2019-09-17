@@ -1,15 +1,20 @@
 {
   "title": "Port Range",
   "id": "session-type-transport-ports",
-  "sections": [{
-    "id": "session-type-transport-ports.main",
-    "title": "Start & End Ports",
-    "fields": [{
-      "id": "authority.session-type.transport.port-range.start-port",
-      "label": "Start Port"
-    }, {
-      "id": "authority.session-type.transport.port-range.end-port",
-      "label": "End Port"
-    }]
-  }]
+  "sections": [
+    {
+      "id": "session-type-transport-ports.main",
+      "title": "Start & End Ports",
+      "fields": [
+        {
+          "id": "authority.session-type.transport.port-range.start-port",
+          "label": "Start Port"
+        },
+        {
+          "id": "authority.session-type.transport.port-range.end-port",
+          "label": "End Port"
+        }
+      ]
+    }
+  ]
 }

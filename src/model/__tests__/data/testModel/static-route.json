@@ -1,36 +1,57 @@
 {
-    "title": "Static Route",
-    "id": "static-route",
-    "sections": [{
-        "id": "static-route.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.router.routing.static-route.destination-prefix",
-            "label": "Destination Address"
-        }, {
-            "id": "authority.router.routing.static-route.distance",
-            "label": "Administrative Distance"
-        }, {
-            "id": "authority.router.routing.static-route.description",
-            "label": "Description"
-        }, {
-            "id": "authority.router.routing.static-route.blackhole",
-            "label": "Blackhole"
-        }, {
-            "id": "authority.router.routing.static-route.next-hop-choice",
-            "label": "Next Hop Choice"
-        }]
-    }, {
-        "id": "static-route.next-hop",
-        "title": null,
-        "type": "list-table",
-        "fields": [{
-            "id": "authority.router.routing.static-route.next-hop",
-            "label": "Static Route Next Hop List",
-            "columnLabels": [{
-                "id": "name",
-                "label": "Next Hop"
-            }]
-        }]
-    }]
+  "title": "Static Route",
+  "id": "static-route",
+  "sections": [
+    {
+      "id": "static-route.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.routing.static-route.destination-prefix",
+          "label": "Destination Address"
+        },
+        {
+          "id": "authority.router.routing.static-route.distance",
+          "label": "Administrative Distance"
+        },
+        {
+          "id": "authority.router.routing.static-route.description",
+          "label": "Description"
+        },
+        {
+          "id": "authority.router.routing.static-route.next-hop-choice",
+          "label": "Next Hop Choice"
+        }
+      ]
+    },
+    {
+      "id": "static-route.next-hop",
+      "title": null,
+      "type": "list-table",
+      "fields": [
+        {
+          "id": "authority.router.routing.static-route.next-hop",
+          "label": "Static Route Next Hop List",
+          "columnLabels": [
+            {
+              "id": "name",
+              "label": "Next Hop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "static-route.next-hop-interfaces",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "static-route-next-hop-interfaces",
+          "id": "authority.router.routing.static-route.next-hop-interface",
+          "label": "Next Hop Interfaces"
+        }
+      ]
+    }
+  ]
 }

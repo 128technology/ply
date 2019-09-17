@@ -1,27 +1,36 @@
 {
-    "title": "Redundancy Group",
-    "id": "redundancy-group",
-    "sections": [{
-        "id": "redundancy-group.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.router.redundancy-group.name",
-            "label": "Name"
-        }, {
-            "id": "authority.router.redundancy-group.priority",
-            "label": "Priority"
-        }, {
-            "id": "authority.router.redundancy-group.description",
-            "label": "Description"
-        }]
-    }, {
-        "id": "redundancy-group.members",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "redundancy-group-member",
-            "id": "authority.router.redundancy-group.member",
-            "label": "Group Members"
-        }]
-    }]
+  "title": "Redundancy Group",
+  "id": "redundancy-group",
+  "sections": [
+    {
+      "id": "redundancy-group.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.redundancy-group.name",
+          "label": "Name"
+        },
+        {
+          "id": "authority.router.redundancy-group.priority",
+          "label": "Priority"
+        },
+        {
+          "id": "authority.router.redundancy-group.description",
+          "label": "Description"
+        }
+      ]
+    },
+    {
+      "id": "redundancy-group.members",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "redundancy-group-member",
+          "id": "authority.router.redundancy-group.member",
+          "label": "Group Members"
+        }
+      ]
+    }
+  ]
 }

@@ -45,7 +45,7 @@ describe('Choice Field Model', () => {
     expect(field.serialize()).to.deep.equal({
       deprecated: false,
       emptyCases: {
-        'to-routing-agent': 'to-routing-agent',
+        'routing-stack': 'routing-stack',
         'use-learned-routes': 'use-learned-routes'
       },
       enumerations: [
@@ -53,7 +53,8 @@ describe('Choice Field Model', () => {
         'peer-service-route',
         'next-peer-service-route',
         'use-learned-routes',
-        'to-routing-agent'
+        'routing-stack',
+        'host'
       ],
       id: 'authority.router.service-route.type',
       kind: 'choice',

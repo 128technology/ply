@@ -1,33 +1,44 @@
 {
-    "title": "Tenant",
-    "id": "tenant",
-    "sections": [{
-        "id": "tenant.main",
-        "title": "Basic Information",
-        "fields": [{
-            "id": "authority.tenant.name",
-            "label": "Name"
-        }, {
-            "id": "authority.tenant.id",
-            "label": "Tenant ID"
-        }, {
-            "id": "authority.tenant.description",
-            "label": "Description"
-        }, {
-            "id": "authority.tenant.security",
-            "label": "Security Policy"
-        }, {
+  "title": "Tenant",
+  "id": "tenant",
+  "sections": [
+    {
+      "id": "tenant.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.tenant.name",
+          "label": "Name"
+        },
+        {
+          "id": "authority.tenant.id",
+          "label": "Tenant ID"
+        },
+        {
+          "id": "authority.tenant.description",
+          "label": "Description"
+        },
+        {
+          "id": "authority.tenant.security",
+          "label": "Security Policy"
+        },
+        {
           "id": "authority.tenant.generated",
           "label": "Auto-generated"
-        }]
-    }, {
-        "id": "tenant.members",
-        "title": null,
-        "type": "list-section",
-        "fields": [{
-            "link": "tenant-members",
-            "id": "authority.tenant.member",
-            "label": "Tenant Members"
-        }]
-    }]
+        }
+      ]
+    },
+    {
+      "id": "tenant.members",
+      "title": null,
+      "type": "list-section",
+      "fields": [
+        {
+          "link": "tenant-members",
+          "id": "authority.tenant.member",
+          "label": "Tenant Members"
+        }
+      ]
+    }
+  ]
 }

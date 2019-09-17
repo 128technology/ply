@@ -1,0 +1,20 @@
+{
+  "title": "Ifcfg Option",
+  "id": "ifcfg-option",
+  "sections": [
+    {
+      "id": "ifcfg-option.main",
+      "title": "Basic Information",
+      "fields": [
+        {
+          "id": "authority.router.node.device-interface.network-interface.ifcfg-option.name",
+          "label": "Ifcfg option name"
+        },
+        {
+          "id": "authority.router.node.device-interface.network-interface.ifcfg-option.value",
+          "label": "Ifcfg option value"
+        }
+      ]
+    }
+  ]
+}
