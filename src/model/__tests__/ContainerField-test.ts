@@ -5,7 +5,7 @@ import TestPresentationModel from './data/testPresentationModel';
 
 describe('Container/Link Field Model', () => {
   it('serializes a basic container/link', () => {
-    const field = TestPresentationModel.getFieldForID('authority');
+    const field = TestPresentationModel.getFieldForID('authority')!;
 
     expect(field.serialize()).to.deep.equal({
       deprecated: false,

@@ -4,7 +4,7 @@ import TestPresentationModel from './data/testPresentationModel';
 
 describe('Leaf List Field Model', () => {
   it('serializes a basic leaf list', () => {
-    const field = TestPresentationModel.getFieldForID('authority.router.administrative-group');
+    const field = TestPresentationModel.getFieldForID('authority.router.administrative-group')!;
 
     expect(field.serialize()).to.deep.equal({
       columnLabels: [

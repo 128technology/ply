@@ -11,7 +11,7 @@ const { LeafRefType, DerivedType } = Types;
 const FAKE_KEY = 'XXX_FAKE_KEY_VALUE_XXX';
 
 interface IGenericObj {
-  [index: string]: string;
+  [index: string]: string | null;
 }
 
 export default class ListFieldInstance implements Pluggable, Child {
@@ -43,7 +43,7 @@ export default class ListFieldInstance implements Pluggable, Child {
       const references: string[] = [];
       const suggestions: string[] = [];
       const fakePath = this.getFakePath(model.name);
-      let enumerations: string[];
+      let enumerations: string[] | undefined;
 
       if (model instanceof Leaf && model.getResolvedType() instanceof LeafRefType) {
         enumerations = [];

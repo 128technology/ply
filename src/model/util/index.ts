@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 import { DataModel, List, Choice, Leaf, LeafList, Container } from '@128technology/yinz';
 
-import { LeafField, ListField, ChoiceField, LeafListField, ContainerField, Field, Section } from '../';
+import { LeafField, ListField, ChoiceField, LeafListField, ContainerField, Section } from '../';
 
 export function buildField(fieldDef: any, parent: Section, dataModel: DataModel) {
   const { id } = fieldDef;

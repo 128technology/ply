@@ -66,7 +66,7 @@ export default class Page {
   }
 
   public getKeyNames() {
-    const keyNames = new Set();
+    const keyNames: Set<string> = new Set();
 
     this.sections.forEach(section => {
       section.fields.forEach(field => {

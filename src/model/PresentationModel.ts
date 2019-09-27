@@ -35,7 +35,7 @@ export default class PresentationModel {
 
   public getPage(id: string) {
     if (this.pages.has(id)) {
-      return this.pages.get(id);
+      return this.pages.get(id)!;
     } else {
       throw new Error(
         `Page ${id} not found. Did you mean one of the following: ${Array.from(this.pages.keys()).join(', ')}?`
@@ -77,7 +77,7 @@ export default class PresentationModel {
 
   public getFieldForID(id: string) {
     if (this.fieldRegistry.has(id)) {
-      return this.fieldRegistry.get(id);
+      return this.fieldRegistry.get(id)!;
     } else {
       throw new Error(`Field for ${id} not found.`);
     }
@@ -87,7 +87,7 @@ export default class PresentationModel {
     const { id } = page;
 
     if (this.linkRegistry.has(id)) {
-      return this.linkRegistry.get(id);
+      return this.linkRegistry.get(id)!;
     } else {
       return null;
     }

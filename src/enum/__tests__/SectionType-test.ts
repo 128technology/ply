@@ -9,9 +9,9 @@ describe('Section Types', () => {
     expect(val).to.equal(SectionType.leafSection);
   });
 
-  it('should get enum value null for no match', () => {
-    const val = enumValueOf('moo');
+  it('should throw for no match', () => {
+    const shouldThrow = () => enumValueOf('moo');
 
-    expect(val).to.equal(null);
+    expect(shouldThrow).to.throw();
   });
 });

@@ -70,7 +70,7 @@ export default class SectionInstance implements Child, Pluggable {
       .map(({ field, path }) => {
         // Choices don't exist in the response, look for its parent
         const searchPath = field instanceof ChoiceField ? _.initial(path) : path;
-        let instanceData = null;
+        let instanceData: Instance;
 
         const noMatchHandler = (stopInstance: Instance, remaining: Path) => {
           if (_.find(remaining, 'keys')) {
@@ -90,7 +90,7 @@ export default class SectionInstance implements Child, Pluggable {
           }
         }
 
-        return { field, path, instanceData };
+        return { field, path, instanceData: instanceData! };
       })
       .map(({ field, path, instanceData }) => buildField(field, this, instanceData, path));
   }

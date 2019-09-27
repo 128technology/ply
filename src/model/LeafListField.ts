@@ -10,7 +10,7 @@ import { SectionType, ErrorLevel } from '../enum';
 
 export default class LeafListField implements Field {
   public model: LeafList;
-  public columnLabels: IColumnLabel[];
+  public columnLabels?: IColumnLabel[];
   public id: string;
   public label: string;
   public customComponent: string;

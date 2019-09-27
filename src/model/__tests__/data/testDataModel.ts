@@ -7,7 +7,7 @@ import { DataModel } from '@128technology/yinz';
 const modelXml = fs.readFileSync(path.join(__dirname, './/consolidatedT128Model.xml'), 'utf8');
 
 const dataModel = new DataModel({
-  modelElement: xml.parseXmlString(modelXml).root(),
+  modelElement: xml.parseXmlString(modelXml).root()!,
   rootPath: '//yin:container[@name="authority"]'
 });
 

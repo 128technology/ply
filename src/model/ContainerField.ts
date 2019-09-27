@@ -50,7 +50,7 @@ export default class ContainerField implements Field {
   public resolveLink(): Page {
     const model = this.parent.parent.parent;
     if (model.pages.has(this.link)) {
-      return model.pages.get(this.link);
+      return model.pages.get(this.link)!;
     } else {
       throw new Error(
         `Field ${this.id} on page ${this.parent.parent.id} has a link to non-existant page ${this.link}.`
