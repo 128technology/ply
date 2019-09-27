@@ -1,7 +1,4 @@
 import * as _ from 'lodash';
-import { DataModelInstance } from '@128technology/yinz';
-
-import { PresentationModelInstance } from '../';
 
 export type IPlugin = (instance: any, serialized: any) => any;
 

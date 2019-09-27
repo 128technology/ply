@@ -4,7 +4,7 @@ import TestPresentationModel from './data/testPresentationModel';
 
 describe('Leaf Field Model', () => {
   it('serializes a basic leaf', () => {
-    const field = TestPresentationModel.getFieldForID('authority.name');
+    const field = TestPresentationModel.getFieldForID('authority.name')!;
 
     expect(field.serialize()).to.deep.equal({
       deprecated: false,
@@ -22,7 +22,7 @@ describe('Leaf Field Model', () => {
   });
 
   it('serializes a field with enumerations', () => {
-    const field = TestPresentationModel.getFieldForID('authority.router.node.device-interface.type');
+    const field = TestPresentationModel.getFieldForID('authority.router.node.device-interface.type')!;
 
     expect(field.serialize()).to.deep.equal({
       default: 'ethernet',
@@ -42,7 +42,7 @@ describe('Leaf Field Model', () => {
   });
 
   it('serializes a union field with enumerations and a boolean', () => {
-    const field = TestPresentationModel.getFieldForID('authority.router.system.remote-login.enabled');
+    const field = TestPresentationModel.getFieldForID('authority.router.system.remote-login.enabled')!;
 
     expect(field.serialize()).to.deep.equal({
       default: 'use-authority-setting',
@@ -62,7 +62,7 @@ describe('Leaf Field Model', () => {
   });
 
   it('serializes a field with units', () => {
-    const field = TestPresentationModel.getFieldForID('authority.router.bfd.desired-tx-interval');
+    const field = TestPresentationModel.getFieldForID('authority.router.bfd.desired-tx-interval')!;
 
     expect(field.serialize().units).to.equal('milliseconds');
   });

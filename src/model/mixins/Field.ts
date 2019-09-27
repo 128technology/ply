@@ -19,7 +19,7 @@ function isUpperCase(character: string) {
 export default class Field {
   public id: string;
   public label: string;
-  public customComponent: string;
+  public customComponent?: string;
   public parent: Section;
   public type: string;
   public default: string;

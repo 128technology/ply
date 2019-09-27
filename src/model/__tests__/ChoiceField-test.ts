@@ -4,7 +4,7 @@ import TestPresentationModel from './data/testPresentationModel';
 
 describe('Choice Field Model', () => {
   it('serializes a basic choice', () => {
-    const field = TestPresentationModel.getFieldForID('authority.dscp-map.prioritization-method');
+    const field = TestPresentationModel.getFieldForID('authority.dscp-map.prioritization-method')!;
 
     expect(field.serialize()).to.deep.equal({
       deprecated: false,
@@ -21,7 +21,7 @@ describe('Choice Field Model', () => {
   });
 
   it('serializes choice with an obsolete case', () => {
-    const field = TestPresentationModel.getFieldForID('authority.router.routing.static-route.next-hop-choice');
+    const field = TestPresentationModel.getFieldForID('authority.router.routing.static-route.next-hop-choice')!;
 
     expect(field.serialize()).to.deep.equal({
       deprecated: false,
@@ -40,7 +40,7 @@ describe('Choice Field Model', () => {
   });
 
   it('serializes a choice with empty cases', () => {
-    const field = TestPresentationModel.getFieldForID('authority.router.service-route.type');
+    const field = TestPresentationModel.getFieldForID('authority.router.service-route.type')!;
 
     expect(field.serialize()).to.deep.equal({
       deprecated: false,

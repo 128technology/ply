@@ -4,7 +4,7 @@ import TestPresentationModel from './data/testPresentationModel';
 
 describe('List Field Model', () => {
   it('serializes a basic list', () => {
-    const field = TestPresentationModel.getFieldForID('authority.router');
+    const field = TestPresentationModel.getFieldForID('authority.router')!;
 
     expect(field.serialize()).to.deep.equal({
       deprecated: false,
@@ -95,7 +95,7 @@ describe('List Field Model', () => {
   it('serializes a user ordered list', () => {
     const field = TestPresentationModel.getFieldForID(
       'authority.router.node.device-interface.network-interface.neighborhood'
-    );
+    )!;
 
     expect(field.serialize().orderedBy).to.equal('user');
   });

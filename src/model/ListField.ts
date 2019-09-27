@@ -8,7 +8,7 @@ import { IErrorReporter, IErrorLocation, IValidateOptions } from '../validate/Er
 import { SectionType, ErrorLevel } from '../enum';
 
 export default class ListField implements Field {
-  public columns: string[];
+  public columns?: string[];
   public leaves: string[];
   public link: string;
   public model: List;
@@ -59,7 +59,7 @@ export default class ListField implements Field {
   public resolveLink(): Page {
     const model = this.parent.parent.parent;
     if (model.pages.has(this.link)) {
-      return model.pages.get(this.link);
+      return model.pages.get(this.link)!;
     } else {
       throw new Error(
         `Field ${this.id} on page ${this.parent.parent.id} has a link to non-existant page ${this.link}.`
@@ -70,7 +70,7 @@ export default class ListField implements Field {
   public get tableColumns() {
     let tableColumnFilterer;
     if (this.columns) {
-      tableColumnFilterer = (leaf: string) => this.columns.includes(leaf);
+      tableColumnFilterer = (leaf: string) => this.columns!.includes(leaf);
     } else {
       tableColumnFilterer = (leaf: string) => this.model.keys.has(leaf);
     }

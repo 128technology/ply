@@ -10,17 +10,18 @@ import { PresentationModelInstance, SectionInstance, LeafPlugin } from './';
 const { LeafRefType, DerivedType } = Types;
 
 export default class LeafFieldInstance implements Pluggable, Child {
-  public instanceData: LeafInstance;
-  public model: LeafField;
-  public parent: SectionInstance;
-  public path: Path;
-  public plugins: LeafPlugin[];
-  public references: string[] = [];
-  public suggestions: string[] = [];
+  public readonly instanceData: LeafInstance;
+  public readonly model: LeafField;
+  public readonly parent: SectionInstance;
+  public readonly path: Path;
+  public readonly plugins: LeafPlugin[];
 
-  public getDataInstance: () => DataModelInstance;
-  public getPresentationInstance: () => PresentationModelInstance;
-  public applyPlugins: (field: any) => any;
+  public readonly getDataInstance: () => DataModelInstance;
+  public readonly getPresentationInstance: () => PresentationModelInstance;
+  public readonly applyPlugins: (field: any) => any;
+
+  private readonly references?: string[];
+  private readonly suggestions?: string[];
 
   constructor(model: LeafField, parent: SectionInstance, instanceData: LeafInstance, path: Path) {
     this.model = model;
@@ -51,23 +52,23 @@ export default class LeafFieldInstance implements Pluggable, Child {
     return this.instanceData ? this.instanceData.value : null;
   }
 
-  public getInstanceReferences() {
-    return _.uniq(this.references.concat(this.suggestions));
-  }
-
   public serialize(): any {
     const base = this.model.serialize();
 
     let enumerations;
     if (base.enumerations) {
       enumerations = _.uniq(base.enumerations.concat(this.getInstanceReferences()));
-    } else if (this.suggestions.length > 0 || this.references.length > 0) {
+    } else if (this.suggestions || this.references) {
       enumerations = this.getInstanceReferences();
     }
 
     return this.applyPlugins(
       Object.assign({}, base, _.pickBy({ value: this.value, enumerations }, v => !_.isUndefined(v)))
     );
+  }
+
+  private getInstanceReferences() {
+    return _.uniq((this.references || []).concat(this.suggestions || []));
   }
 }
 
