@@ -78,8 +78,8 @@ export default class LeafListField implements Field, WithOptions {
       this.baseSerialize(),
       _.pickBy(
         {
-          enumerations: this.enumerations,
           columnLabels: this.columnLabels,
+          enumerations: this.enumerations,
           orderedBy: this.orderedBy,
           units: this.model.units,
           validation: this.validation
