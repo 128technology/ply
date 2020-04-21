@@ -1,43 +1,43 @@
-import { Leaf, Model, DataModel } from '@128technology/yinz';
+import { Container } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import { Field } from './mixins';
-import { Page, Section, PresentationModel } from './';
-import { IField, IChoice, IContainerField } from './FieldTypes';
-import { IErrorReporter, IErrorLocation, IValidateOptions } from '../validate/ErrorReporter';
+import { Page, Section } from './';
+import { IContainerField } from './FieldTypes';
+import { IErrorReporter, IValidateOptions } from '../validate/ErrorReporter';
 import { ErrorLevel } from '../enum';
 
 export default class ContainerField implements Field {
-  public model: Leaf;
+  public model: Container;
   public link: string;
-  public id: string;
-  public label: string;
-  public customComponent: string;
-  public parent: Section;
-  public type: string;
-  public default: string;
-  public readOnly: boolean;
-  public required: boolean;
-  public visibility: string;
-  public choice: IChoice;
 
-  public addChoice: () => void;
-  public addDefault: () => void;
-  public addFieldProps: (fieldDef: IField, parent: Section) => void;
-  public addReadOnly: () => void;
-  public addRequired: () => void;
-  public addType: () => void;
-  public addVisibility: () => void;
-  public baseSerialize: () => any;
-  public getDataModel: () => DataModel;
-  public getKeyNames: () => string[];
-  public getLocation: () => IErrorLocation;
-  public getLocationDescriptor: () => string;
-  public getPage: () => Page;
-  public getPresentationModel: () => PresentationModel;
-  public resolveModel: () => Model;
-  public translateType: () => string;
-  public baseValidate: (errorReporter: IErrorReporter, options: IValidateOptions) => void;
+  public id: Field['id'];
+  public label: Field['label'];
+  public customComponent: Field['customComponent'];
+  public parent: Field['parent'];
+  public type: Field['type'];
+  public default: Field['default'];
+  public readOnly: Field['readOnly'];
+  public required: Field['required'];
+  public visibility: Field['visibility'];
+  public choice: Field['choice'];
+  public addChoice: Field['addChoice'];
+  public addDefault: Field['addDefault'];
+  public addFieldProps: Field['addFieldProps'];
+  public addReadOnly: Field['addReadOnly'];
+  public addRequired: Field['addRequired'];
+  public addType: Field['addType'];
+  public addVisibility: Field['addVisibility'];
+  public baseSerialize: Field['baseSerialize'];
+  public getDataModel: Field['getDataModel'];
+  public getKeyNames: Field['getKeyNames'];
+  public getLocation: Field['getLocation'];
+  public getLocationDescriptor: Field['getLocationDescriptor'];
+  public getPage: Field['getPage'];
+  public getPresentationModel: Field['getPresentationModel'];
+  public resolveModel: Field['resolveModel'];
+  public translateType: Field['translateType'];
+  public baseValidate: Field['baseValidate'];
 
   constructor(fieldDef: IContainerField, parent: Section) {
     this.addFieldProps(fieldDef, parent);
