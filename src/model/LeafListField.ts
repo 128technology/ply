@@ -1,45 +1,49 @@
 import * as _ from 'lodash';
-import { LeafList, Model, DataModel, OrderedBy } from '@128technology/yinz';
+import { LeafList, OrderedBy } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
-import { Field } from './mixins';
-import { Section, Page, PresentationModel } from './';
-import { IField, IChoice, ILeafListField, IColumnLabel } from './FieldTypes';
-import { IErrorReporter, IErrorLocation, IValidateOptions } from '../validate/ErrorReporter';
+import { Field, WithOptions } from './mixins';
+import { Section } from './';
+import { ILeafListField, IColumnLabel } from './FieldTypes';
+import { IErrorReporter, IValidateOptions } from '../validate/ErrorReporter';
 import { SectionType, ErrorLevel } from '../enum';
 
-export default class LeafListField implements Field {
+export default class LeafListField implements Field, WithOptions {
   public model: LeafList;
   public columnLabels?: IColumnLabel[];
-  public id: string;
-  public label: string;
-  public customComponent: string;
-  public parent: Section;
-  public type: string;
-  public default: string;
-  public readOnly: boolean;
-  public required: boolean;
-  public visibility: string;
-  public choice: IChoice;
   public orderedBy: OrderedBy;
 
-  public addChoice: () => void;
-  public addDefault: () => void;
-  public addFieldProps: (fieldDef: IField, parent: Section) => void;
-  public addReadOnly: () => void;
-  public addRequired: () => void;
-  public addType: () => void;
-  public addVisibility: () => void;
-  public baseSerialize: () => any;
-  public getDataModel: () => DataModel;
-  public getKeyNames: () => string[];
-  public getLocation: () => IErrorLocation;
-  public getLocationDescriptor: () => string;
-  public getPage: () => Page;
-  public getPresentationModel: () => PresentationModel;
-  public resolveModel: () => Model;
-  public translateType: () => string;
-  public baseValidate: (errorReporter: IErrorReporter, options: IValidateOptions) => void;
+  public id: Field['id'];
+  public label: Field['label'];
+  public customComponent: Field['customComponent'];
+  public parent: Field['parent'];
+  public type: Field['type'];
+  public default: Field['default'];
+  public readOnly: Field['readOnly'];
+  public required: Field['required'];
+  public visibility: Field['visibility'];
+  public choice: Field['choice'];
+  public addChoice: Field['addChoice'];
+  public addDefault: Field['addDefault'];
+  public addFieldProps: Field['addFieldProps'];
+  public addReadOnly: Field['addReadOnly'];
+  public addRequired: Field['addRequired'];
+  public addType: Field['addType'];
+  public addVisibility: Field['addVisibility'];
+  public baseSerialize: Field['baseSerialize'];
+  public getDataModel: Field['getDataModel'];
+  public getKeyNames: Field['getKeyNames'];
+  public getLocation: Field['getLocation'];
+  public getLocationDescriptor: Field['getLocationDescriptor'];
+  public getPage: Field['getPage'];
+  public getPresentationModel: Field['getPresentationModel'];
+  public resolveModel: Field['resolveModel'];
+  public translateType: Field['translateType'];
+  public baseValidate: Field['baseValidate'];
+
+  public collectOptions: WithOptions['collectOptions'];
+  public enumerations: WithOptions['enumerations'];
+  public suggestionRefs: WithOptions['suggestionRefs'];
 
   constructor(fieldDef: ILeafListField, parent: Section) {
     this.addFieldProps(fieldDef, parent);
@@ -47,6 +51,7 @@ export default class LeafListField implements Field {
 
     this.columnLabels = fieldDef.columnLabels;
     this.orderedBy = this.model.orderedBy;
+    this.collectOptions();
   }
 
   public get validation() {
@@ -73,6 +78,7 @@ export default class LeafListField implements Field {
       this.baseSerialize(),
       _.pickBy(
         {
+          enumerations: this.enumerations,
           columnLabels: this.columnLabels,
           orderedBy: this.orderedBy,
           units: this.model.units,
@@ -84,4 +90,4 @@ export default class LeafListField implements Field {
   }
 }
 
-applyMixins(LeafListField, [Field]);
+applyMixins(LeafListField, [Field, WithOptions]);

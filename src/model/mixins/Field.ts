@@ -69,7 +69,7 @@ export default class Field {
   }
 
   public getKeyNames() {
-    const keyNames = new Set();
+    const keyNames = new Set<string>();
 
     let currModel = this.model;
     while (currModel.parentModel) {

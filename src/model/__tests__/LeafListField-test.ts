@@ -29,4 +29,32 @@ describe('Leaf List Field Model', () => {
       visibility: 'visible'
     });
   });
+
+  it('serializes a leaf list with enumerations', () => {
+    const field = TestPresentationModel.getFieldForID('authority.router.application-identification.mode')!;
+
+    expect(field.serialize()).to.deep.equal({
+      deprecated: false,
+      description: 'Application learning modes.',
+      id: 'authority.router.application-identification.mode',
+      kind: 'leaf-list',
+      label: 'Application Identification',
+      name: 'mode',
+      readOnly: false,
+      type: 'enumeration',
+      visibility: 'visible',
+      enumerations: ['module', 'tls'],
+      columnLabels: [
+        {
+          id: 'name',
+          label: 'Application Learning Mode'
+        }
+      ],
+      orderedBy: 'system',
+      validation: {
+        maxElements: null,
+        minElements: 0
+      }
+    });
+  });
 });
