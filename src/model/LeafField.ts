@@ -56,44 +56,13 @@ export default class LeafField implements Field {
   public serialize(): any {
     return Object.assign(
       this.baseSerialize(),
-      _.pickBy({ enumerations: this.enumerations, units: this.model.units }, v => !_.isNil(v))
+      _.pickBy({ enumerations: this.enumerations, units: this.model.units }, (v) => !_.isNil(v))
     );
   }
 
   private collectOptions() {
-    const enumerations: string[] = [];
-    const suggestionRefs: string[] = [];
-    let containsBoolean = false;
-
-    const visitType = (aType: Type) => {
-      if (aType instanceof IdentityRefType || aType instanceof EnumerationType) {
-        Array.prototype.push.apply(enumerations, aType.options);
-      } else if (aType instanceof DerivedType) {
-        if (aType.suggestionRefs) {
-          Array.prototype.push.apply(suggestionRefs, aType.suggestionRefs);
-        }
-
-        if (aType.type === 't128ext:qsn') {
-          this.type = 'qsn';
-        }
-      } else if (aType instanceof BooleanType) {
-        containsBoolean = true;
-      }
-    };
-
-    if ('traverse' in this.model.type) {
-      this.model.type.traverse(visitType);
-    } else {
-      visitType(this.model.type);
-    }
-
-    if (enumerations.length > 0) {
-      this.enumerations = containsBoolean ? [...enumerations, 'true', 'false'] : enumerations;
-    }
-
-    if (suggestionRefs.length > 0) {
-      this.suggestionRefs = suggestionRefs;
-    }
+    this.enumerations = [];
+    this.suggestionRefs = [];
   }
 }
 
