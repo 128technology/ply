@@ -1,13 +1,11 @@
 import * as _ from 'lodash';
-import { Types, Type, Leaf, Model, DataModel } from '@128technology/yinz';
+import { Leaf, Model, DataModel } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import { Field } from './mixins';
 import { Section, Page, PresentationModel } from './';
 import { IField, IChoice } from './FieldTypes';
 import { IErrorReporter, IErrorLocation, IValidateOptions } from '../validate/ErrorReporter';
-
-const { EnumerationType, IdentityRefType, DerivedType, BooleanType } = Types;
 
 export default class LeafField implements Field {
   public model: Leaf;
