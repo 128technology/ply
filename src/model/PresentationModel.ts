@@ -24,13 +24,15 @@ export default class PresentationModel {
   constructor(models: any[], dataModel: DataModel) {
     this.dataModel = dataModel;
 
-    this.pages = models.map(model => new Page(model, this)).reduce((acc, page) => {
-      if (acc.has(page.id)) {
-        throw new Error(`Duplicate presentation page detected for ${page.id}`);
-      }
+    this.pages = models
+      .map(model => new Page(model, this))
+      .reduce((acc, page) => {
+        if (acc.has(page.id)) {
+          throw new Error(`Duplicate presentation page detected for ${page.id}`);
+        }
 
-      return acc.set(page.id, page);
-    }, new Map());
+        return acc.set(page.id, page);
+      }, new Map());
   }
 
   public getPage(id: string) {
@@ -97,20 +99,22 @@ export default class PresentationModel {
     const errors: string[] = [];
     const models = Array.from(this.dataModel.modelRegistry.registry.entries());
 
-    models.filter(([_, model]) => !(model instanceof Container)).forEach(modelEntry => {
-      const [id, model] = modelEntry;
-      const fieldInPresentation = this.fieldRegistry.has(id);
+    models
+      .filter(([_, model]) => !(model instanceof Container))
+      .forEach(modelEntry => {
+        const [id, model] = modelEntry;
+        const fieldInPresentation = this.fieldRegistry.has(id);
 
-      if (model.isObsolete) {
-        if (fieldInPresentation) {
-          errors.push(`Field ${id} is present in presentation model but is obsolete in datamodel.`);
+        if (model.isObsolete) {
+          if (fieldInPresentation) {
+            errors.push(`Field ${id} is present in presentation model but is obsolete in datamodel.`);
+          }
+        } else {
+          if (model.isVisible && !fieldInPresentation) {
+            errors.push(`Field ${id} is missing from presentation model.`);
+          }
         }
-      } else {
-        if (model.isVisible && !fieldInPresentation) {
-          errors.push(`Field ${id} is missing from presentation model.`);
-        }
-      }
-    });
+      });
 
     return errors;
   }
