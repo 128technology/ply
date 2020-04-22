@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { DataModel, List, DataModelInstance, Path, Instance } from '@128technology/yinz';
+import { DataModel, List, DataModelInstance, Path, Instance, LeafListChildInstance } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import ContainingListDoesNotExist from './errors/ContainingListDoesNotExistError';
@@ -70,7 +70,6 @@ export default class SectionInstance implements Child, Pluggable {
       .map(({ field, path }) => {
         // Choices don't exist in the response, look for its parent
         const searchPath = field instanceof ChoiceField ? _.initial(path) : path;
-        let instanceData: Instance;
 
         const noMatchHandler = (stopInstance: Instance, remaining: Path) => {
           if (_.find(remaining, 'keys')) {
@@ -80,14 +79,19 @@ export default class SectionInstance implements Child, Pluggable {
           }
         };
 
+        let instanceData: ReturnType<DataModelInstance['getInstance']>;
         try {
-          instanceData = instance.getInstance(searchPath, noMatchHandler);
+          instanceData = instance.getInstance(searchPath, noMatchHandler)!;
         } catch (e) {
           // Field has no data in the instance, this is okay. Continue on.
           // Unless the field is in a list instance that does not exist.
           if (e instanceof ContainingListDoesNotExist) {
             throw e;
           }
+        }
+
+        if (instanceData instanceof LeafListChildInstance) {
+          throw new Error('Fields cannot reference leaf list children.');
         }
 
         return { field, path, instanceData: instanceData! };

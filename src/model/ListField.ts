@@ -79,7 +79,7 @@ export default class ListField implements Field {
       .filter(tableColumnFilterer)
       .map(leaf => this.model.getChild(leaf))
       .filter(x => x instanceof Leaf)
-      .map(keyNode => this.getPresentationModel().getFieldForModel(keyNode) as LeafField);
+      .map((keyNode: Leaf) => this.getPresentationModel().getFieldForModel(keyNode) as LeafField);
   }
 
   public get keys(): LeafField[] {
