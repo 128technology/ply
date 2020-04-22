@@ -58,7 +58,11 @@ export default class LeafListFieldInstance implements Pluggable, Child {
     }
 
     return this.applyPlugins(
-      Object.assign({}, base, _.pickBy({ readOnly, value: this.value, enumerations }, v => !_.isUndefined(v)))
+      Object.assign(
+        {},
+        base,
+        _.pickBy({ readOnly, value: this.value, enumerations }, v => !_.isUndefined(v))
+      )
     );
   }
 

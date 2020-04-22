@@ -73,7 +73,11 @@ export default class ListFieldInstance implements Pluggable, Child {
         enumerations = _.uniq(references.concat(suggestions));
       }
 
-      return Object.assign({}, base, _.pickBy({ enumerations }, v => !_.isUndefined(v)));
+      return Object.assign(
+        {},
+        base,
+        _.pickBy({ enumerations }, v => !_.isUndefined(v))
+      );
     });
   }
 
