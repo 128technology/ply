@@ -1,5 +1,13 @@
 import * as _ from 'lodash';
-import { DataModel, List, DataModelInstance, Path, Instance, LeafListChildInstance } from '@128technology/yinz';
+import {
+  DataModel,
+  List,
+  DataModelInstance,
+  Path,
+  Instance,
+  LeafListChildInstance,
+  Authorized
+} from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import ContainingListDoesNotExist from './errors/ContainingListDoesNotExistError';
@@ -51,10 +59,10 @@ export default class SectionInstance implements Child, Pluggable {
     this.addFields(params);
   }
 
-  public serialize(): any {
+  public serialize(authorized: Authorized): any {
     return this.applyPlugins(
       Object.assign({}, this.model.serialize(false), {
-        fields: this.fields.map(field => field.serialize())
+        fields: this.fields.map(field => field.serialize(authorized))
       })
     );
   }

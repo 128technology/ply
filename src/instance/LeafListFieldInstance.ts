@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { LeafListInstance, DataModelInstance, Path, LeafList, Types } from '@128technology/yinz';
+import { LeafListInstance, DataModelInstance, Path, LeafList, Types, Authorized } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import { LeafListField } from '../model';
@@ -43,11 +43,11 @@ export default class LeafListFieldInstance implements Pluggable, Child {
     }
   }
 
-  public get value() {
-    return this.instanceData ? this.instanceData.values : [];
+  public getValue(authorized: Authorized) {
+    return this.instanceData ? this.instanceData.getValues(authorized) : [];
   }
 
-  public serialize(readOnly?: boolean): any {
+  public serialize(authorized: Authorized, readOnly?: boolean): any {
     const base = this.model.serialize();
 
     let enumerations;
@@ -61,7 +61,7 @@ export default class LeafListFieldInstance implements Pluggable, Child {
       Object.assign(
         {},
         base,
-        _.pickBy({ readOnly, value: this.value, enumerations }, v => !_.isUndefined(v))
+        _.pickBy({ readOnly, value: this.getValue(authorized), enumerations }, v => !_.isUndefined(v))
       )
     );
   }

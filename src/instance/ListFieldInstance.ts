@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { ListInstance, LeafInstance, Leaf, Types, Path, DataModelInstance } from '@128technology/yinz';
+import { ListInstance, LeafInstance, Leaf, Types, Path, DataModelInstance, Authorized } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import { ListField, LeafField } from '../model';
@@ -81,15 +81,17 @@ export default class ListFieldInstance implements Pluggable, Child {
     });
   }
 
-  public get value() {
+  public getValue(authorized: Authorized) {
     if (_.isNil(this.instanceData)) {
       return [];
     }
 
-    return Array.from(this.instanceData.children.entries()).map(([key, listItem]) => {
+    return Array.from(this.instanceData.getChildren(authorized).entries()).map(([key, listItem]) => {
       const itemLeaves = this.model.leaves.reduce((acc: IGenericObj, leaf) => {
         // TODO: Better guard
-        const value = listItem.instance.has(leaf) ? (listItem.instance.get(leaf) as LeafInstance).value : null;
+        const value = listItem.getChildren(authorized).has(leaf)
+          ? (listItem.getChildren(authorized).get(leaf) as LeafInstance).getValue(authorized)
+          : null;
         acc[leaf] = value;
         return acc;
       }, {});
@@ -100,12 +102,12 @@ export default class ListFieldInstance implements Pluggable, Child {
     });
   }
 
-  public serialize(): any {
+  public serialize(authorized: Authorized): any {
     return this.applyPlugins(
       Object.assign(
         {},
         this.model.serialize(),
-        _.pickBy({ value: this.value, keys: this.keys }, v => !_.isUndefined(v))
+        _.pickBy({ value: this.getValue(authorized), keys: this.keys }, v => !_.isUndefined(v))
       )
     );
   }

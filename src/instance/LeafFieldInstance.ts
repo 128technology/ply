@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { Leaf, LeafInstance, Types, Path, DataModelInstance } from '@128technology/yinz';
+import { Leaf, LeafInstance, Types, Path, DataModelInstance, Authorized } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import KeyUndefinedError from './errors/KeyUndefinedError';
@@ -31,7 +31,7 @@ export default class LeafFieldInstance implements Pluggable, Child {
 
     this.plugins = this.getPresentationInstance().leafPlugins;
 
-    if (_.isNil(this.value) && this.model.model.isKey) {
+    if (_.isNil(this.getValue(() => true)) && this.model.model.isKey) {
       throw new KeyUndefinedError(`Key for ${this.model.id} not present in instance.`);
     }
 
@@ -48,11 +48,11 @@ export default class LeafFieldInstance implements Pluggable, Child {
     }
   }
 
-  public get value() {
-    return this.instanceData ? this.instanceData.value : null;
+  public getValue(authorized: Authorized) {
+    return this.instanceData ? this.instanceData.getValue(authorized) : null;
   }
 
-  public serialize(): any {
+  public serialize(authorized: Authorized): any {
     const base = this.model.serialize();
 
     let enumerations;
@@ -66,7 +66,7 @@ export default class LeafFieldInstance implements Pluggable, Child {
       Object.assign(
         {},
         base,
-        _.pickBy({ value: this.value, enumerations }, v => !_.isUndefined(v))
+        _.pickBy({ value: this.getValue(authorized), enumerations }, v => !_.isUndefined(v))
       )
     );
   }
