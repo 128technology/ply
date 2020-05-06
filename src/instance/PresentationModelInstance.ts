@@ -1,4 +1,4 @@
-import { DataModelInstance } from '@128technology/yinz';
+import { DataModelInstance, Authorized } from '@128technology/yinz';
 
 import { IParams } from './InstanceTypes';
 import {
@@ -29,11 +29,11 @@ export default class PresentationModelInstance {
     this.instance = instance;
   }
 
-  public getPresentationForPage(page: string, params: IParams) {
+  public getPresentationForPage(page: string, params: IParams, authorized: Authorized) {
     const pageModel = this.presentationModel.getPage(page);
     const instance = new PageInstance(pageModel, this, params);
 
-    return instance.serialize();
+    return instance.serialize(authorized);
   }
 
   public registerContainerPlugin(plugin: ContainerPlugin) {

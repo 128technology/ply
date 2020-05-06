@@ -1,4 +1,4 @@
-import { DataModelInstance } from '@128technology/yinz';
+import { DataModelInstance, Authorized } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import { IParams } from './InstanceTypes';
@@ -23,10 +23,10 @@ export default class PageInstance implements Pluggable {
     this.sections = model.sections.map(section => new SectionInstance(section, this, params));
   }
 
-  public serialize(): any {
+  public serialize(authorized: Authorized): any {
     return this.applyPlugins(
       Object.assign({}, this.model.serialize(false), {
-        sections: this.sections.map(section => section.serialize())
+        sections: this.sections.map(section => section.serialize(authorized))
       })
     );
   }
