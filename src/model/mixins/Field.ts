@@ -154,12 +154,22 @@ export default class Field {
   }
 
   public addChoice() {
-    if (this.model.choiceCase) {
-      const {
-        name,
-        parentChoice: { path }
-      } = this.model.choiceCase;
-      this.choice = { case: name, path };
+    if (!(this.model instanceof Choice)) {
+      let currModel: Model | null = this.model;
+
+      while (currModel) {
+        if (currModel.choiceCase) {
+          const {
+            name,
+            parentChoice: { path }
+          } = currModel.choiceCase;
+
+          this.choice = { case: name, path };
+          break;
+        } else {
+          currModel = currModel.parentModel;
+        }
+      }
     }
   }
 
