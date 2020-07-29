@@ -71,6 +71,15 @@ export default class LeafListField implements Field, WithOptions {
         this.getLocation()
       );
     }
+
+    if (
+      !Array.isArray(this.columnLabels) ||
+      this.columnLabels.length !== 1 ||
+      !this.columnLabels[0].id ||
+      !this.columnLabels[0].label
+    ) {
+      errorReporter(`Leaf list field ${this.id} must be contain column labels.`, ErrorLevel.error, this.getLocation());
+    }
   }
 
   public serialize(): any {
