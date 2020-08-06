@@ -28,7 +28,15 @@ describe('Leaf Field Model', () => {
       default: 'ethernet',
       deprecated: false,
       description: 'Type of interface.',
-      enumerations: ['ethernet', 'pppoe', 'host', 'bridged', 'lte', 't1'],
+      enumerations: [
+        { name: 'ethernet', description: 'A physical ethernet interface.' },
+        { name: 'kni', description: 'A logical interface to VM, host process, or container instance.' },
+        { name: 'pppoe', description: 'An interface using the Point-to-Point Protocol over Ethernet (PPPoE).' },
+        { name: 'host', description: 'A logical interface to the host system.' },
+        { name: 'bridged', description: 'A logical interface bridged to a target interface.' },
+        { name: 'lte', description: 'An interface using LTE.' },
+        { name: 't1', description: 'An interface using a T1 card.' }
+      ],
       id: 'authority.router.node.device-interface.type',
       isKey: false,
       kind: 'leaf',
@@ -48,7 +56,11 @@ describe('Leaf Field Model', () => {
       default: 'use-authority-setting',
       deprecated: false,
       description: 'Enable remote login from a Conductor to assets on this Router.',
-      enumerations: ['use-authority-setting', 'true', 'false'],
+      enumerations: [
+        { name: 'use-authority-setting', description: 'Use the authority wide remote-login state.' },
+        { name: 'true', description: '' },
+        { name: 'false', description: '' }
+      ],
       id: 'authority.router.system.remote-login.enabled',
       isKey: false,
       kind: 'leaf',

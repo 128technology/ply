@@ -8,6 +8,11 @@ import { PresentationModelInstance, SectionInstance, LeafListPlugin } from './';
 
 const { LeafRefType, DerivedType } = Types;
 
+interface IEnumeration {
+  name: string;
+  description: string;
+}
+
 export default class LeafListFieldInstance implements Pluggable, Child {
   public readonly instanceData: LeafListInstance;
   public readonly model: LeafListField;
@@ -50,7 +55,7 @@ export default class LeafListFieldInstance implements Pluggable, Child {
   public serialize(authorized: Authorized, readOnly?: boolean): any {
     const base = this.model.serialize();
 
-    let enumerations;
+    let enumerations: IEnumeration[] = [];
     if (base.enumerations) {
       enumerations = _.uniq(base.enumerations.concat(this.getInstanceReferences()));
     } else if (this.suggestions || this.references) {
@@ -67,7 +72,11 @@ export default class LeafListFieldInstance implements Pluggable, Child {
   }
 
   private getInstanceReferences() {
-    return _.uniq((this.references || []).concat(this.suggestions || []));
+    return _.uniq(
+      (this.references?.map(r => ({ name: r, description: '' })) || []).concat(
+        this.suggestions?.map(s => ({ name: s, description: '' })) || []
+      )
+    );
   }
 }
 

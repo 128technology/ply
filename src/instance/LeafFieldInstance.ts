@@ -72,7 +72,11 @@ export default class LeafFieldInstance implements Pluggable, Child {
   }
 
   private getInstanceReferences() {
-    return _.uniq((this.references || []).concat(this.suggestions || []));
+    return _.uniq(
+      (this.references?.map(r => ({ name: r, description: '' })) || []).concat(
+        this.suggestions?.map(s => ({ name: s, description: '' })) || []
+      )
+    );
   }
 }
 

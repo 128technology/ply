@@ -10,6 +10,11 @@ const { LeafRefType, DerivedType } = Types;
 
 const FAKE_KEY = 'XXX_FAKE_KEY_VALUE_XXX';
 
+interface IEnumeration {
+  name: string;
+  description: string;
+}
+
 interface IGenericObj {
   [index: string]: string | null;
 }
@@ -43,7 +48,7 @@ export default class ListFieldInstance implements Pluggable, Child {
       const references: string[] = [];
       const suggestions: string[] = [];
       const fakePath = this.getFakePath(model.name);
-      let enumerations: string[] | undefined;
+      let enumerations: IEnumeration[] | undefined;
 
       if (model instanceof Leaf && model.getResolvedType() instanceof LeafRefType) {
         enumerations = [];
@@ -68,9 +73,9 @@ export default class ListFieldInstance implements Pluggable, Child {
       const base = modelKey.serialize();
 
       if (base.enumerations) {
-        enumerations = _.uniq(base.enumerations.concat(references).concat(suggestions));
+        enumerations = _.uniq(base.enumerations.concat(this.formatInstanceReferences(references, suggestions)));
       } else if (suggestions.length > 0 || references.length > 0) {
-        enumerations = _.uniq(references.concat(suggestions));
+        enumerations = this.formatInstanceReferences(references, suggestions);
       }
 
       return Object.assign(
@@ -122,6 +127,14 @@ export default class ListFieldInstance implements Pluggable, Child {
 
   private getFakeKeys() {
     return Array.from(this.model.model.keys.values()).map(key => ({ key, value: FAKE_KEY }));
+  }
+
+  private formatInstanceReferences(references: string[], suggestions: string[]) {
+    return _.uniq(
+      (references?.map(r => ({ name: r, description: '' })) || []).concat(
+        suggestions?.map(s => ({ name: s, description: '' })) || []
+      )
+    );
   }
 }
 
