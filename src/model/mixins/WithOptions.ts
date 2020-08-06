@@ -3,20 +3,33 @@ import { Types, Type, Leaf, LeafList } from '@128technology/yinz';
 
 const { EnumerationType, IdentityRefType, DerivedType, BooleanType } = Types;
 
+interface IEnumeration {
+  name: string;
+  description: string;
+}
+
 export default class WithOptions {
   public model: Leaf | LeafList;
-  public enumerations: string[];
+  public enumerations: IEnumeration[];
   public suggestionRefs: string[];
   public type: string;
 
   public collectOptions() {
-    const enumerations: string[] = [];
+    const enumerations: IEnumeration[] = [];
     const suggestionRefs: string[] = [];
     let containsBoolean = false;
 
     const visitType = (aType: Type) => {
-      if (aType instanceof IdentityRefType || aType instanceof EnumerationType) {
-        Array.prototype.push.apply(enumerations, aType.options);
+      if (aType instanceof IdentityRefType) {
+        Array.prototype.push.apply(
+          enumerations,
+          aType.options.map(x => ({ name: x, description: '' }))
+        );
+      } else if (aType instanceof EnumerationType) {
+        Array.prototype.push.apply(
+          enumerations,
+          Array.from(aType.members).map(x => ({ name: x[0], description: x[1].description }))
+        );
       } else if (aType instanceof DerivedType) {
         if (aType.suggestionRefs) {
           Array.prototype.push.apply(suggestionRefs, aType.suggestionRefs);
@@ -37,7 +50,9 @@ export default class WithOptions {
     }
 
     if (enumerations.length > 0) {
-      this.enumerations = containsBoolean ? [...enumerations, 'true', 'false'] : enumerations;
+      this.enumerations = containsBoolean
+        ? [...enumerations, { name: 'true', description: '' }, { name: 'false', description: '' }]
+        : enumerations;
     }
 
     if (suggestionRefs.length > 0) {

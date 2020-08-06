@@ -42,7 +42,10 @@ describe('Leaf List Field Model', () => {
       ],
       deprecated: false,
       description: 'Application learning modes.',
-      enumerations: ['module', 'tls'],
+      enumerations: [
+        { name: 'module', description: 'Learn application via modules.' },
+        { name: 'tls', description: 'Learn application via TLS certificate parsing.' }
+      ],
       id: 'authority.router.application-identification.mode',
       kind: 'leaf-list',
       label: 'Application Identification',
