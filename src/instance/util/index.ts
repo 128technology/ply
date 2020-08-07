@@ -27,3 +27,11 @@ export function buildField(fieldModel: Field, parent: SectionInstance, instanceD
     throw new Error('Unrecognized field model type.');
   }
 }
+
+export function getInstanceReferences(references: string[] | undefined, suggestions: string[] | undefined) {
+  return _.uniq(
+    (references?.map(r => ({ name: r, description: '' })) || []).concat(
+      suggestions?.map(s => ({ name: s, description: '' })) || []
+    )
+  );
+}
