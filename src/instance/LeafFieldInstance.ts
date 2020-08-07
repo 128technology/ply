@@ -6,6 +6,7 @@ import KeyUndefinedError from './errors/KeyUndefinedError';
 import { LeafField } from '../model';
 import { Pluggable, Child } from './mixins';
 import { PresentationModelInstance, SectionInstance, LeafPlugin } from './';
+import { getInstanceReferences } from './util';
 
 const { LeafRefType, DerivedType } = Types;
 
@@ -57,9 +58,9 @@ export default class LeafFieldInstance implements Pluggable, Child {
 
     let enumerations;
     if (base.enumerations) {
-      enumerations = _.uniq(base.enumerations.concat(this.getInstanceReferences()));
+      enumerations = _.uniq(base.enumerations.concat(getInstanceReferences(this.references, this.suggestions)));
     } else if (this.suggestions || this.references) {
-      enumerations = this.getInstanceReferences();
+      enumerations = getInstanceReferences(this.references, this.suggestions);
     }
 
     return this.applyPlugins(
@@ -67,14 +68,6 @@ export default class LeafFieldInstance implements Pluggable, Child {
         {},
         base,
         _.pickBy({ value: this.getValue(authorized), enumerations }, v => !_.isUndefined(v))
-      )
-    );
-  }
-
-  private getInstanceReferences() {
-    return _.uniq(
-      (this.references?.map(r => ({ name: r, description: '' })) || []).concat(
-        this.suggestions?.map(s => ({ name: s, description: '' })) || []
       )
     );
   }

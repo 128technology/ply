@@ -1,12 +1,8 @@
 import * as _ from 'lodash';
 import { Types, Type, Leaf, LeafList } from '@128technology/yinz';
+import { IEnumeration } from '../../util/types';
 
 const { EnumerationType, IdentityRefType, DerivedType, BooleanType } = Types;
-
-interface IEnumeration {
-  name: string;
-  description: string;
-}
 
 export default class WithOptions {
   public model: Leaf | LeafList;

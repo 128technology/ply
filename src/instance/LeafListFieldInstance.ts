@@ -5,13 +5,10 @@ import applyMixins from '../util/applyMixins';
 import { LeafListField } from '../model';
 import { Pluggable, Child } from './mixins';
 import { PresentationModelInstance, SectionInstance, LeafListPlugin } from './';
+import { getInstanceReferences } from './util';
+import { IEnumeration } from '../util/types';
 
 const { LeafRefType, DerivedType } = Types;
-
-interface IEnumeration {
-  name: string;
-  description: string;
-}
 
 export default class LeafListFieldInstance implements Pluggable, Child {
   public readonly instanceData: LeafListInstance;
@@ -57,9 +54,9 @@ export default class LeafListFieldInstance implements Pluggable, Child {
 
     let enumerations: IEnumeration[] = [];
     if (base.enumerations) {
-      enumerations = _.uniq(base.enumerations.concat(this.getInstanceReferences()));
+      enumerations = _.uniq(base.enumerations.concat(getInstanceReferences(this.references, this.suggestions)));
     } else if (this.suggestions || this.references) {
-      enumerations = this.getInstanceReferences();
+      enumerations = getInstanceReferences(this.references, this.suggestions);
     }
 
     return this.applyPlugins(
@@ -67,14 +64,6 @@ export default class LeafListFieldInstance implements Pluggable, Child {
         {},
         base,
         _.pickBy({ readOnly, value: this.getValue(authorized), enumerations }, v => !_.isUndefined(v))
-      )
-    );
-  }
-
-  private getInstanceReferences() {
-    return _.uniq(
-      (this.references?.map(r => ({ name: r, description: '' })) || []).concat(
-        this.suggestions?.map(s => ({ name: s, description: '' })) || []
       )
     );
   }
