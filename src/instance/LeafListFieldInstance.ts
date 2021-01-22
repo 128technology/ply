@@ -1,55 +1,57 @@
 import * as _ from 'lodash';
-import { LeafListInstance, DataModelInstance, Path, LeafList, Types, Authorized } from '@128technology/yinz';
+import { LeafListInstance, Path, LeafList, Types, Authorized } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import { LeafListField } from '../model';
 import { Pluggable, Child } from './mixins';
-import { PresentationModelInstance, SectionInstance, LeafListPlugin } from './';
+import { SectionInstance, LeafListPlugin } from './';
 import { getInstanceReferences } from './util';
 import { IEnumeration } from '../util/types';
 
 const { LeafRefType, DerivedType } = Types;
 
 export default class LeafListFieldInstance implements Pluggable, Child {
-  public readonly instanceData: LeafListInstance;
-  public readonly model: LeafListField;
-  public readonly parent: SectionInstance;
-  public readonly path: Path;
-  public readonly plugins: LeafListPlugin[];
+  public static async build(model: LeafListField, parent: SectionInstance, instanceData: LeafListInstance, path: Path) {
+    let references;
 
-  public readonly getDataInstance: () => DataModelInstance;
-  public readonly getPresentationInstance: () => PresentationModelInstance;
-  public readonly applyPlugins: (field: any) => any;
-
-  private readonly references?: string[] | undefined;
-  private readonly suggestions?: string[];
-
-  constructor(model: LeafListField, parent: SectionInstance, instanceData: LeafListInstance, path: Path) {
-    this.model = model;
-    this.parent = parent;
-    this.instanceData = instanceData;
-    this.path = path;
-
-    this.plugins = this.getPresentationInstance().leafListPlugins;
-
-    if (this.model.model instanceof LeafList && this.model.model.getResolvedType() instanceof LeafRefType) {
-      this.references = this.getDataInstance().evaluateLeafRef(path);
+    if (model.model instanceof LeafList && model.model.getResolvedType() instanceof LeafRefType) {
+      references = await parent.getDataInstance().evaluateLeafRef(path);
     }
 
-    if (this.model.model instanceof LeafList) {
-      const type = this.model.model.type;
+    let suggestions;
+    if (model.model instanceof LeafList) {
+      const type = model.model.type;
 
       if (type instanceof DerivedType && type.suggestionRefs && type.suggestionRefs.length > 0) {
-        this.suggestions = this.getDataInstance().evaluateSuggestionRef(path);
+        suggestions = await parent.getDataInstance().evaluateSuggestionRef(path);
       }
     }
+
+    return new LeafListFieldInstance(model, parent, instanceData, path, references, suggestions);
+  }
+
+  public readonly plugins: LeafListPlugin[];
+
+  public getDataInstance: Child['getDataInstance'];
+  public getPresentationInstance: Child['getPresentationInstance'];
+  public applyPlugins: Pluggable['applyPlugins'];
+
+  constructor(
+    public readonly model: LeafListField,
+    public readonly parent: SectionInstance,
+    public readonly instanceData: LeafListInstance,
+    public readonly path: Path,
+    private readonly references: string[] | undefined,
+    private readonly suggestions: string[] | undefined
+  ) {
+    this.plugins = this.getPresentationInstance().leafListPlugins;
   }
 
   public getValue(authorized: Authorized) {
     return this.instanceData ? this.instanceData.getValues(authorized) : [];
   }
 
-  public serialize(authorized: Authorized, readOnly?: boolean): any {
+  public async serialize(authorized: Authorized, readOnly?: boolean): Promise<any> {
     const base = this.model.serialize();
 
     let enumerations: IEnumeration[] = [];
@@ -59,7 +61,7 @@ export default class LeafListFieldInstance implements Pluggable, Child {
       enumerations = getInstanceReferences(this.references, this.suggestions);
     }
 
-    return this.applyPlugins(
+    return await this.applyPlugins(
       Object.assign(
         {},
         base,
