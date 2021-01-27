@@ -1,32 +1,32 @@
-import { ContainerInstance, DataModelInstance, Path } from '@128technology/yinz';
+import { ContainerInstance, Path } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
-import { PresentationModelInstance, SectionInstance, ContainerPlugin } from './';
+import { SectionInstance, ContainerPlugin } from './';
 import { ContainerField } from '../model';
 import { Pluggable, Child } from './mixins';
 
 export default class ContainerFieldInstance implements Pluggable, Child {
-  public readonly instanceData: ContainerInstance;
-  public model: ContainerField;
-  public parent: SectionInstance;
-  public plugins: ContainerPlugin[];
-  public path: Path;
+  public static build(model: ContainerField, parent: SectionInstance, instanceData: ContainerInstance, path: Path) {
+    return new ContainerFieldInstance(model, parent, instanceData, path);
+  }
 
-  public getDataInstance: () => DataModelInstance;
-  public getPresentationInstance: () => PresentationModelInstance;
-  public applyPlugins: (field: any) => any;
+  public readonly plugins: ContainerPlugin[];
 
-  constructor(model: ContainerField, parent: SectionInstance, instanceData: ContainerInstance, path: Path) {
-    this.model = model;
-    this.parent = parent;
-    this.path = path;
-    this.instanceData = instanceData;
+  public getDataInstance: Child['getDataInstance'];
+  public getPresentationInstance: Child['getPresentationInstance'];
+  public applyPlugins: Pluggable['applyPlugins'];
 
+  constructor(
+    public readonly model: ContainerField,
+    public readonly parent: SectionInstance,
+    public readonly instanceData: ContainerInstance,
+    public readonly path: Path
+  ) {
     this.plugins = this.getPresentationInstance().containerPlugins;
   }
 
-  public serialize(): any {
-    return this.applyPlugins(Object.assign({}, this.model.serialize()));
+  public async serialize(): Promise<any> {
+    return await this.applyPlugins(Object.assign({}, this.model.serialize()));
   }
 }
 

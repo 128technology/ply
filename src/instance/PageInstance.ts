@@ -7,26 +7,30 @@ import { Page } from '../model';
 import { SectionInstance, PresentationModelInstance, PagePlugin } from './';
 
 export default class PageInstance implements Pluggable {
-  public model: Page;
-  public parent: PresentationModelInstance;
   public plugins: PagePlugin[];
   public sections: SectionInstance[];
 
-  public applyPlugins: (page: any) => any;
+  public applyPlugins: Pluggable['applyPlugins'];
 
-  constructor(model: Page, parent: PresentationModelInstance, params: IParams) {
-    this.model = model;
-    this.parent = parent;
-
+  constructor(public readonly model: Page, public readonly parent: PresentationModelInstance) {
     this.plugins = this.getPresentationInstance().pagePlugins;
-
-    this.sections = model.sections.map(section => new SectionInstance(section, this, params));
   }
 
-  public serialize(authorized: Authorized): any {
-    return this.applyPlugins(
+  public async addSections(params: IParams) {
+    this.sections = await Promise.all(
+      this.model.sections.map(async section => {
+        const instance = new SectionInstance(section, this);
+        await instance.addFields(params);
+        return instance;
+      })
+    );
+  }
+
+  public async serialize(authorized: Authorized): Promise<any> {
+    const sections = await Promise.all(this.sections.map(async section => await section.serialize(authorized)));
+    return await this.applyPlugins(
       Object.assign({}, this.model.serialize(false), {
-        sections: this.sections.map(section => section.serialize(authorized))
+        sections
       })
     );
   }

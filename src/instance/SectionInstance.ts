@@ -13,7 +13,7 @@ import applyMixins from '../util/applyMixins';
 import ContainingListDoesNotExist from './errors/ContainingListDoesNotExistError';
 import { Child, Pluggable } from './mixins';
 import { FieldInstance, IParams } from './InstanceTypes';
-import { PresentationModelInstance, PageInstance, SectionPlugin } from './';
+import { PageInstance, SectionPlugin } from './';
 import { Section, ChoiceField } from '../model';
 import { buildField } from './util';
 
@@ -42,39 +42,33 @@ function getPath(id: string, params: IParams, model: DataModel): Path {
 
 export default class SectionInstance implements Child, Pluggable {
   public fields: FieldInstance[];
-  public model: Section;
   public plugins: SectionPlugin[];
-  public parent: PageInstance;
 
-  public applyPlugins: (section: any) => any;
-  public getDataInstance: () => DataModelInstance;
-  public getPresentationInstance: () => PresentationModelInstance;
+  public getDataInstance: Child['getDataInstance'];
+  public getPresentationInstance: Child['getPresentationInstance'];
+  public applyPlugins: Pluggable['applyPlugins'];
 
-  constructor(model: Section, parent: PageInstance, params: IParams) {
-    this.model = model;
-    this.parent = parent;
-
+  constructor(public readonly model: Section, public readonly parent: PageInstance) {
     this.plugins = this.getPresentationInstance().sectionPlugins;
-
-    this.addFields(params);
   }
 
-  public serialize(authorized: Authorized): any {
-    return this.applyPlugins(
+  public async serialize(authorized: Authorized): Promise<any> {
+    const fields = await Promise.all(this.fields.map(async field => await field.serialize(authorized)));
+    return await this.applyPlugins(
       Object.assign({}, this.model.serialize(false), {
-        fields: this.fields.map(field => field.serialize(authorized))
+        fields
       })
     );
   }
 
-  private addFields(params: IParams) {
+  public async addFields(params: IParams) {
     const instance = this.getDataInstance();
     const model = instance.model;
 
-    this.fields = this.model.fields
+    const fieldPromises = this.model.fields
       .filter(field => field.visibility !== 'hidden')
       .map(field => ({ field, path: getPath(field.id, params, model) }))
-      .filter(({ path }) => instance.evaluateWhenCondition(path))
+      .filter(async ({ path }) => await instance.evaluateWhenCondition(path))
       .map(({ field, path }) => {
         // Choices don't exist in the response, look for its parent
         const searchPath = field instanceof ChoiceField ? _.initial(path) : path;
@@ -104,7 +98,9 @@ export default class SectionInstance implements Child, Pluggable {
 
         return { field, path, instanceData: instanceData! };
       })
-      .map(({ field, path, instanceData }) => buildField(field, this, instanceData, path));
+      .map(async ({ field, path, instanceData }) => await buildField(field, this, instanceData, path));
+
+    this.fields = await Promise.all(fieldPromises);
   }
 }
 

@@ -1,28 +1,28 @@
 import * as _ from 'lodash';
-import { Instance, DataModelInstance, Path } from '@128technology/yinz';
+import { Instance, Path } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import { ChoiceField } from '../model';
 import { Pluggable, Child } from './mixins';
-import { PresentationModelInstance, SectionInstance, ChoicePlugin } from './';
+import { SectionInstance, ChoicePlugin } from './';
 
 export default class ChoiceFieldInstance implements Pluggable, Child {
-  public model: ChoiceField;
-  public parent: SectionInstance;
-  public path: Path;
-  public parentInstanceData: Instance;
-  public plugins: ChoicePlugin[];
+  public static build(model: ChoiceField, parent: SectionInstance, parentInstanceData: Instance, path: Path) {
+    return new ChoiceFieldInstance(model, parent, parentInstanceData, path);
+  }
 
-  public getDataInstance: () => DataModelInstance;
-  public getPresentationInstance: () => PresentationModelInstance;
-  public applyPlugins: (field: any) => any;
+  public readonly plugins: ChoicePlugin[];
 
-  constructor(model: ChoiceField, parent: SectionInstance, parentInstanceData: Instance, path: Path) {
-    this.model = model;
-    this.parent = parent;
-    this.parentInstanceData = parentInstanceData;
-    this.path = path;
+  public getDataInstance: Child['getDataInstance'];
+  public getPresentationInstance: Child['getPresentationInstance'];
+  public applyPlugins: Pluggable['applyPlugins'];
 
+  constructor(
+    public readonly model: ChoiceField,
+    public readonly parent: SectionInstance,
+    public readonly parentInstanceData: Instance,
+    public readonly path: Path
+  ) {
     this.plugins = this.getPresentationInstance().choicePlugins;
   }
 
@@ -34,8 +34,8 @@ export default class ChoiceFieldInstance implements Pluggable, Child {
     }
   }
 
-  public serialize(): any {
-    return this.applyPlugins(
+  public async serialize(): Promise<any> {
+    return await this.applyPlugins(
       Object.assign(
         {},
         this.model.serialize(),

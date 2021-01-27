@@ -8,10 +8,10 @@ import {
   SectionInstance
 } from './';
 
-export type ContainerPlugin = (container: ContainerFieldInstance, serializedField: any) => any;
-export type ListPlugin = (list: ListFieldInstance, serializedField: any) => any;
-export type LeafPlugin = (leaf: LeafFieldInstance, serializedField: any) => any;
-export type LeafListPlugin = (leafList: LeafListFieldInstance, serializedField: any) => any;
-export type ChoicePlugin = (choice: ChoiceFieldInstance, serializedField: any) => any;
-export type PagePlugin = (page: PageInstance, serializedPage: any) => any;
-export type SectionPlugin = (section: SectionInstance, serializedSection: any) => any;
+export type ContainerPlugin = (container: ContainerFieldInstance, serializedField: any) => Promise<any>;
+export type ListPlugin = (list: ListFieldInstance, serializedField: any) => Promise<any>;
+export type LeafPlugin = (leaf: LeafFieldInstance, serializedField: any) => Promise<any>;
+export type LeafListPlugin = (leafList: LeafListFieldInstance, serializedField: any) => Promise<any>;
+export type ChoicePlugin = (choice: ChoiceFieldInstance, serializedField: any) => Promise<any>;
+export type PagePlugin = (page: PageInstance, serializedPage: any) => Promise<any>;
+export type SectionPlugin = (section: SectionInstance, serializedSection: any) => Promise<any>;

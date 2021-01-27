@@ -16,24 +16,20 @@ import { PresentationModel } from '../model';
 export default class PresentationModelInstance {
   public choicePlugins: ChoicePlugin[] = [];
   public containerPlugins: ContainerPlugin[] = [];
-  public instance: DataModelInstance;
   public leafListPlugins: LeafListPlugin[] = [];
   public leafPlugins: LeafPlugin[] = [];
   public listPlugins: ListPlugin[] = [];
   public pagePlugins: PagePlugin[] = [];
   public sectionPlugins: SectionPlugin[] = [];
-  public presentationModel: PresentationModel;
 
-  constructor(presentationModel: PresentationModel, instance: DataModelInstance) {
-    this.presentationModel = presentationModel;
-    this.instance = instance;
-  }
+  constructor(public readonly presentationModel: PresentationModel, public readonly instance: DataModelInstance) {}
 
-  public getPresentationForPage(page: string, params: IParams, authorized: Authorized) {
+  public async getPresentationForPage(page: string, params: IParams, authorized: Authorized) {
     const pageModel = this.presentationModel.getPage(page);
-    const instance = new PageInstance(pageModel, this, params);
+    const instance = new PageInstance(pageModel, this);
+    await instance.addSections(params);
 
-    return instance.serialize(authorized);
+    return await instance.serialize(authorized);
   }
 
   public registerContainerPlugin(plugin: ContainerPlugin) {
