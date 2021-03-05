@@ -23,7 +23,7 @@
   "author": "128 Technology",
   "license": "MIT",
   "dependencies": {
-    "@128technology/yinz": "^5.0.0-alpha.0",
+    "@128technology/yinz": "^5.0.0-alpha.3",
     "@types/lodash": "^4.14.121",
     "lodash": "^4.17.15"
   },

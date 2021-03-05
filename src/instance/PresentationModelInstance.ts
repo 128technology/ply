@@ -22,7 +22,11 @@ export default class PresentationModelInstance {
   public pagePlugins: PagePlugin[] = [];
   public sectionPlugins: SectionPlugin[] = [];
 
-  constructor(public readonly presentationModel: PresentationModel, public readonly instance: DataModelInstance) {}
+  constructor(
+    public readonly presentationModel: PresentationModel,
+    public readonly instance: DataModelInstance,
+    public readonly context: unknown
+  ) {}
 
   public async getPresentationForPage(page: string, params: IParams, authorized: Authorized) {
     const pageModel = this.presentationModel.getPage(page);

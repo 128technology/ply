@@ -11,7 +11,13 @@ import {
   SectionInstance
 } from '../';
 
-export async function buildField(fieldModel: Field, parent: SectionInstance, instanceData: Instance, path: Path) {
+export async function buildField(
+  fieldModel: Field,
+  parent: SectionInstance,
+  instanceData: Instance,
+  path: Path,
+  context?: unknown
+) {
   if (fieldModel instanceof ListField) {
     return await ListFieldInstance.build(fieldModel, parent, instanceData as ListInstance, path);
   } else if (fieldModel instanceof ChoiceField) {
