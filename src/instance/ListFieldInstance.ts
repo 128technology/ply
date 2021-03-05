@@ -17,13 +17,19 @@ interface IGenericObj {
 }
 
 export default class ListFieldInstance implements Pluggable, Child {
-  public static async build(model: ListField, parent: SectionInstance, instanceData: ListInstance, path: Path) {
-    const keys = await ListFieldInstance.getKeys(model, parent, path);
+  public static async build(
+    model: ListField,
+    parent: SectionInstance,
+    instanceData: ListInstance,
+    path: Path,
+    context?: unknown
+  ) {
+    const keys = await ListFieldInstance.getKeys(model, parent, path, context);
 
     return new ListFieldInstance(model, parent, instanceData, path, keys);
   }
 
-  private static async getKeys(fieldModel: ListField, parent: SectionInstance, path: Path) {
+  private static async getKeys(fieldModel: ListField, parent: SectionInstance, path: Path, context?: unknown) {
     // Eww eww eww eww eww
     const modelKeys = fieldModel.keys;
 
@@ -37,7 +43,7 @@ export default class ListFieldInstance implements Pluggable, Child {
 
         if (model instanceof Leaf && model.getResolvedType() instanceof LeafRefType) {
           enumerations = [];
-          const leafRefs = await parent.getDataInstance().evaluateLeafRef(fakePath);
+          const leafRefs = await parent.getDataInstance().evaluateLeafRef(fakePath, context);
           Array.prototype.push.apply(references, leafRefs);
         }
 
@@ -50,7 +56,7 @@ export default class ListFieldInstance implements Pluggable, Child {
         ) {
           enumerations = [];
           // Suggestion-Refs can be self referential...
-          const suggestionsRefs = await parent.getDataInstance().evaluateSuggestionRef(fakePath);
+          const suggestionsRefs = await parent.getDataInstance().evaluateSuggestionRef(fakePath, context);
           Array.prototype.push.apply(suggestions, _.without(suggestionsRefs, FAKE_KEY));
         }
 

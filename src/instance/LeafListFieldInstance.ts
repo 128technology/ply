@@ -11,11 +11,17 @@ import { IEnumeration } from '../util/types';
 const { LeafRefType, DerivedType } = Types;
 
 export default class LeafListFieldInstance implements Pluggable, Child {
-  public static async build(model: LeafListField, parent: SectionInstance, instanceData: LeafListInstance, path: Path) {
+  public static async build(
+    model: LeafListField,
+    parent: SectionInstance,
+    instanceData: LeafListInstance,
+    path: Path,
+    context?: unknown
+  ) {
     let references;
 
     if (model.model instanceof LeafList && model.model.getResolvedType() instanceof LeafRefType) {
-      references = await parent.getDataInstance().evaluateLeafRef(path);
+      references = await parent.getDataInstance().evaluateLeafRef(path, context);
     }
 
     let suggestions;
@@ -23,7 +29,7 @@ export default class LeafListFieldInstance implements Pluggable, Child {
       const type = model.model.type;
 
       if (type instanceof DerivedType && type.suggestionRefs && type.suggestionRefs.length > 0) {
-        suggestions = await parent.getDataInstance().evaluateSuggestionRef(path);
+        suggestions = await parent.getDataInstance().evaluateSuggestionRef(path, context);
       }
     }
 
