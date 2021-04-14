@@ -19,14 +19,14 @@ export async function buildField(
   context?: unknown
 ) {
   if (fieldModel instanceof ListField) {
-    return await ListFieldInstance.build(fieldModel, parent, instanceData as ListInstance, path);
+    return await ListFieldInstance.build(fieldModel, parent, instanceData as ListInstance, path, context);
   } else if (fieldModel instanceof ChoiceField) {
     // In this case instanceData is actually the parent, if it exists.
     return ChoiceFieldInstance.build(fieldModel, parent, instanceData, path);
   } else if (fieldModel instanceof LeafField) {
-    return await LeafFieldInstance.build(fieldModel, parent, instanceData as LeafInstance, path);
+    return await LeafFieldInstance.build(fieldModel, parent, instanceData as LeafInstance, path, context);
   } else if (fieldModel instanceof LeafListField) {
-    return await LeafListFieldInstance.build(fieldModel, parent, instanceData as LeafListInstance, path);
+    return await LeafListFieldInstance.build(fieldModel, parent, instanceData as LeafListInstance, path, context);
   } else if (fieldModel instanceof ContainerField) {
     return ContainerFieldInstance.build(fieldModel, parent, instanceData as ContainerInstance, path);
   } else {
