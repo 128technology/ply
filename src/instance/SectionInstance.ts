@@ -65,10 +65,20 @@ export default class SectionInstance implements Child, Pluggable {
     const instance = this.getDataInstance();
     const model = instance.model;
 
-    const fieldPromises = this.model.fields
+    const fields = this.model.fields
       .filter(field => field.visibility !== 'hidden')
-      .map(field => ({ field, path: getPath(field.id, params, model) }))
-      .filter(async ({ path }) => await instance.evaluateWhenCondition(path, this.getPresentationInstance().context))
+      .map(field => ({ field, path: getPath(field.id, params, model) }));
+
+    const fieldsThatPassWhenEvaluation = [];
+    for (const field of fields) {
+      const whenResult = await instance.evaluateWhenCondition(field.path, this.getPresentationInstance().context);
+
+      if (whenResult) {
+        fieldsThatPassWhenEvaluation.push(field);
+      }
+    }
+
+    const fieldBuilderPromises = fieldsThatPassWhenEvaluation
       .map(({ field, path }) => {
         // Choices don't exist in the response, look for its parent
         const searchPath = field instanceof ChoiceField ? _.initial(path) : path;
@@ -103,7 +113,7 @@ export default class SectionInstance implements Child, Pluggable {
           await buildField(field, this, instanceData, path, this.getPresentationInstance().context)
       );
 
-    this.fields = await Promise.all(fieldPromises);
+    this.fields = await Promise.all(fieldBuilderPromises);
   }
 }
 
