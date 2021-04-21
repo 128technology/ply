@@ -12,9 +12,7 @@ const { LeafRefType, DerivedType } = Types;
 
 const FAKE_KEY = 'XXX_FAKE_KEY_VALUE_XXX';
 
-interface IGenericObj {
-  [index: string]: string | null;
-}
+type GenericObj = Record<string, string | null>;
 
 export default class ListFieldInstance implements Pluggable, Child {
   public static async build(
@@ -110,20 +108,22 @@ export default class ListFieldInstance implements Pluggable, Child {
       return [];
     }
 
-    return Array.from(this.instanceData.getChildren(authorized).entries()).map(([key, listItem]) => {
-      const itemLeaves = this.model.leaves.reduce((acc: IGenericObj, leaf) => {
-        // TODO: Better guard
-        const value = listItem.getChildren(authorized).has(leaf)
-          ? (listItem.getChildren(authorized).get(leaf) as LeafInstance).getValue(authorized)
-          : null;
-        acc[leaf] = value;
-        return acc;
-      }, {});
+    const value: GenericObj[] = [];
 
-      return Object.assign(itemLeaves, {
+    for (const [key, listItem] of this.instanceData.getChildren(authorized).entries()) {
+      const item: GenericObj = {
         _key: key
-      });
-    });
+      };
+
+      for (const leaf of this.model.leaves) {
+        const leafInstance = listItem.getInstance([{ name: leaf }], _.noop) as LeafInstance | undefined;
+        item[leaf] = leafInstance ? leafInstance.getValue(authorized) : null;
+      }
+
+      value.push(item);
+    }
+
+    return value;
   }
 
   public async serialize(authorized: Authorized): Promise<any> {
