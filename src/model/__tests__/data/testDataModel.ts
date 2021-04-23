@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import * as xml from 'libxmljs';
+import * as xml from 'libxmljs2';
 
 import { DataModel } from '@128technology/yinz';
 
