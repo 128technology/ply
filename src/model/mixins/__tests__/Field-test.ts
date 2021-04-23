@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { Model, Choice, DataModel } from '@128technology/yinz';
-import * as xml from 'libxmljs';
+import * as xml from 'libxmljs2';
 
 import Field from '../Field';
 import applyMixins from '../../../util/applyMixins';
