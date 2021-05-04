@@ -29,6 +29,7 @@ import {
 } from './instance';
 
 import { KeyUndefinedError, ContainingListDoesNotExistError } from './instance/errors';
+import { getPath } from './instance/util';
 import { IErrorLocation } from './validate/ErrorReporter';
 import { ErrorLevel } from './enum';
 import * as Plugins from './plugins';
@@ -62,5 +63,6 @@ export {
   PresentationModelInstance,
   Section,
   SectionInstance,
-  SectionPlugin
+  SectionPlugin,
+  getPath
 };
