@@ -1,5 +1,15 @@
 import * as _ from 'lodash';
-import { Instance, ListInstance, LeafInstance, LeafListInstance, ContainerInstance, Path } from '@128technology/yinz';
+import {
+  Instance,
+  ListInstance,
+  LeafInstance,
+  LeafListInstance,
+  ContainerInstance,
+  Path,
+  DataModel,
+  List,
+  Choice
+} from '@128technology/yinz';
 
 import { Field, LeafField, ListField, ChoiceField, LeafListField, ContainerField } from '../../model';
 import {
@@ -10,6 +20,7 @@ import {
   ListFieldInstance,
   SectionInstance
 } from '../';
+import { IParams } from '../InstanceTypes';
 
 export async function buildField(
   fieldModel: Field,
@@ -40,4 +51,30 @@ export function getInstanceReferences(references: string[] | undefined, suggesti
       suggestions?.map(s => ({ name: s, description: '' })) || []
     )
   );
+}
+
+export function getPath(id: string, params: IParams, model: DataModel): Path {
+  const splitPath = id.split('.');
+  const path = [];
+
+  for (let i = 0, len = splitPath.length; i < len; i++) {
+    const thisModel = model.getModelForPath(splitPath.slice(0, i + 1).join('.'));
+    const segment = splitPath[i];
+
+    if (thisModel instanceof List) {
+      if (params[segment]) {
+        const keyValues = params[segment].split(',');
+        const keys = Array.from(thisModel.keys).map((key, keyIdx) => ({ key, value: keyValues[keyIdx] }));
+        path.push({ name: segment, keys });
+      } else if (i === splitPath.length - 1) {
+        // Last segment doesn't need keys if targeting the whole list.
+        path.push({ name: segment });
+      } else {
+        throw new Error(`Keys not provided for ${thisModel.name}.`);
+      }
+    } else if (!(thisModel instanceof Choice)) {
+      path.push({ name: segment });
+    }
+  }
+  return path;
 }

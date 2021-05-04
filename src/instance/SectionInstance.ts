@@ -1,14 +1,5 @@
 import * as _ from 'lodash';
-import {
-  DataModel,
-  List,
-  DataModelInstance,
-  Path,
-  Instance,
-  LeafListChildInstance,
-  Authorized,
-  Choice
-} from '@128technology/yinz';
+import { DataModelInstance, Path, Instance, LeafListChildInstance, Authorized } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import ContainingListDoesNotExist from './errors/ContainingListDoesNotExistError';
@@ -16,33 +7,7 @@ import { Child, Pluggable } from './mixins';
 import { FieldInstance, IParams } from './InstanceTypes';
 import { PageInstance, SectionPlugin } from './';
 import { Section, ChoiceField } from '../model';
-import { buildField } from './util';
-
-function getPath(id: string, params: IParams, model: DataModel): Path {
-  const splitPath = id.split('.');
-  const path = [];
-
-  for (let i = 0, len = splitPath.length; i < len; i++) {
-    const thisModel = model.getModelForPath(splitPath.slice(0, i + 1).join('.'));
-    const segment = splitPath[i];
-
-    if (thisModel instanceof List) {
-      if (params[segment]) {
-        const keyValues = params[segment].split(',');
-        const keys = Array.from(thisModel.keys).map((key, keyIdx) => ({ key, value: keyValues[keyIdx] }));
-        path.push({ name: segment, keys });
-      } else if (i === splitPath.length - 1) {
-        // Last segment doesn't need keys if targeting the whole list.
-        path.push({ name: segment });
-      } else {
-        throw new Error(`Keys not provided for ${thisModel.name}.`);
-      }
-    } else if (!(thisModel instanceof Choice)) {
-      path.push({ name: segment });
-    }
-  }
-  return path;
-}
+import { buildField, getPath } from './util';
 
 export default class SectionInstance implements Child, Pluggable {
   public fields: FieldInstance[];
