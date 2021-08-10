@@ -1,4 +1,4 @@
-import { Choice, Case } from '@128technology/yinz';
+import { Choice, Case, Leaf, Types } from '@128technology/yinz';
 
 import applyMixins from '../util/applyMixins';
 import { Section } from './';
@@ -53,7 +53,16 @@ export default class ChoiceField implements Field {
 
   public get emptyCases() {
     return this.model.emptyCases.reduce((acc: IEmptyCases, theCase) => {
-      acc[theCase.name] = Array.from(theCase.children.values())[0].name;
+      const firstEmptyLeaf = Array.from(theCase.children.values()).find(
+        c => c instanceof Leaf && c.getResolvedType() instanceof Types.EmptyType
+      );
+
+      if (!firstEmptyLeaf) {
+        throw new Error('Case was marked as empty, but no empty type leaf was found.');
+      }
+
+      acc[theCase.name] = firstEmptyLeaf.name;
+
       return acc;
     }, {});
   }
